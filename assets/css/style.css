@@ -1,0 +1,13 @@
+.navbar-brand {
+	font-family: 'Operation Napalm',
+		monospace;
+	font-weight: bolder;
+}
+
+.navbar {
+	font-family: monospace;
+}
+
+.hidden {
+	display: none;
+}

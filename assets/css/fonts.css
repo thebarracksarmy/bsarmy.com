@@ -1,0 +1,11 @@
+@font-face {
+	font-family: 'Operation Napalm';
+	src: url(/assets/fonts/OperationNapalm.ttf) format('truetype'),
+		url(/assets/fonts/OperationNapalm.woff) format('woff');
+}
+
+@font-face {
+	font-family: 'Operation Napalm Italic';
+	src: url(/assets/fonts/OperationNapalmItalic.ttf) format('truetype'),
+		url(/assets/fonts/OperationNapalmItalic.woff) format('woff');
+}
