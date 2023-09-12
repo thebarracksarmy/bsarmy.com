@@ -1,0 +1,41 @@
+# The Barracks' Army
+
+## Description
+
+Building the Barracks up, improving the QOL for everyone, making the B's a better place to live.
+
+## Roadmap
+
+- [x] Create landing page with basic information about the project and how to get involved
+- [] Create a basic structure for the project and vote on what features to implement first
+- [] Create the first feature: DFAC schedule and map for Fort Liberty, NC
+
+## Contributing
+
+### Getting Started
+
+1. Fork the repository
+2. Clone the repository
+3. Create a new branch
+4. Make your changes
+5. Commit your changes
+6. Push your changes to GitHub
+7. Open a pull request, including a detailed description of your changes and where you are located. You'll be contacted by a maintainer to verify your identity and ask a series of questions to verify military service. We then get you added to the project.
+
+## Contributors
+
+- [Lucas Burlingham](https://github.com/lucasburlingham) - Creator, Maintainer - 25U, Fort Liberty, NC
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details. Additional licenses may apply to data/code used in this project. See the [licenses](licenses/) directory for more information.
+
+## Acknowledgements
+
+This project uses the following technologies:
+
+![Made with Apache 2](https://img.shields.io/badge/Made_With-Apache_2-blue?style=for-the-badge)
+![Ubuntu Linux](https://img.shields.io/badge/Linux-_?style=for-the-badge&logo=ubuntu&label=Ubuntu&labelColor=gray&color=gray)
+![Using Cloudflare Tunnels](https://img.shields.io/badge/Tunnels-_?style=for-the-badge&logo=cloudflare&label=Cloudflare&labelColor=gray&color=gray)
+![GitHub](https://img.shields.io/badge/GIT-_?style=for-the-badge&logo=github&label=Github&labelColor=gray&color=gray)
+![Spectrum Internet](https://img.shields.io/badge/Internet-_?style=for-the-badge&logo=Spectrum&logoColor=blue&label=Spectrum&labelColor=gray&color=gray)

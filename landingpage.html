@@ -266,6 +266,7 @@
 		[type="reset"],
 		[type="submit"] {
 			-webkit-appearance: button;
+			appearance: button;
 		}
 
 		/** * Remove the inner border and
@@ -344,6 +345,7 @@
 		Safari. * 2. Correct the outline style in Safari. */
 		[type="search"] {
 			-webkit-appearance: textfield;
+			appearance: textfield;
 			/* 1 */
 			outline-offset: -2px;
 			/* 2 */
@@ -395,16 +397,31 @@
 		.navbar-brand {
 			font-family: 'Operation Napalm', monospace;
 			font-weight: bolder;
+			font-size: 1.5rem;
 		}
 
 		.navbar {
 			font-family:
 				monospace;
-			background-color: black;
+		}
+
+		.bg-dark {
+			background-color: black !important;
 		}
 
 		.hidden {
 			display: none;
+		}
+
+		.muted {
+			/* From https://css.glass */
+			background: rgba(0, 0, 0, 0.53);
+			border-radius: 16px;
+			box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+			backdrop-filter: blur(8.5px);
+			-webkit-backdrop-filter: blur(8.5px);
+			border: 1px solid rgba(0, 0, 0, 0.61);
+			z-index: 1000000000;
 		}
 	</style>
 
@@ -465,7 +482,7 @@
 				</div>
 			</div>
 		</section>
-
+		<!-- 
 		<div class="album py-5 bg-light">
 			<div class="container">
 
@@ -690,18 +707,22 @@
 					</div>
 				</div>
 			</div>
-		</div>
+		</div> -->
 
 	</main>
 
-	<footer class="text-muted py-5">
+	<footer class="footer text-muted fixed-bottom py-5">
 		<div class="container">
-			<p class="float-right mb-1">
+			<p class="float-right">
 				<a href="#">Back to top</a>
 			</p>
-			<p class="mb-1">Album example is &copy; Bootstrap, but please download and customize it for yourself!</p>
-			<p class="mb-0">New to Bootstrap? <a href="/">Visit the homepage</a> or read our <a
-					href="/docs/5.0/getting-started/introduction/">getting started guide</a>.</p>
+			<p class="mb-1">Website &copy; Lucas Burlingham using Bootstrap 5 and album template.
+				<br>
+				This website is not close to being finished. See an issue?
+				<br>
+				<a href="https://github.com/lucasburlingham/bsarmy.com/issues/new">Submit an
+					issue report on GitHub.
+			</p>
 		</div>
 	</footer>
 
