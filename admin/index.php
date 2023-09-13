@@ -17,7 +17,7 @@ if($_POST['git_pull'] == 'git_pull') {
 
 <body>
 	<form action="<?php echo $PHP_SELF ?>" method="POST">
-		<input type="button" value="Run <kbd>git pull</kbd>">
+		<input type="submit" value="Run git pull">
 	</form>
 </body>
 
