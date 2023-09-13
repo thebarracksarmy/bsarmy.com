@@ -7,8 +7,8 @@ Building the Barracks up, improving the QOL for everyone, making the B's a bette
 ## Roadmap
 
 - [x] Create landing page with basic information about the project and how to get involved
-- [] Create a basic structure for the project and vote on what features to implement first
-- [] Create the first feature: DFAC schedule and map for Fort Liberty, NC
+- [ ] Create a basic structure for the project and vote on what features to implement first
+- [ ] Create the first feature: DFAC schedule and map for Fort Liberty, NC
 
 ## Contributing
 
@@ -21,6 +21,10 @@ Building the Barracks up, improving the QOL for everyone, making the B's a bette
 5. Commit your changes
 6. Push your changes to GitHub
 7. Open a pull request, including a detailed description of your changes and where you are located. You'll be contacted by a maintainer to verify your identity and ask a series of questions to verify military service. We then get you added to the project.
+
+### Submitting suggestions
+
+Use our [suggestion form](https://forms.gle/F9c7CEvEkwV6TbZNA) to submit suggestions for the project. You can also submit suggestions by opening an issue on GitHub.
 
 ## Contributors
 
