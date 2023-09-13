@@ -1,0 +1,7 @@
+AuthType Basic
+AuthName "The Barracks Admin Panel - Authorized Access Only"
+AuthUserFile /home/uglyfugly/.htpasswd
+require valid-user
+
+
+# htpasswd -cm /home/myuser/public_html/.htpasswd  myuser
