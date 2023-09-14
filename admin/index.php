@@ -2,6 +2,7 @@
 
 if($_POST['git_pull'] == 'git_pull') {
 	shell_exec('git pull');
+	shell_exec('wall "Git Pull Complete at ' . date('Y-m-d H:i:s') . ' by ' . $_SERVER['REMOTE_ADDR'] . ' as ' . $_SERVER['PHP_AUTH_USER'] . '"');
 }
 
 ?>
@@ -16,8 +17,9 @@ if($_POST['git_pull'] == 'git_pull') {
 </head>
 
 <body>
-	<form action="<?php echo $PHP_SELF ?>" method="POST">
-		<input type="submit" value="Run git pull">
+	<form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="POST">
+		<input type="command" value="git_pull" name="git_pull" hidden>
+		<input type="submit" value="Git Pull">
 	</form>
 </body>
 
