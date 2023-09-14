@@ -45,6 +45,6 @@ CREATE TABLE `admin_logs` (
 	PRIMARY KEY (`id`)
 ) ENGINE=InnoDB;
 
-CREATE user 'username'@'localhost' IDENTIFIED BY 'password';
+CREATE USER 'username'@'localhost' identified by 'password';
 
-GRANT ALTER, INSERT, UPDATE, DELETE, SELECT, RELOAD on *.* TO 'username'@'localhost';
+GRANT ALTER, INSERT, DELETE, UPDATE, CREATE ON *.* TO 'username'@'localhost';
