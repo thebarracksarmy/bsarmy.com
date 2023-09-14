@@ -2,7 +2,9 @@
 
 if($_POST['git_pull'] == 'git_pull') {
 	shell_exec('git pull');
-	shell_exec('wall "Git Pull Complete at ' . date('Y-m-d H:i:s') . ' by ' . $_SERVER['REMOTE_ADDR'] . ' as ' . $_SERVER['PHP_AUTH_USER'] . '"');
+	// Need to use HTTP_CF_CONNECTING_IP because Cloudflare Tunnels works behind a proxy to serve the site
+	// https://stackoverflow.com/questions/14985518/cloudflare-and-logging-visitor-ip-addresses-via-in-php
+	shell_exec('wall "Git Pull Complete at ' . date('Y-m-d H:i:s') . ' by ' . $_SERVER['HTTP_CF_CONNECTING_IP'] . ' as ' . $_SERVER['PHP_AUTH_USER'] . '"');
 }
 
 ?>
