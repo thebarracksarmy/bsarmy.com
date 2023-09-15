@@ -1,6 +1,7 @@
 <?php
 
-include_once ('/includes/cacheVersionController.php');
+include $_SERVER['DOCUMENT_ROOT'] . '/includes/beforeIncludes.php';
+
 ?>
 
 <!DOCTYPE html>
@@ -12,7 +13,8 @@ include_once ('/includes/cacheVersionController.php');
 	<title>The Barracks | Army</title>
 	<?php
 
-include_once ('/includes/headIncludes.php');
+include $_SERVER['DOCUMENT_ROOT'] . '/includes/headIncludes.php';
+
 
 ?>
 </head>

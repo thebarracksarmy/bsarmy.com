@@ -1,6 +1,6 @@
 <?php
 
-include_once ('/includes/beforeincludes.php');
+include $_SERVER['DOCUMENT_ROOT'] . '/includes/beforeIncludes.php';
 
 
 ?>
@@ -17,7 +17,8 @@ include_once ('/includes/beforeincludes.php');
 
 	<?php
 
-include_once ('/includes/headIncludes.php');
+include $_SERVER['DOCUMENT_ROOT'] . '/includes/headIncludes.php';
+
 
 ?>
 
