@@ -42,4 +42,19 @@ function get_log_category($category_id) {
 
 }
 
+function get_all_users() {
+	// global so that we can use the $conn variable
+	global $conn;
+
+	$sql = "SELECT id, last_login_epoch, username, name, bio, permissions, reputation FROM `bsarmy_main.user_nonpii-data`;";
+
+	$result = mysqli_query($conn, $sql);
+
+	if (!$result) {
+		die('Error: ' . mysqli_error($conn));
+	}
+	echo $result;
+	return $result;
+}
+
 ?>

@@ -27,13 +27,17 @@ if(isset($_POST['git_pull']) && $_POST['git_pull'] == 'git_pull') {
 	<title>The Barracks Admin - Git Pull</title>
 	<?php
 
-include $_SERVER['DOCUMENT_ROOT'] . '/includes/headIncludes.php';
+include_once $_SERVER['DOCUMENT_ROOT'] . '/includes/headIncludes.php';
 
 ?>
 
 </head>
 
 <body>
+
+	<?php include $_SERVER['DOCUMENT_ROOT'] . '/includes/nav.php'; ?>
+
+
 	<form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="POST">
 		<input type="text" value="git_pull" name="git_pull" hidden>
 		<input type="submit" value="Git Pull">

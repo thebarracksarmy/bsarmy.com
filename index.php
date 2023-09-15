@@ -22,23 +22,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/headIncludes.php';
 <body>
 
 
-	<!-- Navbar -->
-	<nav class="navbar navbar-expand-md bg-body-tertiary">
-		<div class="container-fluid">
-			<a class="navbar-brand" href="#">The Barracks</a>
-			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
-				aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
-				<span class="navbar-toggler-icon"></span>
-			</button>
-			<div class="collapse navbar-collapse" id="navbarContent">
-				<div class="navbar-nav">
-					<a class="nav-link active" aria-current="page" href="#">Home</a>
-					<a class="nav-link" href="#">Programs</a>
-					<a class="nav-link disabled" aria-disabled="true">Disabled</a>
-				</div>
-			</div>
-		</div>
-	</nav>
+	<?php include $_SERVER['DOCUMENT_ROOT'] . '/includes/nav.php'; ?>
 
 
 	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"

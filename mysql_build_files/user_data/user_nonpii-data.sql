@@ -8,3 +8,6 @@ CREATE TABLE `user_nonpii-data` (
 	`reputation` INT DEFAULT '0' COMMENT 'max is 10 million',
 	PRIMARY KEY (`id`)
 ) ENGINE=InnoDB;
+
+
+-- id, last_login_epoch, username, name, bio, permissions, reputation
