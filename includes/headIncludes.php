@@ -1,5 +1,7 @@
 <?php
 
+$cacheVersion = time();
+
 echo <<<EOT
 
 	<!-- Bootstrap core CSS -->
@@ -15,7 +17,9 @@ echo <<<EOT
 	<link rel="stylesheet" href="/assets/css/fonts.css">
 	<link rel="stylesheet" href="/assets/css/normalize.css">
 	<link rel="stylesheet" href="/assets/css/style.css">
+	<meta name="cache-version" content="$cacheVersion">
 
 EOT;
+
 
 ?>
