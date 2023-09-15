@@ -1,8 +1,6 @@
 <?php
 
-$document_root = $_SERVER['DOCUMENT_ROOT'];
-
-$output = <<<EOT
+echo <<<EOT
 
 	<!-- Bootstrap core CSS -->
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
@@ -14,12 +12,10 @@ $output = <<<EOT
 		integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
 		crossorigin="anonymous"></script>
 
-	<link rel="stylesheet" href="$document_root/assets/css/fonts.css">
-	<link rel="stylesheet" href="$document_root/assets/css/normalize.css">
-	<link rel="stylesheet" href="$document_root/assets/css/style.css">
+	<link rel="stylesheet" href="/assets/css/fonts.css">
+	<link rel="stylesheet" href="/assets/css/normalize.css">
+	<link rel="stylesheet" href="/assets/css/style.css">
 
 EOT;
-
-echo $output;
 
 ?>
