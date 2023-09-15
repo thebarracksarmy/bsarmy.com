@@ -1,6 +1,6 @@
 <?php
 
-include_once ($_SERVER['DOCUMENT_ROOT'] . '//stylesScripts.php');
+include_once ('/stylesScripts.php');
 
 ?>
 
