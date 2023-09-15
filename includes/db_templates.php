@@ -14,6 +14,7 @@ function log_server_command($admin_username, $ip, $description, $category) {
 
 	echo $sql;
 	$result = mysqli_query($conn, $sql);
+	echo $result;
 
 	if (!$result) {
 		die('Error: ' . mysqli_error($conn));
