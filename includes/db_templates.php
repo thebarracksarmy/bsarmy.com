@@ -1,6 +1,6 @@
 <?php
 
-include_once('./db.php');
+include_once('db.php');
 
 function log_server_command($admin_username, $ip, $description, $category) {
 	# global so that we can use the $conn variable
@@ -10,16 +10,18 @@ function log_server_command($admin_username, $ip, $description, $category) {
 
 	$category = get_log_category($category);
 
-	$sql = "INSERT INTO bsarmy_main.admin_logs (epoch_time, description, admin_username, ip, category) VALUES ('" . $epoch_time . "', 'git pull', '" . $admin_username . "', '" . $ip . "', '" . $category . "')";
+	$sql = "INSERT INTO bsarmy_main.admin_logs (epoch_time, description, admin_username, ip, category) VALUES ('" . $epoch_time . "', '" . $description . "', '" . $admin_username . "', '" . $ip . "', '" . $category . "');";
 
-	echo $sql;
+	
 	$result = mysqli_query($conn, $sql);
+	echo $sql;
 	echo $result;
 
 	if (!$result) {
 		die('Error: ' . mysqli_error($conn));
 	} else {
 		mysqli_close($conn);
+		echo 'Closed connection';
 	}
 	
 }
