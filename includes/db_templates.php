@@ -21,6 +21,7 @@ function log_server_command($admin_username, $ip, $description, $category) {
 		mysqli_close($conn);
 		echo 'Closed connection';
 	}
+
 	return 'Result: ' . $result;
 }
 
@@ -53,6 +54,7 @@ function get_all_users() {
 	if (!$result) {
 		die('Error: ' . mysqli_error($conn));
 	}
+	
 	echo $result;
 	return $result;
 }

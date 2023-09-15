@@ -16,7 +16,6 @@ if ($conn->connect_error) {
 	die("Connection failed: " . $conn->connect_error);
 } else {
 	$db_connection_status = true;
-	echo "Connection succeeded";
 }
 
 ?>
