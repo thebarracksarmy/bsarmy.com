@@ -12,7 +12,6 @@ function log_server_command($admin_username, $ip, $description, $category) {
 
 	$sql = "INSERT INTO bsarmy_main.admin_logs (epoch_time, description, admin_username, ip, category) VALUES ('" . $epoch_time . "', '" . $description . "', '" . $admin_username . "', '" . $ip . "', '" . $category . "');";
 
-
 	$result = mysqli_query($conn, $sql);
 	echo $sql;
 	echo $result;

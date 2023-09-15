@@ -2,6 +2,7 @@
 	font-family: 'Operation Napalm',
 		monospace;
 	font-weight: bolder;
+	font-size: 1.5rem;
 }
 
 .navbar {
@@ -10,4 +11,8 @@
 
 .hidden {
 	display: none;
+}
+
+.bg-dark {
+	background-color: black !important;
 }

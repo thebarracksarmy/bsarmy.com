@@ -1,5 +1,7 @@
 <?php
 
+include_once('../includes/db_templates.php');
+
 if(isset($_POST['git_pull']) && $_POST['git_pull'] == 'git_pull') {
 	shell_exec('git pull');
 	// Need to use HTTP_CF_CONNECTING_IP because Cloudflare Tunnels works behind a proxy to serve the site
@@ -7,11 +9,12 @@ if(isset($_POST['git_pull']) && $_POST['git_pull'] == 'git_pull') {
 	shell_exec('wall "Git Pull Complete at ' . date('Y-m-d H:i:s') . ' by ' . $_SERVER['HTTP_CF_CONNECTING_IP'] . ' as ' . $_SERVER['PHP_AUTH_USER'] . '"');
 
 	// add action to mysql database admin table
-	include_once('../includes/db_templates.php');
 	$result = log_server_command($_SERVER['PHP_AUTH_USER'], $_SERVER['HTTP_CF_CONNECTING_IP'], 'git_pull', 1);
+	
 	echo $result;
+	
 } else {
-echo "Form error";
+	echo "Form error";
 }
 
 ?>

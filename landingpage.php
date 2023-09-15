@@ -1,3 +1,9 @@
+<?php
+
+include_once ($_SERVER['DOCUMENT_ROOT'] . '//stylesScripts.php');
+
+?>
+
 <!doctype html>
 <html lang="en">
 
@@ -7,21 +13,28 @@
 	<meta name="description" content="">
 	<title>Barracks Army - Coming Soon</title>
 
-	<style>
-		.bd-placeholder-img {
-			font-size: 1.125rem;
-			text-anchor: middle;
-			-webkit-user-select: none;
-			-moz-user-select: none;
-			-ms-user-select: none;
-			user-select: none;
-		}
 
-		@media (min-width: 768px) {
-			.bd-placeholder-img-lg {
-				font-size: 3.5rem;
-			}
+	<?php
+
+include_once ($_SERVER['DOCUMENT_ROOT'] . '/includes/stylesScripts.php');
+
+?>
+
+	<style>
+	.bd-placeholder-img {
+		font-size: 1.125rem;
+		text-anchor: middle;
+		-webkit-user-select: none;
+		-moz-user-select: none;
+		-ms-user-select: none;
+		user-select: none;
+	}
+
+	@media (min-width: 768px) {
+		.bd-placeholder-img-lg {
+			font-size: 3.5rem;
 		}
+	}
 	</style>
 
 
