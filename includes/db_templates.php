@@ -10,7 +10,7 @@ function log_server_command($admin_username, $ip, $description, $category) {
 
 	$category = get_log_category($category);
 
-	$sql = "INSERT INTO bsadmin_logs.admin_logs (epoch_time, description, admin_username, ip, category) VALUES ('" . $epoch_time . "', 'git pull', '" . $admin_username . "', '" . $ip . "', '" . $category . "')";
+	$sql = "INSERT INTO bsarmy_main.admin_logs (epoch_time, description, admin_username, ip, category) VALUES ('" . $epoch_time . "', 'git pull', '" . $admin_username . "', '" . $ip . "', '" . $category . "')";
 
 	echo $sql;
 	$result = mysqli_query($conn, $sql);
