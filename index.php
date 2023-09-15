@@ -12,9 +12,7 @@ include_once ('/includes/cacheVersionController.php');
 	<title>The Barracks | Army</title>
 	<?php
 
-include_once ('/includes/cacheVersionController.php');
-include_once ('/includes/metaTags.php');
-include_once ('/stylesScripts.php');
+include_once ('/includes/headIncludes.php');
 
 ?>
 </head>
