@@ -1,6 +1,6 @@
 <?php
 
-// include_once $_SERVER['DOCUMENT_ROOT'] . '/includes/db_templates.php';
+include_once $_SERVER['DOCUMENT_ROOT'] . '/includes/db_templates.php';
 include_once $_SERVER['DOCUMENT_ROOT'] . '/includes/beforeIncludes.php';
 
 // $userList = get_all_users();
