@@ -1,6 +1,6 @@
 <?php
 
-include_once '../../creds.php';
+include_once ('../../creds.php');
 
 # connect to DB
 $conn = new mysqli($DB_SERVER, $DB_USERNAME, $DB_PASSWORD, $DB_NAME);
