@@ -1,6 +1,7 @@
 <?php
 
-include_once ('/stylesScripts.php');
+include_once ('/includes/beforeincludes.php');
+
 
 ?>
 
@@ -16,7 +17,7 @@ include_once ('/stylesScripts.php');
 
 	<?php
 
-include_once ($_SERVER['DOCUMENT_ROOT'] . '/includes/stylesScripts.php');
+include_once ('/includes/headIncludes.php');
 
 ?>
 
