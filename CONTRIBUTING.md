@@ -82,7 +82,7 @@ However, if you're a blue falcon, yeah... Leave that behind next time you're doi
 
 ### Code of Conduct
 
-This project follows the [Contributor Covenant](https://www.contributor-covenant.org/) Code of Conduct, and contributors will be asked to maintain general military bearing and professionalism. This is not a place for hazing, bullying, or any other form of harassment as defined by the UCMJ. If you're a civilian, you're expected to maintain the same level of professionalism. 
+This project follows the [Contributor Covenant](https://www.contributor-covenant.org/) Code of Conduct, and contributors will be asked to maintain general military bearing and professionalism. This is not a place for hazing, bullying, or any other form of harassment as defined by the UCMJ. If you're a civilian, you're expected to maintain the same level of professionalism.
 
 ### Branching
 
