@@ -49,4 +49,4 @@ CREATE TABLE `admin_logs` (
 
 CREATE USER 'username'@'localhost' identified by 'password';
 
-GRANT ALTER, INSERT, DELETE, UPDATE, CREATE ON *.* TO 'username'@'localhost';
+GRANT SELECT, ALTER, INSERT, DELETE, UPDATE, CREATE ON bsarmy_main.* TO 'username'@'hostname';

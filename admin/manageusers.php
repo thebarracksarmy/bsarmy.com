@@ -1,13 +1,28 @@
 <?php
 
-include_once $_SERVER['DOCUMENT_ROOT'] . '/includes/db_templates.php';
-include_once $_SERVER['DOCUMENT_ROOT'] . '/includes/beforeIncludes.php';
+
+
+$file_path = $_SERVER['DOCUMENT_ROOT'] . '/includes/db_templates.php';
+
+if (file_exists($file_path)) {
+    require_once($file_path);
+} else {
+    echo "Error: The file does not exist at path: $file_path";
+}
+
+$file_path = $_SERVER['DOCUMENT_ROOT'] . '/includes/beforeIncludes.php';
+
+if (file_exists($file_path)) {
+    require_once($file_path);
+} else {
+    echo "Error: The file does not exist at path: $file_path";
+}
+
 
 // $userList = get_all_users();
 
 
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -15,68 +30,64 @@ include_once $_SERVER['DOCUMENT_ROOT'] . '/includes/beforeIncludes.php';
 
 	<title>Manage Users</title>
 
-
+	<!-- Use includes to insert snippets of code that will be reused in every page -->
 	<?php include_once $_SERVER['DOCUMENT_ROOT'] . '/includes/headIncludes.php'; ?>
 </head>
 
 <body>
-
+	<!-- The navbar won't change so insert it for a more consistant exprience -->
+	<!-- TODO: figure out how to pass the active page to make it aria accessable -->
 	<?php include $_SERVER['DOCUMENT_ROOT'] . '/includes/nav.php'; ?>
 
-
-	<table class="table">
-		<thead>
-			<tr>
-				<?php 
-
-					$column = array('id', 'last_login_epoch', 'username', 'name', 'bio', 'permissions', 'reputation');
+	<div class="table-responsive">
+		<table class="table container table-hover">
+			<thead>
+				<tr>
+					<?php 
+					$column = array('#', 'Last Login', 'Username', 'Name', 'Bio', 'Permissions', 'Reputation');
 
 					foreach ($column as $item) {
 						echo '<th scope="col">' . $item . '</th>';
 					}
-	
 				?>
-			</tr>
-		</thead>
-		<tbody>
-			<tr>
-				<?php
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<?php
 
-				$userList = get_all_users();
-				// $userList = array(
-				// 	array('id' => 1, 'last_login_epoch' => 1, 'username' => 'test1', 'name' => 'test1', 'bio' => 'test1', 'permissions' => 'test1', 'reputation' => 'test1'),
-				// 	array('id' => 2, 'last_login_epoch' => 2, 'username' => 'test2', 'name' => 'test2', 'bio' => 'test2', 'permissions' => 'test2', 'reputation' => 'test2'),
-				// 	array('id' => 3, 'last_login_epoch' => 3, 'username' => 'test3', 'name' => 'test3', 'bio' => 'test3', 'permissions' => 'test3', 'reputation' => 'test3'),
-				// 	array('id' => 4, 'last_login_epoch' => 4, 'username' => 'test4', 'name' => 'test4', 'bio' => 'test5', 'permissions' => 'test4', 'reputation' => 'test4'),
-				// 	array('id' => 5, 'last_login_epoch' => 5, 'username' => 'test5', 'name' => 'test5', 'bio' => 'test5', 'permissions' => 'test5', 'reputation' => 'test5'),
-				// );
-				 
+				$userList = json_decode(get_all_users());
 
+				// Get the total number of users
+				$total = count($userList);
+				
+				// Output a row for each user
 				foreach ($userList as $user) {
-					echo '<th scope="row">' . var_export($user) . '</th>';
-				}
-				// foreach ($userList as $user) {
-				// 	echo '<td>' . $user['last_login_epoch'] . '</td>';
-				// }
-				// foreach ($userList as $user) {
-				// 	echo '<td>' . $user['username'] . '</td>';
-				// }
-				// foreach ($userList as $user) {
-				// 	echo '<td>' . $user['name'] . '</td>';
-				// }
-				// // figure out a drop down method for this 
-				// foreach ($userList as $user) {
-				// 	echo '<td>' . $user['bio'] . '</td>';
-				// }
-				// foreach ($userList as $user) {
-				// 	echo '<td>' . $user['permissions'] . '</td>';
-				// }
-				// foreach ($userList as $user) {
-				// 	echo '<td>' . $user['reputation'] . '</td>';
-				// }
-				?>
-			</tr>
-		</tbody>
-	</table>
+					echo '<tr>';
+					// Output a column for each user attribute
+					foreach ($user as $item) {
+						if ($item === null || $item === '') {
+							$item = '<span class="text-muted">N/A</span>';
+						} else if ($item === 1) {
+							$item = 'Yes';
+						}
 
+						// if $item is an epoch time, convert it to a human readable date
+						if(strlen($item) === 10) {
+							// 	Fri, 15 Sep 2023 20:52:35
+							$item = date('D, j M Y H:i:s', $item);
+						};
+						
+						echo '<td>' . $item . '</td>';
+					}
+					echo '</tr>';
+				}
+				?>
+				</tr>
+				<tr>
+					<td colspan="7">Total Users: <?php echo $total; ?></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
 </body>

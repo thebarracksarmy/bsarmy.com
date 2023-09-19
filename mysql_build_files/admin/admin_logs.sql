@@ -7,4 +7,3 @@ CREATE TABLE `admin_logs` (
 	`category` TINYTEXT,
 	PRIMARY KEY (`id`)
 ) ENGINE=InnoDB;
-

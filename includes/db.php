@@ -8,6 +8,8 @@ $DB_USERNAME = constant('DB_USERNAME');
 $DB_PASSWORD = constant('DB_PASSWORD');
 $DB_NAME = constant('DB_NAME');
 
+
+
 // Connect to DB
 $conn = new mysqli($DB_SERVER, $DB_USERNAME, $DB_PASSWORD, $DB_NAME);
 
