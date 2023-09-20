@@ -6,7 +6,11 @@ $cacheVersion = time();
 
 
 echo <<<EOT
+	<!-- Bootstrap required (https://getbootstrap.com/docs/5.3/getting-started/introduction/) -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
+	
 	<!-- Bootstrap (https://getbootstrap.com) -->
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
 		integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
@@ -17,16 +21,18 @@ echo <<<EOT
 		integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
 		crossorigin="anonymous"></script>
 
+		
 	<!-- htmx (https://htmx.org/)-->
 	<script src="https://unpkg.com/htmx.org@1.9.5"></script>
 
+	
 	<!-- Project CSS -->
 	<link rel="stylesheet" href="/assets/css/fonts.css?$cacheVersion">
 	<link rel="stylesheet" href="/assets/css/normalize.css?$cacheVersion">
 	<link rel="stylesheet" href="/assets/css/style.css?$cacheVersion">
 
+	
 	<!-- Project JS -->
-
 
 	<!-- Meta -->
 	<meta name="cache-version" content="$cacheVersion">

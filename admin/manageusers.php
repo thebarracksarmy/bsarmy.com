@@ -1,7 +1,17 @@
 <?php
 
+/*
+
+For admins to manage users.
+Shows a table of all users with their attributes.
+
+TODO: Add pagination, search, sorting, delete, edit, etc.
+
+*/
 
 
+
+// Import what we need for interacting with the database
 $file_path = $_SERVER['DOCUMENT_ROOT'] . '/includes/db_templates.php';
 
 if (file_exists($file_path)) {
@@ -10,6 +20,7 @@ if (file_exists($file_path)) {
     echo "Error: The file does not exist at path: $file_path";
 }
 
+// Import what we need for general page functionality, eg. session management 
 $file_path = $_SERVER['DOCUMENT_ROOT'] . '/includes/beforeIncludes.php';
 
 if (file_exists($file_path)) {
@@ -18,8 +29,6 @@ if (file_exists($file_path)) {
     echo "Error: The file does not exist at path: $file_path";
 }
 
-
-// $userList = get_all_users();
 
 
 ?>
