@@ -1,6 +1,6 @@
 <?php
 
-include $_SERVER['DOCUMENT_ROOT'] . '/includes/beforeIncludes.php';
+include $_SERVER['DOCUMENT_ROOT'] . '/assets/includes/beforeIncludes.php';
 
 
 ?>
@@ -17,7 +17,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/beforeIncludes.php';
 
 	<?php
 
-include $_SERVER['DOCUMENT_ROOT'] . '/includes/headIncludes.php';
+include $_SERVER['DOCUMENT_ROOT'] . '/assets/includes/elements/head.php';
 
 
 ?>
@@ -44,7 +44,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/headIncludes.php';
 
 <body>
 
-	<?php include $_SERVER['DOCUMENT_ROOT'] . '/includes/nav.php'; ?>
+	<?php include $_SERVER['DOCUMENT_ROOT'] . '/assets/includes/elements/nav.php'; ?>
 
 	<main>
 
