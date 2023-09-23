@@ -1,0 +1,6 @@
+These favicons were generated using the following font:
+
+- Font Title: Mohave
+- Font Author: Copyright 2019 The Mohave Project Authors (https://github.com/tokotype/Mohave-Typefaces)
+- Font Source: http://fonts.gstatic.com/s/mohave/v9/7cH0v4ksjJunKqMVAOPIMOeSmiojdnn_HvCQopLSvBk.ttf
+- Font License: SIL Open Font License, 1.1 (http://scripts.sil.org/OFL))
