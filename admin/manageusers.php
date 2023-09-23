@@ -40,7 +40,7 @@ if (file_exists($file_path)) {
 	<title>Manage Users</title>
 
 	<!-- Use includes to insert snippets of code that will be reused in every page -->
-	<?php include_once $_SERVER['DOCUMENT_ROOT'] . '/assets/includes/headIncludes.php'; ?>
+	<?php include_once $_SERVER['DOCUMENT_ROOT'] . '/assets/includes/elements/head.php'; ?>
 </head>
 
 <body>
