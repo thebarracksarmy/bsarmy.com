@@ -13,13 +13,21 @@ echo <<<EOT
 							roomate. Get out once and awhile, do something that <i>you'll remember</i>, something that
 							actually has an impact <i>you</i> can observe.</p>
 					</div>
-					<div class="col-sm-4 offset-md-1 py-4 hidden">
+					<div class="col-sm-4 offset-md-1 py-4">
 						<h4 class="text-white">Contact</h4>
 						<ul class="list-unstyled">
-							<li><a href="#" class="text-white" disabled>Follow on Twitter</a></li>
-							<li><a href="#" class="text-white" disabled>Like on Facebook</a></li>
-							<li><a href="#" class="text-white" disabled>Email me</a></li>
+							<li><a href="#" class="text-white" disabled hidden>Follow on Twitter</a></li>
+							<li><a href="#" class="text-white" disabled hidden>Like on Facebook</a></li>
+							<li><a href="mailto:hi@bsarmy.com" class="text-white">Email</a></li>
 						</ul>
+						<ul class="list-unstyled">
+							<li><a href="/login/" class="text-white">Login</a></li>
+							<li><a href="/register/" class="text-white">Sign Up</a></li>
+						</ul>
+
+					</div>
+					<div class="col-sm-4 offset-md-1 py-4">
+						
 					</div>
 				</div>
 			</div>

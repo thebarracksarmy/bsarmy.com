@@ -12,7 +12,7 @@ TODO: Add pagination, search, sorting, delete, edit, etc.
 
 
 // Import what we need for interacting with the database
-$file_path = $_SERVER['DOCUMENT_ROOT'] . '/includes/db_templates.php';
+$file_path = $_SERVER['DOCUMENT_ROOT'] . '/assets/includes/db_templates.php';
 
 if (file_exists($file_path)) {
     require_once($file_path);
@@ -21,7 +21,7 @@ if (file_exists($file_path)) {
 }
 
 // Import what we need for general page functionality, eg. session management 
-$file_path = $_SERVER['DOCUMENT_ROOT'] . '/includes/beforeIncludes.php';
+$file_path = $_SERVER['DOCUMENT_ROOT'] . '/assets/includes/beforeIncludes.php';
 
 if (file_exists($file_path)) {
     require_once($file_path);
@@ -40,13 +40,13 @@ if (file_exists($file_path)) {
 	<title>Manage Users</title>
 
 	<!-- Use includes to insert snippets of code that will be reused in every page -->
-	<?php include_once $_SERVER['DOCUMENT_ROOT'] . '/includes/headIncludes.php'; ?>
+	<?php include_once $_SERVER['DOCUMENT_ROOT'] . '/assets/includes/headIncludes.php'; ?>
 </head>
 
 <body>
 	<!-- The navbar won't change so insert it for a more consistant exprience -->
 	<!-- TODO: figure out how to pass the active page to make it aria accessable -->
-	<?php include $_SERVER['DOCUMENT_ROOT'] . '/includes/nav.php'; ?>
+	<?php include $_SERVER['DOCUMENT_ROOT'] . '/assets/includes/elements/nav.php'; ?>
 
 	<div class="table-responsive">
 		<table class="table container table-hover">

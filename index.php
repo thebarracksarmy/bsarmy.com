@@ -1,6 +1,6 @@
 <?php
 
-include $_SERVER['DOCUMENT_ROOT'] . '/includes/beforeIncludes.php';
+include $_SERVER['DOCUMENT_ROOT'] . '/assets/includes/beforeIncludes.php';
 
 ?>
 
@@ -13,7 +13,8 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/beforeIncludes.php';
 	<title>The Barracks | Army</title>
 	<?php
 
-include $_SERVER['DOCUMENT_ROOT'] . '/includes/headIncludes.php';
+include $_SERVER['DOCUMENT_ROOT'] . '/assets/includes/elements/head.php';
+
 
 
 ?>
@@ -22,7 +23,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/headIncludes.php';
 <body>
 
 
-	<?php include $_SERVER['DOCUMENT_ROOT'] . '/includes/nav.php'; ?>
+	<?php include $_SERVER['DOCUMENT_ROOT'] . '/assets/includes/elements/nav.php'; ?>
 
 
 	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"

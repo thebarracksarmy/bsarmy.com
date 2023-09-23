@@ -25,7 +25,9 @@ echo <<<EOT
 	<!-- htmx (https://htmx.org/)-->
 	<script src="https://unpkg.com/htmx.org@1.9.5"></script>
 
-	
+	<!-- less.js (http://lesscss.org/) -->
+	<script src="https://cdn.jsdelivr.net/npm/less" ></script>
+
 	<!-- Project CSS -->
 	<link rel="stylesheet" href="/assets/css/fonts.css?$cacheVersion">
 	<link rel="stylesheet" href="/assets/css/normalize.css?$cacheVersion">
@@ -33,6 +35,13 @@ echo <<<EOT
 
 	
 	<!-- Project JS -->
+
+
+	<!-- Favicons -->
+	<link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16.png">
+	<link rel="manifest" href="/assets/icons/site.webmanifest">
 
 	<!-- Meta -->
 	<meta name="cache-version" content="$cacheVersion">

@@ -9,7 +9,7 @@ if(isset($_POST['git_pull']) && $_POST['git_pull'] == 'git_pull') {
 	shell_exec('wall "Git Pull Complete at ' . date('Y-m-d H:i:s') . ' by ' . $_SERVER['HTTP_CF_CONNECTING_IP'] . ' as ' . $_SERVER['PHP_AUTH_USER'] . '"');
 
 	// add action to mysql database admin table
-	include_once $_SERVER['DOCUMENT_ROOT'] . '/includes/db_templates.php';
+	include_once $_SERVER['DOCUMENT_ROOT'] . '/assets/includes/db_templates.php';
 	$result = log_server_command($_SERVER['PHP_AUTH_USER'], $_SERVER['HTTP_CF_CONNECTING_IP'], 'git_pull', 1);
 
 	echo $result;
@@ -27,7 +27,7 @@ if(isset($_POST['git_pull']) && $_POST['git_pull'] == 'git_pull') {
 	<title>The Barracks Admin - Git Pull</title>
 	<?php
 
-include_once $_SERVER['DOCUMENT_ROOT'] . '/includes/headIncludes.php';
+include_once $_SERVER['DOCUMENT_ROOT'] . '/assets/includes/headIncludes.php';
 
 ?>
 
@@ -35,7 +35,7 @@ include_once $_SERVER['DOCUMENT_ROOT'] . '/includes/headIncludes.php';
 
 <body>
 
-	<?php include $_SERVER['DOCUMENT_ROOT'] . '/includes/nav.php'; ?>
+	<?php include $_SERVER['DOCUMENT_ROOT'] . '/assets/includes/elements/nav.php'; ?>
 
 
 	<form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="POST">
