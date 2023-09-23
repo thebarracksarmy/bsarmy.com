@@ -7,8 +7,11 @@ Building the Barracks up, improving the QOL for everyone, making the B's a bette
 ## Roadmap
 
 - [x] Create landing page with basic information about the project and how to get involved
-- [ ] Create a basic structure for the project and vote on what features to implement first
+- [x] Create a basic structure for the project and vote on what features to implement first
 - [ ] Create the first feature: DFAC schedule and map for Fort Liberty, NC
+ - Generate JSON files for each DFAC and load them into the page
+ - [ ] Generate .ics files for all DFACS
+- [ ] Create the second feature: Event calendar for Fort Liberty, NC
 
 ## Contributing
 
