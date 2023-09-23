@@ -13,7 +13,7 @@
 	display: none;
 }
 
-.bg-dark {
+.bg-dark, .bg-black {
 	background-color: black !important;
 }
 
