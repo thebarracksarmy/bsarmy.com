@@ -1,5 +1,6 @@
 <?php
 
+header('Location: /landingpage.php');
 include $_SERVER['DOCUMENT_ROOT'] . '/assets/includes/beforeIncludes.php';
 
 ?>
