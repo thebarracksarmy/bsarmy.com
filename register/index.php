@@ -162,7 +162,7 @@ if (file_exists($file_path)) {
 						<input class="form-check-input" type="checkbox" value="yes" id="terms_conditions_checkbox" name="terms_conditions_checkbox" required>
 						<label class="form-check-label" for="terms_conditions_checkbox">
 							Check this box to agree to the
-							<a href="documents/terms_conditions/" target="_blank">
+							<a href="docs/terms_conditions/" target="_blank">
 								terms and conditions</a>.
 							We will only send you text messages for account verification and password resets.
 						</label>
