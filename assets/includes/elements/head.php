@@ -6,15 +6,13 @@ $cacheVersion = time();
 
 
 echo <<<EOT
-	<!-- Bootstrap required (https://getbootstrap.com/docs/5.3/getting-started/introduction/) -->
+	<!-- Required by Bootstrap (https://getbootstrap.com/docs/5.3/getting-started/introduction/) -->
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	
 	<!-- PWA (https://web.dev/progressive-web-apps/) -->
 	<link rel="manifest" href="/manifest.json">
 
-	
 	<!-- Bootstrap (https://getbootstrap.com) -->
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" 
 		integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
@@ -39,7 +37,7 @@ echo <<<EOT
 
 	
 	<!-- Project JS -->
-
+	<script src="/assets/js/script.js?$cacheVersion"></script>
 
 	<!-- Favicons -->
 	<link rel="apple-touch-icon" sizes="57x57" href="/assets/icons/apple-icon-57x57.png">
@@ -55,10 +53,14 @@ echo <<<EOT
 	<link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png">
 	<link rel="icon" type="image/png" sizes="96x96" href="/assets/icons/favicon-96x96.png">
 	<link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16.png">
+
+
 	<link rel="manifest" href="/assets/icons/manifest.json">
-	<meta name="msapplication-TileColor" content="#ffffff">
+
+	<!-- For Microsoft Edge -->
+	<meta name="msapplication-TileColor" content="#f9d3c1">
 	<meta name="msapplication-TileImage" content="/assets/icons/ms-icon-144x144.png">
-	<meta name="theme-color" content="#ffffff">
+	<meta name="theme-color" content="#20493c">
 
 
 	<!-- Meta -->

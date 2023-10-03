@@ -302,23 +302,20 @@ include $_SERVER['DOCUMENT_ROOT'] . '/assets/includes/elements/head.php';
 		</div> -->
 
 	</main>
-
-	<footer class="footer text-muted fixed-bottom py-5">
-		<div class="container">
-			<p class="float-right">
-				<a href="#">Back to top</a>
-			</p>
-			<p class="mb-1">Website &copy; 2023 Lucas Burlingham using Bootstrap 5 and album template.
-				<br>
-				This website is not close to being finished. See an issue?
-				<br>
-				<a href="https://github.com/lucasburlingham/bsarmy.com/issues/new">Submit an
-					issue report on GitHub.
-			</p>
-		</div>
-	</footer>
+<?php
+// Add footer to page
+require_once $_SERVER['DOCUMENT_ROOT'] . '/assets/includes/elements/footer.php';
+?>
 
 
 </body>
 
 </html>
+
+
+<?php
+
+require_once $_SERVER['DOCUMENT_ROOT'] . '/assets/includes/afterIncludes.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/assets/includes/db_disconnect.php';
+
+?>

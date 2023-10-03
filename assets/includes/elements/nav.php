@@ -4,44 +4,48 @@ echo <<<EOT
 
 
 	<header>
-		<div class="collapse bg-dark" id="navbarHeader">
-			<div class="container">
-				<div class="row">
-					<div class="col-sm-8 col-md-7 py-4">
-						<h4 class="text-white">About</h4>
-						<p class="text-white">You probably live in the barracks. So do those cockroaches, mold and
-							roomate. Get out once and awhile, do something that <i>you'll remember</i>, something that
-							actually has an impact <i>you</i> can observe.</p>
-					</div>
-					<div class="col-sm-4 offset-md-1 py-4">
-						<h4 class="text-white">Contact</h4>
-						<ul class="list-unstyled">
-							<li><a href="#" class="text-white" disabled hidden>Follow on Twitter</a></li>
-							<li><a href="#" class="text-white" disabled hidden>Like on Facebook</a></li>
-							<li><a href="mailto:hi@bsarmy.com" class="text-white">Email</a></li>
-						</ul>
-						<ul class="list-unstyled">
-							<li><a href="/login/" class="text-white">Login</a></li>
-							<li><a href="/register/" class="text-white">Sign Up</a></li>
-						</ul>
-
-					</div>
-					<div class="col-sm-4 offset-md-1 py-4">
-						
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="navbar navbar-dark bg-dark shadow-sm">
+		
+		<div class="navbar navbar-dark bg-dark-green shadow-sm">
 			<div class="container">
 				<a href="#" class="navbar-brand d-flex align-items-center">
-					<i class="fa-solid fa-shoe-prints"></i>
-					<strong>THE BARRACKS</strong>
+					<img src="/assets/icons/logo.png" alt="bsarmy.com" height="80px" width="215">
 				</a>
 				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader"
 					aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
 					<span class="navbar-toggler-icon"></span>
 				</button>
+			</div>
+		</div>
+		<div class="collapse bg-dark-green" id="navbarHeader">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-8 col-md-7 py-4">
+						<h4 class="text-white">About</h4>
+						
+					</div>
+					<div class="col-sm-4 offset-md-1 py-4">
+						<h4 class="text-white">Contact</h4>
+							<button class="btn btn-outline-light-tan" id="emailbutton">Email</button>
+							<script>
+								button = document.getElementById("emailbutton");
+								// console.log(btoa("mailto:emailhehenoscammers"));
+								// Decode the email address and set the href to it
+								// This is to prevent bots from scraping the email address
+								button.addEventListener("click", function() {
+									window.location.href = atob("bWFpbHRvOmhpQGJzYXJteS5jb20=");
+								});
+							</script>
+							<a href="/contact/" class="btn btn-light-tan disabled" id="contactButton" disabled>Contact Form</a>
+							<!-- Below this is account related links -->
+						<hr>
+						<a href="/login/" class="btn btn-outline-light-tan">Login</a>
+						<a href="/register/" class="btn btn-light-tan">Sign Up</a>
+
+					</div>
+					<div class="col-sm-4 offset-md-1 py-4">
+						<!-- This is where the offset navbar will go when activated -->
+					</div>
+				</div>
 			</div>
 		</div>
 	</header>

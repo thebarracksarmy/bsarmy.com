@@ -51,7 +51,7 @@ if (file_exists($file_path)) {
 		<div class="row">
 			<!-- Registration form -->
 			<div class="col">
-				<form class="form row g-3 needs-validation" method="POST" action="registration_processor.php" novalidate>
+				<form class="form row g-3 needs-validation" method="post" action="registration_processor.php" enctype="multipart/form-data" novalidate>
 					<!-- Gather fullname -->
 					<div class="form-group">
 						<label for="first_name" class="form-label fw-bold">Full name</label>
@@ -83,7 +83,7 @@ if (file_exists($file_path)) {
 									</div>
 									<div class="input-group mb-3">
 										<span class="input-group-text">Cell Phone Carrier</span>
-										<select id="carrier_name" class="form-select" required>
+										<select id="carrier_name" class="form-select" name="carrier_name" required>
 											<?php
 
 											$carriers_list = array(
@@ -153,10 +153,19 @@ if (file_exists($file_path)) {
 							<label for="military_grade" class="input-group-text">Pay Grade</label>
 							<select name="military_grade" id="military_grade" class="form-select">
 								<?php foreach (range(1, 5) as $grade) { echo "<option value='$grade'>E-$grade</option>"; }?>
+								<option value="9">Other</option>
 							</select>
 						</div>
-						
+					</div>
+
+					<div class="form-group mb-3">
+						<label for="location" class="form-label fw-bold">Location</label>
+						<div class="input-group">
+							<label for="military_base_name" class="input-group-text">Military Base Name</label>
+							<input type="text" class="form-control" id="military_base_name" name="military_base_name" placeholder="Military Base Name" required>
 						</div>
+					</div>
+
 					<!-- Submit button -->
 					<div class="form-check mb-3">
 						<input class="form-check-input" type="checkbox" value="yes" id="terms_conditions_checkbox" name="terms_conditions_checkbox" required>
@@ -168,7 +177,7 @@ if (file_exists($file_path)) {
 						</label>
 					</div>
 					<div class="col-12">
-						<button class="btn btn-primary" type="submit">Sign Up</button>
+						<button class="btn btn-primary" type="submit" name="submit" value="true">Sign Up</button>
 					</div>
 				</form>
 			</div>
@@ -188,13 +197,27 @@ if (file_exists($file_path)) {
 				if (!form.checkValidity()) {
 					event.preventDefault()
 					event.stopPropagation()
+
+					// Get the values from the form and set them to the hidden input
+					// This is so we can pass the full name to the server
+					var first_name = document.getElementById('first_name').value 
+					var last_name = document.getElementById('last_name').value
+					var full_name = first_name + ' ' + last_name;
+					console.log(full_name);
 				}
 
 				form.classList.add('was-validated')
 			}, false)
 		})
 	})()
+
 	</script>
+
+<?php
+// Add footer to page
+require_once $_SERVER['DOCUMENT_ROOT'] . '/assets/includes/elements/footer.php';
+?>
+
 </body>
 
 </html>

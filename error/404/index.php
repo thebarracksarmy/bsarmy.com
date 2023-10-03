@@ -28,4 +28,11 @@ include_once $_SERVER['DOCUMENT_ROOT'] . '/assets/includes/beforeIncludes.php';
 			<a href="<?php echo $_SERVER['HTTP_REFERER']; ?>" class="btn btn-secondary">Go back</a>
 		</div>
 	</div>
+
+	<?php
+		// Add footer to page
+		require_once $_SERVER['DOCUMENT_ROOT'] . '/assets/includes/elements/footer.php';
+	?>
 </body>
+
+</html>

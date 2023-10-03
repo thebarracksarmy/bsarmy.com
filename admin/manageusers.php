@@ -11,27 +11,12 @@ TODO: Add pagination, search, sorting, delete, edit, etc.
 
 
 
-// Import what we need for interacting with the database
-$file_path = $_SERVER['DOCUMENT_ROOT'] . '/assets/includes/db_templates.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/assets/includes/db_templates.php';
 
-if (file_exists($file_path)) {
-    require_once($file_path);
-} else {
-    echo "Error: The file does not exist at path: $file_path";
-}
-
-// Import what we need for general page functionality, eg. session management 
-$file_path = $_SERVER['DOCUMENT_ROOT'] . '/assets/includes/beforeIncludes.php';
-
-if (file_exists($file_path)) {
-    require_once($file_path);
-} else {
-    echo "Error: The file does not exist at path: $file_path";
-}
-
-
+require_once $_SERVER['DOCUMENT_ROOT'] . '/assets/includes/beforeIncludes.php';
 
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -99,4 +84,11 @@ if (file_exists($file_path)) {
 			</tbody>
 		</table>
 	</div>
+
+	<?php
+// Add footer to page
+require_once $_SERVER['DOCUMENT_ROOT'] . '/assets/includes/elements/footer.php';
+?>
 </body>
+
+</html>

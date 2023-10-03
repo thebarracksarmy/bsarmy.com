@@ -93,6 +93,18 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/assets/includes/beforeIncludes.php';
 				</div>
 			</div>
 		</section>
+
+		<?php
+			// Add footer to page
+			require_once $_SERVER['DOCUMENT_ROOT'] . '/assets/includes/elements/footer.php';
+		?>
 </body>
 
 </html>
+
+<?php
+
+require_once $_SERVER['DOCUMENT_ROOT'] . '/assets/includes/afterIncludes.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/assets/includes/db_disconnect.php';
+
+?>

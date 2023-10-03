@@ -1,6 +1,5 @@
 <?php
 
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -29,7 +28,8 @@
 		<h1>The Barracks | Terms & Conditions</h1>
 	</div>
 	<p class="text-muted fst-italic my-3">Last Updated: 23 September 2023</p>
-	<p>These Terms and Conditions ("Terms") govern your use of the website <a href="https://bsarmy.com/" target="_blank" rel="noopener noreferrer">bsarmy.com</a> and it's supporting subdomains and services, (the "Website"), owned and operated by Lucas Burlingham et. company ("we," "us," or "our"). By accessing or using the Website, you agree to comply with and be bound by these Terms. If you do not agree to these Terms, please do not use the Website.</p>
+	<p>These Terms and Conditions ("Terms") govern your use of the website <a href="https://bsarmy.com/" target="_blank" rel="noopener noreferrer">bsarmy.com</a> and it's supporting subdomains and services, (the "Website"), 
+	owned and operated by Lucas Burlingham and company ("we," "us," or "our"). By accessing or using the Website, you agree to comply with and be bound by these Terms. If you do not agree to these Terms, please do not use the Website.</p>
 	<h6>1. Use of the Website</h6>
 	<p>1.1. You must be at least 17 years old to use this Website.</p>
 	<p>1.2. You agree to use the Website for lawful purposes and in accordance with these Terms, as well as any applicable laws and regulations.</p> 
@@ -54,9 +54,12 @@
 	<h6>9. Governing Law</h6>
 	<p>9.1. These Terms shall be governed by and construed in accordance with the laws of the United States of America. Any disputes arising under or in connection with these Terms shall be subject to the exclusive jurisdiction of the courts of [Your Jurisdiction].</p>
 	<h6>10. Contact Us</h6>
-	<p>10.1. If you have any questions or concerns about these Terms, please contact us at <a href="mailto:legal@bsarmy.com">support@bsarmy.com</a>.</p>
+	<p>10.1. If you have any questions or concerns about these Terms, please contact us at <a href="mailto:legal@bsarmy.com">legal@bsarmy.com</a>.</p>
 
-	<?php include_once $_SERVER['DOCUMENT_ROOT'] . "/assets/includes/elements/footer.php"; ?>
+	<?php
+	// Add footer to page
+	require_once $_SERVER['DOCUMENT_ROOT'] . '/assets/includes/elements/footer.php';
+	?>
 
 </body>
 

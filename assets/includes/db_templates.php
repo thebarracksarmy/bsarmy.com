@@ -7,17 +7,24 @@ Author: Lucas Burlingham
 Last Modified: 17 SEP 23 17:43 by LB
 
 */
+
+
+
 require_once 'db.php';
 
 function log_server_command(string $admin_username, $ip,  $description, int $category) {
 
+	global $debug;
+	
 	$epoch_time = time();
 	$category = get_log_category($category);
 
 	// log to logs/admin_logs.log
 	shell_exec('echo ' . $epoch_time . ', \"' . $description . '\", ' . $admin_username . ', ' . $ip . ', \"' . $category . '\" >> /var/www/html/logs/admin_logs.log');
 
-	
+	if ($debug==true) {
+		echo 'echo ' . $epoch_time . ', \"' . $description . '\", ' . $admin_username . ', ' . $ip . ', \"' . $category . '\" >> /var/www/html/logs/admin_logs.log';
+	}
 }
 
 function get_log_category(int $category_id) {
@@ -37,40 +44,54 @@ function get_log_category(int $category_id) {
 
 }
 
-function insert_user(string $username, string $name, string $bio, int $permissions, int $reputation) {
+function insert_user(string $username, string $name,  int $phone_number, string $phone_carrier, string $military_base_name, int $pay_grade) {
 
 	global $conn;
-	
-	$username = 'test';
-	$name = 'test';
-	$bio = 'test bio';
 
+	// escape the strings to prevent SQL injection
+	$username = mysqli_real_escape_string($conn, $username);
+	$name = mysqli_real_escape_string($conn, $name);
+	$phone_number = mysqli_real_escape_string($conn, $phone_number);
+	$phone_carrier = mysqli_real_escape_string($conn, $phone_carrier);
+	$military_base_name = mysqli_real_escape_string($conn, $military_base_name);
+	$user_pay_grade = mysqli_real_escape_string($conn, $pay_grade);
+
+
+	// generate the rest of the values
 	$last_login_epoch = time();
+	$date_joined_epoch = time();
 	$username = htmlentities($username);
 	$name = htmlentities($name);
-	$bio = htmlentities($bio);
-	$permissions = 00111100; // (not superadmin)(not forum mod)(na)(na)(na)(na)(no strikes)(not banned)
-	$reputation = 0;
+	$user_permissions = 00111100; // (not superadmin)(not forum mod)(na)(na)(na)(na)(no strikes)(not banned)
+	$reputation = 0; // default value in database, so it's not used here
+
 
 	// https://www.php.net/manual/en/mysqli.quickstart.multiple-statement.php
-	$sql = "
-	INSERT INTO `user_nonpii-data` (`username`, `last_login_epoch`) VALUES ('" . $username . "', '" . time() . "');
-	INSERT INTO `user_nonpii-data` (`last_login_epoch`, `username`, `name`, `bio`, `permissions`, `reputation`) VALUES ('" . $last_login_epoch . "', '" . $username . "', '". $name . "', '". $bio . "', '". $permissions ."', '". $reputation .");
-	INSERT INTO `user_pii-data` (`username`) VALUES ('" . $username . "'); JOIN `user_nonpii-data` ON `user_pii-data`.`id` = `user_nonpii-data`.`id`;
-	";
+	
 
-
-	$result = mysqli_multi_query($conn, $sql);
+	// Prepare an insert statement
+	$sql = "INSERT INTO `user_data` (`username`, `name`, `date_joined_epoch`, `phone_number`, `phone_carrier`, `military_branch`, `military_base_name`, `home_location`, `last_login_epoch`, `user_bio`, `user_permissions`, `user_pay_grade`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);";
+	
+	
+	$stmt = $conn->prepare($sql);
+	echo "prepared statement";
+	$stmt->bind_param("ssisssssisii", $username, $name, $date_joined_epoch, $phone_number, $phone_carrier, $military_branch, $military_base_name, $home_location, $last_login_epoch, $user_bio, $user_permissions, $user_pay_grade);
+	$result = $stmt->execute();
+	
+	printf("%d row inserted.\n", $stmt->affected_rows);
 	
 	// if the result is false (0) then log the error and stop
-	if (!$result) {
-		log_server_command('lburlingham', 'localhost', 'insert_user', '4');
-		die('Error: ' . mysqli_error($conn));
-	// otherwise log the result and close the connection
-	} else {
-		log_server_command('lburlingham', 'localhost', 'insert_user', '4');
-		mysqli_close($conn);
-	}
+	// if (!$result) {
+	// 	log_server_command('lburlingham', 'localhost', 'insert_user', '4');
+	// 	die('Error: ' . mysqli_error($conn));
+	// // otherwise log the result and close the connection
+	// } else {
+	// 	log_server_command('lburlingham', 'localhost', 'insert_user', '4');
+	// 	mysqli_close($conn);
+	// 	$result = true;
+	// }
+
+	return true;
 }
 
 // Default value = no strikes, not banned, not superuser, not forum mod
@@ -162,6 +183,47 @@ function get_user_by_name(string $name) {
 	return $result;
 }
 
+
+// Listing functions
+
+// function new_listing() {
+// 	global $conn;
+
+
+// 	$query = "INSERT INTO listing (owner_username, title, description, start_date_epoch, listing_duration, listing_price, listing_location, listing_location_radius, listing_status, payment_method) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+// 	$stmt = $conn->prepare($query);
+// 	$stmt->bind_param("sssiifssis", $owner_username, $title, $description, $start_date_epoch, $listing_duration, $listing_price, $listing_location, $listing_location_radius, $listing_status, $payment_method);
+// 	$listing_status = 'active'; // provide a value for the listing_status column
+// 	$stmt->execute();
+// }
+
+// Email sms functions\
+
+function get_sms_gateway ($id) {
+	global $conn;
+
+	$sql = "SELECT phone_number, phone_carrier FROM `sms_gateways` WHERE `id` = '" . $id . "';";
+
+	$result = mysqli_query($conn, $sql);
+
+	if ($result->num_rows > 0) {
+		// output data of each row
+		while($row = $result->fetch_assoc()) {
+			$row['phone_number'] = htmlentities($row['phone_number']);
+			$row['phone_carrier'] = htmlentities($row['phone_carrier']);
+			$gateway_address = $row['phone_number'] . $row['phone_carrier'];
+			log_server_command('lburlingham', 'localhost', 'get_sms_gateway', '2');
+			// Such as 1234567891@vtext.com
+			return $gateway_address;
+		}
+	  } else {
+		
+	}
+			
+	if (!$result) {
+		die('Error: ' . mysqli_error($conn));
+	}
+}
 
 
 ?>
