@@ -56,12 +56,22 @@ include $_SERVER['DOCUMENT_ROOT'] . '/assets/includes/elements/head.php';
 					<small>Hosted by your local PFC in the barracks. No, First Sergeant, thats a server, not a
 						bomb.</small>
 					<p>
-						<a href="https://github.com/lucasburlingham/bsarmy.com/" rel="noreferrer" target="_blank"
-							class="btn btn-primary my-2">See our
-							progress!</a>
-						<a href="https://forms.gle/F9c7CEvEkwV6TbZNA" class="btn btn-dark my-2">Suggestion form</a>
+						<a href="https://github.com/lucasburlingham/bsarmy.com/" target="_blank" rel="noopener noreferrer"
+							class="btn btn-light-tan my-2">See our progress!</a>
+						<a href="https://forms.gle/F9c7CEvEkwV6TbZNA" class="btn btn-dark-green my-2" target="_blank" rel="noopener noreferrer">Suggestion form</a>
 					</p>
 				</div>
+			</div>
+			<div class="row py-lg-5">
+				<h3 class="h3">
+					So far, this site includes:	
+				</h3>
+				<ul class="list-group-flush mx-1">
+					<a class="list-group-item text-dark border-none" href="/DFAC/">
+						DFAC Schedule for <?php echo date('F Y'); ?> <i class="fa-solid fa-arrow-right"></i>
+					</a>
+
+				</ul>
 			</div>
 		</section>
 		<!-- 
