@@ -1,6 +1,5 @@
 <?php
 
-$debug = false;
 
 require_once $_SERVER['DOCUMENT_ROOT'] . '/assets/includes/db_templates.php';
 
@@ -36,7 +35,7 @@ if (isset($_POST['username'])) {
 
 
 	// insert_user($username, $fullname, $bio, $phone_number, $carrier_name, $military_branch, $military_base_name, $pay_grade);
-	$result = insert_user($username, $fullname, $phone_number, $carrier_name, $military_branch, $military_grade);
+	$result = insert_new_user($username, $fullname, $phone_number, $carrier_name, $military_branch, $military_base_name, $military_grade);
 
 	echo $result;
 	// if the result is true, then the user was inserted successfully
