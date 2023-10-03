@@ -1,16 +1,20 @@
+CREATE DATABASE bsarmy_main;
+
+USE bsarmy_main;
+
 CREATE TABLE `user_data` (
 	`id` int NOT NULL AUTO_INCREMENT,
 	`username` tinytext NOT NULL,
 	`name` tinytext NOT NULL,
 	`date_joined_epoch` int NOT NULL,
-	`phone_number` int NOT NULL,
+	`phone_number` varchar(10) NOT NULL,
 	`phone_carrier` int NOT NULL,
 	`military_branch` char(8) NOT NULL,
 	`military_base_name` varchar(30) NOT NULL,
-	`home_location` tinytext,
-	`last_login_epoch` int,
-	`user_bio` varchar(400),
-	`user_permissions` int NOT NULL,
+	`home_location` tinytext NOT NULL,
+	`last_login_epoch` int NOT NULL,
+	`user_bio` TEXT(400) NOT NULL,
+	`user_permissions` varchar(8) NOT NULL,
 	`user_reputation` int NOT NULL DEFAULT '0',
 	`user_pay_grade` char(4) NOT NULL,
 	PRIMARY KEY (`id`)
@@ -28,18 +32,18 @@ CREATE TABLE `events` (
 );
 
 CREATE TABLE `listing` (
-    `id` int NOT NULL AUTO_INCREMENT,
-    `owner_username` tinytext NOT NULL,
-    `title` tinytext NOT NULL,
-    `description` tinytext NOT NULL,
-    `start_date_epoch` int NOT NULL,
-    `listing_duration` int NOT NULL,
-    `listing_price` FLOAT NOT NULL,
-    `listing_location` tinytext NOT NULL,
-    `listing_location_radius` int NOT NULL,
-    `listing_status` tinytext NOT NULL,
-    `payment_method` int,
-    PRIMARY KEY (`id`)
+	`id` int NOT NULL AUTO_INCREMENT,
+	`owner_username` tinytext NOT NULL,
+	`title` tinytext NOT NULL,
+	`description` tinytext NOT NULL,
+	`start_date_epoch` int NOT NULL,
+	`listing_duration` int NOT NULL,
+	`listing_price` FLOAT NOT NULL,
+	`listing_location` tinytext NOT NULL,
+	`listing_location_radius` int NOT NULL,
+	`listing_status` int NOT NULL,
+	`payment_method` int NOT NULL,
+	PRIMARY KEY (`id`)
 );
 
 CREATE TABLE `listing_messages` (
@@ -58,6 +62,12 @@ CREATE TABLE `session_data` (
 	PRIMARY KEY (`session_id`)
 );
 
+CREATE TABLE `test` (
+	`test1` tinyint NOT NULL,
+	`email` tinyint NOT NULL,
+	`picture` blob NOT NULL
+);
+
 ALTER TABLE `events` ADD CONSTRAINT `events_fk0` FOREIGN KEY (`id`) REFERENCES `user_data`(`username`);
 
 ALTER TABLE `listing` ADD CONSTRAINT `listing_fk0` FOREIGN KEY (`owner_username`) REFERENCES `user_data`(`username`);
@@ -67,6 +77,10 @@ ALTER TABLE `listing` ADD CONSTRAINT `listing_fk1` FOREIGN KEY (`listing_locatio
 ALTER TABLE `listing_messages` ADD CONSTRAINT `listing_messages_fk0` FOREIGN KEY (`listing_id`) REFERENCES `listing`(`id`);
 
 ALTER TABLE `listing_messages` ADD CONSTRAINT `listing_messages_fk1` FOREIGN KEY (`sender_id`) REFERENCES `user_data`(`id`);
+
+CREATE USER 'user'@'host' IDENTIFIED with mysql_native_password BY 'password';
+
+GRANT SELECT, INSERT, UPDATE, DELETE ON bsarmy_main.* TO 'user'@'host';
 
 -- From https://erd.dbdesigner.net/designer/schema/1695956275-bs-army
 
