@@ -10,7 +10,7 @@ Last Modified: 17 SEP 23 17:43 by LB
 
 
 
-require_once 'db.php';
+require_once 'dbconnect.php';
 
 function log_server_command(string $admin_username, $ip,  $description, int $category) {
 
@@ -44,54 +44,31 @@ function get_log_category(int $category_id) {
 
 }
 
-function insert_user(string $username, string $name,  int $phone_number, string $phone_carrier, string $military_base_name, int $pay_grade) {
+function insert_new_user($username, $name, $phone_number, $phone_carrier, $military_branch, $military_base_name, $user_pay_grade) {
 
 	global $conn;
+	$date_joined_epoch = time();
+	$last_login_epoch = $date_joined_epoch;
+	$home_location = "";
+	$user_bio = "";
 
-	// escape the strings to prevent SQL injection
+
 	$username = mysqli_real_escape_string($conn, $username);
 	$name = mysqli_real_escape_string($conn, $name);
 	$phone_number = mysqli_real_escape_string($conn, $phone_number);
 	$phone_carrier = mysqli_real_escape_string($conn, $phone_carrier);
 	$military_base_name = mysqli_real_escape_string($conn, $military_base_name);
-	$user_pay_grade = mysqli_real_escape_string($conn, $pay_grade);
-
-
-	// generate the rest of the values
-	$last_login_epoch = time();
-	$date_joined_epoch = time();
+	$user_pay_grade = mysqli_real_escape_string($conn, $user_pay_grade);
 	$username = htmlentities($username);
-	$name = htmlentities($name);
-	$user_permissions = 00111100; // (not superadmin)(not forum mod)(na)(na)(na)(na)(no strikes)(not banned)
-	$reputation = 0; // default value in database, so it's not used here
 
+	$sql = "INSERT INTO user_data (username, name, date_joined_epoch, phone_number, phone_carrier, military_branch, military_base_name, last_login_epoch, user_pay_grade, home_location, user_bio) VALUES ('" . $username . "', '" . $name . "','" . $date_joined_epoch . "', '" . $phone_number . "', '" . $phone_carrier . "', '" . $military_branch . "', '" . $military_base_name . "','" . $last_login_epoch . "',  '" . $user_pay_grade . "', '" . $home_location . "', '" . $user_bio . "')";
 
-	// https://www.php.net/manual/en/mysqli.quickstart.multiple-statement.php
-	
+	echo "SQL: " . $sql . "<br>";
 
-	// Prepare an insert statement
-	$sql = "INSERT INTO `user_data` (`username`, `name`, `date_joined_epoch`, `phone_number`, `phone_carrier`, `military_branch`, `military_base_name`, `home_location`, `last_login_epoch`, `user_bio`, `user_permissions`, `user_pay_grade`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);";
-	
-	
-	$stmt = $conn->prepare($sql);
-	echo "prepared statement";
-	$stmt->bind_param("ssisssssisii", $username, $name, $date_joined_epoch, $phone_number, $phone_carrier, $military_branch, $military_base_name, $home_location, $last_login_epoch, $user_bio, $user_permissions, $user_pay_grade);
-	$result = $stmt->execute();
-	
-	printf("%d row inserted.\n", $stmt->affected_rows);
-	
-	// if the result is false (0) then log the error and stop
-	// if (!$result) {
-	// 	log_server_command('lburlingham', 'localhost', 'insert_user', '4');
-	// 	die('Error: ' . mysqli_error($conn));
-	// // otherwise log the result and close the connection
-	// } else {
-	// 	log_server_command('lburlingham', 'localhost', 'insert_user', '4');
-	// 	mysqli_close($conn);
-	// 	$result = true;
-	// }
+	$result = $conn->query($sql);
 
-	return true;
+	return $result;
+
 }
 
 // Default value = no strikes, not banned, not superuser, not forum mod
