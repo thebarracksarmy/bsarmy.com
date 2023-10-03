@@ -1,52 +1,74 @@
--- Create database to contain all the data
-CREATE DATABASE `bsarmy_main` CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
-
--- Switch to the database
-USE `bsarmy_main`;
-
-
--- Create table to contain non sensitive user data
-CREATE TABLE `user_nonpii-data` (
-	`id` INT NOT NULL AUTO_INCREMENT,
-	`last_login_epoch` INT NOT NULL,
-	`username` TINYTEXT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-	`name` TINYTEXT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-	`bio` VARCHAR(400) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT '',
-	`permissions` VARCHAR(8) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci COMMENT '(superadmin)(forum)(na)(na)(na)(na)(# strikes)(bans)',
-	`reputation` INT DEFAULT '0' COMMENT 'max is 10 million',
+CREATE TABLE `user_data` (
+	`id` int NOT NULL AUTO_INCREMENT,
+	`username` tinytext NOT NULL,
+	`name` tinytext NOT NULL,
+	`date_joined_epoch` int NOT NULL,
+	`phone_number` int NOT NULL,
+	`phone_carrier` int NOT NULL,
+	`military_branch` char(8) NOT NULL,
+	`military_base_name` varchar(30) NOT NULL,
+	`home_location` tinytext,
+	`last_login_epoch` int,
+	`user_bio` varchar(400),
+	`user_permissions` int NOT NULL,
+	`user_reputation` int NOT NULL DEFAULT '0',
+	`user_pay_grade` char(4) NOT NULL,
 	PRIMARY KEY (`id`)
-) ENGINE=InnoDB;
+);
 
--- Create table to contain sensitive user data
-
-CREATE TABLE `user_sensitive-data` (
-	`id` INT NOT NULL AUTO_INCREMENT,
-	`date_joined_epoch` INT NOT NULL,
-	`email` TINYTEXT NOT NULL,
-	`password_hash` VARCHAR(60) NOT NULL DEFAULT '0',
-	`phone_number` INT,
-	`pay_grade` CHAR(4),
-	`military_branch` CHAR(8),
-	`military_base_name` VARCHAR(30),
-	`address_or_latlong` TINYTEXT,
-	`random_string` VARCHAR(60) NOT NULL,
+CREATE TABLE `events` (
+	`id` int NOT NULL AUTO_INCREMENT UNIQUE,
+	`owner_username` tinytext NOT NULL,
+	`start_date_epoch` INT NOT NULL,
+	`event_duration` INT NOT NULL,
+	`event_description` TEXT NOT NULL,
+	`event_location` tinytext NOT NULL,
+	`number_rsvpd` int NOT NULL,
 	PRIMARY KEY (`id`)
-) ENGINE=InnoDB;
+);
 
+CREATE TABLE `listing` (
+    `id` int NOT NULL AUTO_INCREMENT,
+    `owner_username` tinytext NOT NULL,
+    `title` tinytext NOT NULL,
+    `description` tinytext NOT NULL,
+    `start_date_epoch` int NOT NULL,
+    `listing_duration` int NOT NULL,
+    `listing_price` FLOAT NOT NULL,
+    `listing_location` tinytext NOT NULL,
+    `listing_location_radius` int NOT NULL,
+    `listing_status` tinytext NOT NULL,
+    `payment_method` int,
+    PRIMARY KEY (`id`)
+);
 
--- Create table to contain admin data
-
-CREATE TABLE `admin_logs` (
-	`id` INT NOT NULL AUTO_INCREMENT,
-	`epoch_time` INT NOT NULL,
-	`admin_username` TINYTEXT,
-	`ip` TINYTEXT NOT NULL,
-	`description` TEXT NOT NULL,
-	`category` TINYTEXT,
+CREATE TABLE `listing_messages` (
+	`id` int NOT NULL AUTO_INCREMENT,
+	`listing_id` int NOT NULL,
+	`sender_id` int NOT NULL,
+	`message_epoch` int NOT NULL,
+	`message` tinytext NOT NULL,
 	PRIMARY KEY (`id`)
-) ENGINE=InnoDB;
+);
+
+CREATE TABLE `session_data` (
+	`session_id` varbinary(192) NOT NULL,
+	`created_epoch` int(11) NOT NULL DEFAULT '0',
+	`session_data` longtext NOT NULL,
+	PRIMARY KEY (`session_id`)
+);
+
+ALTER TABLE `events` ADD CONSTRAINT `events_fk0` FOREIGN KEY (`id`) REFERENCES `user_data`(`username`);
+
+ALTER TABLE `listing` ADD CONSTRAINT `listing_fk0` FOREIGN KEY (`owner_username`) REFERENCES `user_data`(`username`);
+
+ALTER TABLE `listing` ADD CONSTRAINT `listing_fk1` FOREIGN KEY (`listing_location`) REFERENCES `user_data`(`home_location`);
+
+ALTER TABLE `listing_messages` ADD CONSTRAINT `listing_messages_fk0` FOREIGN KEY (`listing_id`) REFERENCES `listing`(`id`);
+
+ALTER TABLE `listing_messages` ADD CONSTRAINT `listing_messages_fk1` FOREIGN KEY (`sender_id`) REFERENCES `user_data`(`id`);
+
+-- From https://erd.dbdesigner.net/designer/schema/1695956275-bs-army
 
 
-CREATE USER 'username'@'localhost' identified by 'password';
 
-GRANT SELECT, ALTER, INSERT, DELETE, UPDATE, CREATE ON bsarmy_main.* TO 'username'@'hostname';
