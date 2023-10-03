@@ -17,6 +17,10 @@
 	background-color: black !important;
 }
 
+.bg-dark-green {
+	background-color: #20493c !important;
+}
+
 .table-hover tr:hover {
 	background-color: rgb(192, 192, 192) !important;
 }
@@ -31,4 +35,62 @@ hr.vertical {
 	width: 0px;
 	height: 100%;
 	/* or height in PX */
+}
+
+.btn-outline-dark-green {
+	color: #20493c;
+	background-color: transparent;
+	background-image: none;
+	border-color: #20493c;
+}
+
+.btn-outline-dark-green:hover {
+	color: #fff;
+	background-color: #20493c;
+	border-color: #20493c;
+}
+
+.btn-outline-dark-green:focus, .btn-outline-dark-green.focus {
+	box-shadow: 0 0 0 0.2rem rgba(32, 73, 60, 0.5);
+}
+
+.btn-outline-dark-green.disabled, .btn-outline-dark-green:disabled {
+	color: #20493c;
+	background-color: transparent;
+}
+
+.btn-dark-green {
+	color: #fff;
+	background-color: #20493c;
+	border-color: #20493c;
+}
+
+.btn-dark-green:hover {
+	color: #fff;
+	background-color: #1a3d31;
+	border-color: #1a3d31;
+}
+
+.btn-dark-green:focus, .btn-dark-green.focus {
+	box-shadow: 0 0 0 0.2rem rgba(32, 73, 60, 0.5);
+}
+
+.btn-dark-green.disabled, .btn-dark-green:disabled {
+	color: #fff;
+	background-color: #20493c;
+	border-color: #20493c;
+}
+
+.btn-light-tan {
+	color: #20493c !important;
+	background-color: #f9d3c1;
+	border-color: #f9d3c1;
+}
+
+a {
+	color: #20493c;
+}
+
+a:hover {
+	color: #0cc0df;
 }
