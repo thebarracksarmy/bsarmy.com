@@ -1,7 +1,6 @@
 CREATE DATABASE bsarmy_main;
 
 USE bsarmy_main;
-
 CREATE TABLE `user_data` (
 	`id` int NOT NULL AUTO_INCREMENT,
 	`username` tinytext NOT NULL,
@@ -17,6 +16,7 @@ CREATE TABLE `user_data` (
 	`user_permissions` varchar(8) NOT NULL,
 	`user_reputation` int NOT NULL DEFAULT '0',
 	`user_pay_grade` char(4) NOT NULL,
+	`dfac_sms_optin` bool NOT NULL,
 	PRIMARY KEY (`id`)
 );
 
@@ -62,10 +62,12 @@ CREATE TABLE `session_data` (
 	PRIMARY KEY (`session_id`)
 );
 
-CREATE TABLE `test` (
-	`test1` tinyint NOT NULL,
-	`email` tinyint NOT NULL,
-	`picture` blob NOT NULL
+CREATE TABLE `temp_login_codes` (
+	`id` int NOT NULL AUTO_INCREMENT,
+	`user_id` int NOT NULL,
+	`code` int(6) NOT NULL,
+	`epoch_created` int NOT NULL,
+	PRIMARY KEY (`id`)
 );
 
 ALTER TABLE `events` ADD CONSTRAINT `events_fk0` FOREIGN KEY (`id`) REFERENCES `user_data`(`username`);
@@ -77,6 +79,14 @@ ALTER TABLE `listing` ADD CONSTRAINT `listing_fk1` FOREIGN KEY (`listing_locatio
 ALTER TABLE `listing_messages` ADD CONSTRAINT `listing_messages_fk0` FOREIGN KEY (`listing_id`) REFERENCES `listing`(`id`);
 
 ALTER TABLE `listing_messages` ADD CONSTRAINT `listing_messages_fk1` FOREIGN KEY (`sender_id`) REFERENCES `user_data`(`id`);
+
+ALTER TABLE `temp_login_codes` ADD CONSTRAINT `temp_login_codes_fk0` FOREIGN KEY (`user_id`) REFERENCES `user_data`(`id`);
+
+
+
+
+
+
 
 CREATE USER 'user'@'host' IDENTIFIED with mysql_native_password BY 'password';
 
