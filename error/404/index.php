@@ -24,8 +24,17 @@ include_once $_SERVER['DOCUMENT_ROOT'] . '/assets/includes/beforeIncludes.php';
 			<h1 class="display-5 fw-bold"><kbd>http error 404</kbd> Page or resource not found.</h1>
 			<p class="fst-italics">Sorry, the page you are looking for does not exist.</p>
 			<a href="/index.php" class="btn btn-light-tan">Return to Home</a>
-			<!-- go back to page referrer -->
-			<a href="<?php echo $_SERVER['HTTP_REFERER']; ?>" class="btn btn-secondary">Go back</a>
+			<!-- go back to page referrer or close page if not referred -->
+
+			<?php
+				if (isset($_SERVER['HTTP_REFERER'])) {
+					echo '<a href="' . $_SERVER['HTTP_REFERER'] . '" class="btn btn-outline-dark-green">Go back</a>';
+				} else {
+					// I have no idea what these extra single quotes (') do but they work --\_(0_0)_/--
+					echo '<a onClick="javascript:window.close(\'\',\'_parent\',\'\');" class="btn btn-outline-dark-green">Go back</a>';
+				}
+			?>
+			
 		</div>
 	</div>
 
