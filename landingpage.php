@@ -63,15 +63,22 @@ include $_SERVER['DOCUMENT_ROOT'] . '/assets/includes/elements/head.php';
 				</div>
 			</div>
 			<div class="row py-lg-5">
-				<h3 class="h3">
-					So far, this site includes:	
-				</h3>
-				<ul class="list-group-flush mx-1">
-					<a class="list-group-item text-dark border-none" href="/DFAC/">
-						DFAC Schedule for <?php echo date('F Y'); ?> <i class="fa-solid fa-arrow-right"></i>
-					</a>
+				<div class="col-lg-4"></div>
+				<div class="col-lg-4">
+					<h3 class="h3">
+						So far, this site includes:	
+					</h3>
+					<ul class="list-group mx-1">
+						<a class="list-group-item active" href="/DFAC/">
+							DFAC Schedule for <?php echo date('F Y'); ?> <i class="fa-solid fa-arrow-right"></i>
+						</a>
+						<a class="list-group-item text-dark" href="/register/">
+							Register to subscribe to DFAC SMS alerts <i class="fa-solid fa-arrow-right"></i>
+						</a>
 
-				</ul>
+					</ul>
+				</div>
+				<div class="col-lg-4"></div>
 			</div>
 		</section>
 		<!-- 
