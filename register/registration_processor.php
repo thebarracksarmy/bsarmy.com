@@ -18,11 +18,12 @@ if (isset($_POST['username'])) {
 		$fullname = $_POST['fullname'];
 	}
 
-	$phone_number = $_POST['phone_number'];
-	$carrier_name = $_POST['carrier_name'];
-	$military_branch = $_POST['military_branch'];
-	$military_base_name = $_POST['military_base_name'];
-	$military_grade = $_POST['military_grade'];
+	$phone_number = (int) $_POST['phone_number'];
+	$carrier_name = (string) $_POST['carrier_name'];
+	$military_branch = (string) $_POST['military_branch'];
+	$military_base_name = (string) $_POST['military_base_name'];
+	$military_grade = (int) $_POST['military_grade'];
+	$dfac_sms_optin = (bool) $_POST['dfac_sms_optin'];
 
 
 	// escape the strings to prevent SQL injection
@@ -35,7 +36,7 @@ if (isset($_POST['username'])) {
 
 
 	// insert_user($username, $fullname, $bio, $phone_number, $carrier_name, $military_branch, $military_base_name, $pay_grade);
-	$result = insert_new_user($username, $fullname, $phone_number, $carrier_name, $military_branch, $military_base_name, $military_grade);
+	$result = insert_new_user($username, $fullname, $phone_number, $carrier_name, $military_branch, $military_base_name, $military_grade, $dfac_sms_optin);
 
 	echo $result;
 	// if the result is true, then the user was inserted successfully

@@ -165,19 +165,26 @@ if (file_exists($file_path)) {
 							<input type="text" class="form-control" id="military_base_name" name="military_base_name" placeholder="Military Base Name" required>
 						</div>
 					</div>
+					<!-- SMS DFAC Update opt-in -->
+					<div class="form-check mb-3">
+						<input class="form-check-input" type="checkbox" value="TRUE" id="dfac_sms_optin" name="dfac_sms_optin">
+						<label class="form-check-label" for="dfac_sms_optin">
+							Check this box to agree to receive monthly DFAC schedule updates. You can unsubscribe at any time.
+						</label>
+					</div>
 
 					<!-- Submit button -->
 					<div class="form-check mb-3">
 						<input class="form-check-input" type="checkbox" value="yes" id="terms_conditions_checkbox" name="terms_conditions_checkbox" required>
 						<label class="form-check-label" for="terms_conditions_checkbox">
 							Check this box to agree to the
-							<a href="docs/terms_conditions/" target="_blank">
+							<a href="/docs/terms_conditions/" target="_blank">
 								terms and conditions</a>.
-							We will only send you text messages for account verification and password resets.
+							We will only send you text messages for account verification and password resets if you only select this option.
 						</label>
 					</div>
 					<div class="col-12">
-						<button class="btn btn-primary" type="submit" name="submit" value="true">Sign Up</button>
+						<button class="btn btn-outline-dark-green" type="submit" name="submit" value="true">Sign Up</button>
 					</div>
 				</form>
 			</div>
