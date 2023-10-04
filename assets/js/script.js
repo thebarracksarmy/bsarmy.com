@@ -26,3 +26,17 @@ if ('serviceWorker' in navigator) {
 	}
 }
 
+
+
+// Add a ban icon next to all disabled links
+document.onload = () => {
+	const disabledLinks = document.querySelectorAll('a[disabled]');
+
+	disabledLinks.forEach((link) => {
+		const icon = document.createElement('i');
+		icon.classList.add('fas', 'fa-ban');
+		link.appendChild(icon);
+	});
+
+	console.log('Script loaded.');
+}
