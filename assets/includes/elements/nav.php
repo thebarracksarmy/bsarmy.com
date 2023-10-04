@@ -7,7 +7,7 @@ echo <<<EOT
 		
 		<div class="navbar navbar-dark bg-dark-green shadow-sm">
 			<div class="container">
-				<a href="#" class="navbar-brand d-flex align-items-center">
+				<a href="/" class="navbar-brand d-flex align-items-center">
 					<img src="/assets/icons/logo.png" alt="bsarmy.com" height="80px" width="215">
 				</a>
 				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader"
@@ -20,8 +20,8 @@ echo <<<EOT
 			<div class="container">
 				<div class="row">
 					<div class="col-sm-8 col-md-7 py-4">
-						<h4 class="text-white">About</h4>
-						
+						<h4 class="text-white">Links</h4>
+						<a href="/DFAC/">DFAC Schedule</a>
 					</div>
 					<div class="col-sm-4 offset-md-1 py-4">
 						<h4 class="text-white">Contact</h4>
