@@ -23,8 +23,7 @@
 
 
 	<div class="container">
-		<div class="mt-4 p-5 bg-black text-white
-	 rounded">
+		<div class="mt-4 p-5 bg-dark-green text-white rounded">
 		<h1>The Barracks | Terms & Conditions</h1>
 	</div>
 	<p class="text-muted fst-italic my-3">Last Updated: 23 September 2023</p>
@@ -52,7 +51,8 @@
 	<h6>8. Changes to Terms</h6>
 	<p>8.1. We reserve the right to modify or update these Terms at any time. Changes will be effective upon posting on the Website. Your continued use of the Website after any such changes constitutes your acceptance of the new Terms.</p>
 	<h6>9. Governing Law</h6>
-	<p>9.1. These Terms shall be governed by and construed in accordance with the laws of the United States of America. Any disputes arising under or in connection with these Terms shall be subject to the exclusive jurisdiction of the courts of [Your Jurisdiction].</p>
+	<p>9.1. These Terms shall be governed by and construed in accordance with the laws of the United States of America. Any disputes arising under or in connection with these Terms shall be subject to the exclusive jurisdiction of the courts of the United States of America,
+		 and may be supplimented by the UCMJ (Uniform Code of Military Justice) .</p>
 	<h6>10. Contact Us</h6>
 	<p>10.1. If you have any questions or concerns about these Terms, please contact us at <a href="mailto:legal@bsarmy.com">legal@bsarmy.com</a>.</p>
 
