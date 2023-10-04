@@ -44,13 +44,14 @@ function get_log_category(int $category_id) {
 
 }
 
-function insert_new_user($username, $name, $phone_number, $phone_carrier, $military_branch, $military_base_name, $user_pay_grade) {
+function insert_new_user(string $username, string $name, $phone_number, string $phone_carrier, string $military_branch, string $military_base_name, int $user_pay_grade, bool $dfac_sms_optin) {
 
 	global $conn;
 	$date_joined_epoch = time();
 	$last_login_epoch = $date_joined_epoch;
 	$home_location = "";
 	$user_bio = "";
+	$dfac_sms_optin = "FALSE";
 
 
 	$username = mysqli_real_escape_string($conn, $username);
@@ -61,17 +62,25 @@ function insert_new_user($username, $name, $phone_number, $phone_carrier, $milit
 	$user_pay_grade = mysqli_real_escape_string($conn, $user_pay_grade);
 	$username = htmlentities($username);
 
-	$sql = "INSERT INTO user_data (username, name, date_joined_epoch, phone_number, phone_carrier, military_branch, military_base_name, last_login_epoch, user_pay_grade, home_location, user_bio) VALUES ('" . $username . "', '" . $name . "','" . $date_joined_epoch . "', '" . $phone_number . "', '" . $phone_carrier . "', '" . $military_branch . "', '" . $military_base_name . "','" . $last_login_epoch . "',  '" . $user_pay_grade . "', '" . $home_location . "', '" . $user_bio . "')";
+	$sql = "INSERT INTO user_data (username, name, date_joined_epoch, phone_number, phone_carrier, military_branch, military_base_name, last_login_epoch, user_pay_grade, home_location, user_bio, $dfac_sms_optin) VALUES ('" . $username . "', '" . $name . "','" . $date_joined_epoch . "', '" . $phone_number . "', '" . $phone_carrier . "', '" . $military_branch . "', '" . $military_base_name . "','" . $last_login_epoch . "',  '" . $user_pay_grade . "', '" . $home_location . "', '" . $user_bio . "', " . $dfac_sms_optin . "')";
 
 	echo "SQL: " . $sql . "<br>";
 
 	$result = $conn->query($sql);
 
-	return $result;
+	if (!$result) {
+		die('Error: ' . mysqli_error($conn));
+	} else {
+		log_server_command('lburlingham', 'localhost', 'insert_new_user', '2');
+		mysqli_close($conn);
+		return $result;
+	}
 
 }
 
 // Default value = no strikes, not banned, not superuser, not forum mod
+// Not actually used in the code right now (it will be used for the admin panel and upgrading user permissions later)
+// Database default is non admin no bans no strikes (111100)
 function permission_calculator(int $superuser, int $forum_mod=0, int $strikes=0, int $banned=0) {
 	$permissions = 0;
 	// if true, add the value to the permissions
@@ -177,9 +186,10 @@ function get_user_by_name(string $name) {
 // Email sms functions\
 
 function get_sms_gateway ($id) {
+
 	global $conn;
 
-	$sql = "SELECT phone_number, phone_carrier FROM `sms_gateways` WHERE `id` = '" . $id . "';";
+	$sql = "SELECT phone_number, phone_carrier FROM `user_data` WHERE `id` = '" . $id . "';";
 
 	$result = mysqli_query($conn, $sql);
 
@@ -193,8 +203,8 @@ function get_sms_gateway ($id) {
 			// Such as 1234567891@vtext.com
 			return $gateway_address;
 		}
-	  } else {
-		
+	} else {
+		die ("Error: " . mysqli_error($conn));
 	}
 			
 	if (!$result) {
@@ -202,5 +212,9 @@ function get_sms_gateway ($id) {
 	}
 }
 
+
+
+
+// include_once 'db_disconnect.php';
 
 ?>
