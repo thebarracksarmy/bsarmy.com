@@ -146,5 +146,23 @@ a {
 }
 
 a:hover {
-	color: #0cc0df;
+	color: #20493c;
+	text-decoration: underline;
+}
+
+a:hover:disabled, a:hover + .disabled {
+	color: #20493c;
+	text-decoration: strikethrough;
+}
+
+
+.list-group-item.active {
+	background-color: #20493c !important;
+	color: #f9d3c1;
+	border-color: #20493c !important;
+}
+
+.list-group-item  + .active:hover {
+	background-color: transparent;
+	color: #f9d3c1;
 }
