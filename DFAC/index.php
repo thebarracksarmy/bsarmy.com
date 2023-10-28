@@ -64,17 +64,21 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/assets/includes/beforeIncludes.php';
 							<hr style="width: 50%;" class="mx-auto my-1">
 							<div class="text-muted mt-1">
 								Download a different version:
-								<a href="/DFAC/schedules/2023/OCT/liberty_october_2023.pdf" target="_blank" rel="noopener noreferrer" disabled class="text-muted">
-									PDF version
-								</a>
-									&middot;
-								<a href="/DFAC/schedules/2023/OCT/liberty_october_2023.png" target="_blank" rel="noopener noreferrer" disabled class="text-muted">
-									PNG version
-								</a>
-								&middot;
-								<a href="/DFAC/schedules/2023/OCT/liberty_october_2023.jpg" target="_blank" rel="noopener noreferrer">
-									JPG version
-								</a>	
+
+
+								<?php 
+$formats = ['pdf', 'png', 'jpg'];
+$full_month = strtolower(date('F'));
+$month = strtoupper(date('M'));
+$year = date('Y');
+
+foreach ($formats as $format) {
+	$format_upper = strtoupper($format);
+$href = <<<EOT
+								<a href="/DFAC/schedules/$year/$month/liberty_$full_month_$year.$format" target="_blank" rel="noopener noreferrer" class="text-muted">$format_upper version</a>&middot;
+EOT;
+}
+								?>
 							</div>
 						</div>
 					</div>
