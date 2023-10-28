@@ -120,8 +120,6 @@ $monthsbefore = array_pop($monthsavaliable); // remove the current (last) month 
 print_r($yearsavaliable);
 print_r($monthsbefore);
 
-
-
 						?>
 					</p>
 				</div>
