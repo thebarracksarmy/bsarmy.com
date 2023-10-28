@@ -3,14 +3,16 @@
 // get all files in current month directory and add to array
 
 // get current month and year
-$month = strtoupper(date('M'));
-$year = date('Y');
+$full_month = strtolower(date('F')); // october
+$month = date('m'); // eg. 10
+$year = date('Y'); // 2023
 
 echo "month: $month<br>";
 echo "year: $year<br>";
 
 $dir = __dir__ . "/$year/$month/";
 echo "dir: $dir<br>";
+
 
 $files = scandir($dir);
 
@@ -53,7 +55,7 @@ if (count($formats_needed) == 0) {
 	echo "No schedules for the current month found in any format.<br>";
 
 // If all formats are found
-} elseif (count($format_not_found) == 0) {
+} elseif (count($format_not_found) == count($formats_needed)) {
 	echo "Schedules for the current month found in all formats.<br>";
 
 	// if there are missing formats, then generate them from the existing schedule found
@@ -74,8 +76,6 @@ if (count($formats_needed) == 0) {
 	foreach ($format_not_found as $format) {
 		// get the first format found (probably JPG)
 		$from_format = $formats_found[0];
-
-		$full_month = strtolower(date('F'));
 
 		$convert_command = 'convert -quality 100 '. $dir . 'liberty_' . $full_month . '_' . $year . '.' . $from_format . ' ' . $dir . 'liberty_' . $full_month . '_' . $year . '.' . $format; 
 		
