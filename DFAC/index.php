@@ -63,20 +63,23 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/assets/includes/beforeIncludes.php';
 							<br>
 							<hr style="width: 50%;" class="mx-auto my-1">
 							<div class="text-muted mt-1">
-								Download a different version:
-
-
+								Download a different format:
 								<?php 
 $formats = ['pdf', 'png', 'jpg'];
 $full_month = strtolower(date('F'));
-$month = strtoupper(date('M'));
+$month = date('m');
 $year = date('Y');
 
 foreach ($formats as $format) {
+
 	$format_upper = strtoupper($format);
+	$base = "liberty";
+	$filename = $base . '_' . $full_month . '_' . $year . '.' . $format;
+
 $href = <<<EOT
-								<a href="/DFAC/schedules/$year/$month/liberty_$full_month_$year.$format" target="_blank" rel="noopener noreferrer" class="text-muted">$format_upper version</a>&middot;
+								<a href="/DFAC/schedules/$year/$month/$filename" target="_blank" rel="noopener noreferrer" class="text-muted">$format_upper version</a>&middot;
 EOT;
+									echo $href;
 }
 								?>
 							</div>
@@ -93,6 +96,33 @@ EOT;
 					</h3>
 					<p class="text-muted">
 						None at the moment. Check back next month!
+
+
+						<?php
+
+$year = date('Y');
+
+$yearsavaliable = scandir($_SERVER['DOCUMENT_ROOT'] . '/DFAC/schedules/');
+$monthsavaliable = scandir($_SERVER['DOCUMENT_ROOT'] . '/DFAC/schedules/' . $year .'/');
+
+// remove the first two elements of the arrays (.) and (..)
+array_splice($yearsavaliable, 0, 2);
+array_splice($monthsavaliable, 0, 2);
+// Remove gen_alt_filetypes.php from the array (always gonna be the last one since it's not a number)
+array_pop($yearsavaliable);
+
+// sort numerically so we can get the elements before the current month
+asort($yearsavaliable, SORT_NUMERIC);
+asort($monthsavaliable, SORT_NUMERIC);
+
+$monthsbefore = array_pop($monthsavaliable); // remove the current (last) month from the array
+
+print_r($yearsavaliable);
+print_r($monthsbefore);
+
+
+
+						?>
 					</p>
 				</div>
 			</div>
