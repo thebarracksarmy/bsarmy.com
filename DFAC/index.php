@@ -13,7 +13,7 @@ TODO:
 Show what DFACs are open at the current time, plus driving time
 Directions to each DFAC
 
-1000M goals: 
+1000M goals:
 DFAC Rating system
 DFAC event system (aka Taco Tuesday, Pizza Friday, etc.)
 
@@ -65,13 +65,10 @@ $base = "liberty";
 
 						<?php
 							$filename = $base . '_' . $full_month . '_' . $year . '.jpg';
-
-							// echo '/DFAC/schedules/' . $year . '/' . $month . '/' . $filename;
-
 							if(file_exists($_SERVER['DOCUMENT_ROOT'] . '/DFAC/schedules/' . $year . '/' . $month . '/' . $filename)) {
 
 								$schedule = <<<EOT
-								<a href='/DFAC/schedules/' . $year . '/' . $month . '/' . $filename' target="_blank" rel="noopener noreferrer">
+								<a href='/DFAC/schedules/$year/$month/$filename' target="_blank" rel="noopener noreferrer">
 									<img src='/DFAC/schedules/$year/$month/$filename' alt="Fort Liberty, NC DFAC Schedule for date('F Y') " class="img-fluid" />
 								</a>
 								<!-- Show links to download different versions -->
@@ -94,8 +91,14 @@ $base = "liberty";
 
 										// Construct link
 										$href = <<<EOT
-										<a href="/DFAC/schedules/$year/$month/$filename" target="_blank" rel="noopener noreferrer" class="text-muted">$format_upper version</a>&middot;
+										<a href="/DFAC/schedules/$year/$month/$filename" target="_blank" rel="noopener noreferrer" class="text-muted"> $format_upper version </a>&middot;
 										EOT;
+
+										// if it's the last element in the array, don't add the middot
+										if ($format == end($formats)) {
+											$href = substr($href, 0, -9);
+										}
+
 
 										// Output link to page
 										echo $href;
@@ -119,37 +122,61 @@ $base = "liberty";
 					Archived Schedules:
 				</h3>
 				<p class="text-muted">
-					None at the moment. Check back next month!
-
-
+					<!-- None at the moment. Check back next month! -->
 					<?php
+						$year = date('Y');
 
-$year = date('Y');
+						$yearsavaliable = scandir($_SERVER['DOCUMENT_ROOT'] . '/DFAC/schedules/');
+						$monthsavaliable = scandir($_SERVER['DOCUMENT_ROOT'] . '/DFAC/schedules/' . $year .'/');
 
-$yearsavaliable = scandir($_SERVER['DOCUMENT_ROOT'] . '/DFAC/schedules/');
-$monthsavaliable = scandir($_SERVER['DOCUMENT_ROOT'] . '/DFAC/schedules/' . $year .'/');
+						// remove the first two elements of the arrays (.) and (..)
+						array_splice($yearsavaliable, 0, 2);
+						array_splice($monthsavaliable, 0, 2);
+						// Remove gen_alt_filetypes.php from the array (always gonna be the last one since it's not a number)
+						array_pop($yearsavaliable);
 
-// remove the first two elements of the arrays (.) and (..)
-array_splice($yearsavaliable, 0, 2);
-array_splice($monthsavaliable, 0, 2);
-// Remove gen_alt_filetypes.php from the array (always gonna be the last one since it's not a number)
-array_pop($yearsavaliable);
 
-// sort numerically so we can get the elements before the current month
-asort($yearsavaliable, SORT_NUMERIC);
-asort($monthsavaliable, SORT_NUMERIC);
 
-$monthsbefore = array_pop($monthsavaliable); // remove the current (last) month from the array
+						// sort numerically so we can get the elements before the current month
+						asort($yearsavaliable, SORT_NUMERIC);
+						asort($monthsavaliable, SORT_NUMERIC);
 
-// print_r($yearsavaliable);
-// print_r($monthsbefore);
+						$monthsbefore = array_pop($monthsavaliable); // remove the current (last in array) month from the array
+											
+						// print_r($monthsavaliable);
+						foreach ($monthsavaliable as $month) {
+							// Generate a list for each month with a link to the schedule in each format
+							$monthname = date('F', mktime(0, 0, 0, $month, 10));
+							$monthname = strtolower($monthname);
+							$monthnameNormal = ucfirst($monthname);
+							
+							echo "<p>$monthnameNormal $year:</p>";
+							foreach ($formats as $format) {
+								// Prepare filename
+								$format_upper = strtoupper($format);
+								$base = "liberty";
+								$filename = $base . '_' . $monthname . '_' . $year . '.' . $format;
 
+								// Construct link
+								$href = <<<EOT
+								<a href="/DFAC/schedules/$year/$month/$filename" target="_blank" rel="noopener noreferrer" class="text-muted"> $format_upper version </a>&middot;
+								EOT;
+
+								// if it's the last element in the array, don't add the middot
+								if ($format == end($formats)) {
+									$href = substr($href, 0, -9);
+								}
+
+								// Output link to page
+								echo $href;
+							}
+
+						}
 						?>
 				</p>
 			</div>
 		</div>
 	</section>
-
 	<?php
 			// Add footer to page
 			require_once $_SERVER['DOCUMENT_ROOT'] . '/assets/includes/elements/footer.php';
