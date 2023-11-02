@@ -37,46 +37,80 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/assets/includes/beforeIncludes.php';
 		<table class="table container table-hover">
 			<thead>
 				<tr>
-					<?php 
-					$column = array('#', 'Last Login', 'Username', 'Name', 'Bio', 'Permissions', 'Reputation');
+					<?php
+					$column = array("#","Username","Name","Date Joined","Last Login","Phone Number","SMS Gateway","Branch","Duty Station","Permissions","Pay Grade","Opted in to DFAC SMS?");
 
 					foreach ($column as $item) {
 						echo '<th scope="col">' . $item . '</th>';
 					}
-				?>
+					?>
 				</tr>
 			</thead>
 			<tbody>
 				<tr>
 					<?php
 
-				$userList = json_decode(get_all_users());
+					$userList = get_all_users();
 
-				// Get the total number of users
-				$total = count($userList);
-				
-				// Output a row for each user
-				foreach ($userList as $user) {
-					echo '<tr>';
-					// Output a column for each user attribute
-					foreach ($user as $item) {
-						if ($item === null || $item === '') {
-							$item = '<span class="text-muted">N/A</span>';
-						} else if ($item === 1) {
-							$item = 'Yes';
+					// Get the total number of users
+					$total = count($userList);
+
+					// Output a row for each user
+					foreach ($userList as $user) {
+						echo '<tr>';
+						// Output a column for each user attribute
+						// Keep track of the index so we can use it to format items
+						$index = 0;
+						foreach ($user as $item) {
+							// Iterate the index
+							$index += 1;
+
+							if ($item === null || $item === '') {
+								$item = '<span class="text-muted">N/A</span>';
+							}
+
+							// if the item is a date, make it human readable, otherwise format it as a phone number
+							if ($index === 4 || $index === 5) {
+								$item = date('Y-m-d H:i:s', $item);
+							}
+							
+							if ($index === 6) {
+								// get the first digit of the phone number (US country code)
+								$countryCode = 1;
+
+								// get the next 3 digits (area code)
+								$areaCode = substr($item, 0, 3);
+
+								// get the next 3 digits (prefix)
+								$prefix = substr($item, 3, 3);
+
+								// get the last 4 digits (line number)
+								$lineNumber = substr($item, 6, 4);
+								
+								$item = '+' . $countryCode . ' (' . $areaCode . ') ' . $prefix . '-' . $lineNumber;
+							}
+
+							if ($index === 11) {
+								$item = 'E'	. $item;							
+							}
+
+
+							if ($index === 12) {
+								if ($item == 1) {
+									$item = 'Yes';
+								} else  if ($item == 0){
+									$item = 'No';
+								}
+							}
+
+							echo '<td>' . $item . '</td>';
 						}
+						// Unset the index so we can use it again if needed
+						unset($index);
 
-						// if $item is an epoch time, convert it to a human readable date
-						if(strlen($item) === 10) {
-							// 	Fri, 15 Sep 2023 20:52:35
-							$item = date('D, j M Y H:i:s', $item);
-						};
-						
-						echo '<td>' . $item . '</td>';
+						echo '</tr>';
 					}
-					echo '</tr>';
-				}
-				?>
+					?>
 				</tr>
 				<tr>
 					<td colspan="7">Total Users: <?php echo $total; ?></td>
@@ -86,9 +120,9 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/assets/includes/beforeIncludes.php';
 	</div>
 
 	<?php
-// Add footer to page
-require_once $_SERVER['DOCUMENT_ROOT'] . '/assets/includes/elements/footer.php';
-?>
+	// Add footer to page
+	require_once $_SERVER['DOCUMENT_ROOT'] . '/assets/includes/elements/footer.php';
+	?>
 </body>
 
 </html>
