@@ -106,7 +106,7 @@ function permission_calculator(int $superuser, int $forum_mod=0, int $strikes=0,
 function get_user(string $username) {
 	global $conn;
 
-	$sql = "SELECT * FROM `user_nonpii-data` WHERE `username` = '" . $username . "';";
+	$sql = "SELECT * FROM `user_data` WHERE `username` = '" . $username . "';";
 
 	$result = mysqli_query($conn, $sql);
 	
@@ -120,31 +120,23 @@ function get_user(string $username) {
 function get_all_users() {
     global $conn;
 
-    $sql = "SELECT * FROM `user_nonpii-data`;";
+    $sql = "SELECT id,username,name,date_joined_epoch,last_login_epoch,phone_number,phone_carrier,military_branch,military_base_name,user_permissions,user_pay_grade,dfac_sms_optin FROM `user_data`;";
     $result = mysqli_query($conn, $sql);
 
-	$result = json_encode($result);
-    // if (!$result) {
-    //     die('Error: ' . mysqli_error($conn));
-    // } else {
-    //     $users = array();
-    //     while ($row = mysqli_fetch_object($result)) {
-    //         $users[] = $row;
-    //     }
+	// https://stackoverflow.com/a/1501284/13059535
+	$result = $conn->query($sql);
+	$rows = [];
+	while($row = $result->fetch_row()) {
+		$rows[] = $row;
+	}
+	return $rows;
 
-    //     log_server_command('lburlingham', 'localhost', 'get_all_users', '2');
-    //     mysqli_close($conn);
-
-    //     return $users;
-    // }
-
-	return $result;
 }
 
 function get_user_by_id(int $id) {
 	global $conn;
 
-	$sql = "SELECT * FROM `user_nonpii-data` WHERE `id` = '" . $id . "';";
+	$sql = "SELECT id,username,name,date_joined_epoch,last_login_epoch,phone_number,phone_carrier,military_branch,military_base_name,user_permissions,user_pay_grade,dfac_sms_optin FROM `user_data` WHERE `id` = '" . $id . "';";
 
 	$result = mysqli_query($conn, $sql);
 	
@@ -158,7 +150,7 @@ function get_user_by_id(int $id) {
 function get_user_by_name(string $name) {
 	global $conn;
 
-	$sql = "SELECT * FROM `user_nonpii-data` WHERE `name` = '" . $name . "';";
+	$sql = "SELECT * FROM `user_data` WHERE `name` = '" . $name . "';";
 
 	$result = mysqli_query($conn, $sql);
 	
