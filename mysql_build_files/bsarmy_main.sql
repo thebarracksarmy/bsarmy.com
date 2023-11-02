@@ -7,16 +7,16 @@ CREATE TABLE `user_data` (
 	`name` tinytext NOT NULL,
 	`date_joined_epoch` int NOT NULL,
 	`phone_number` varchar(10) NOT NULL,
-	`phone_carrier` int NOT NULL,
+	`phone_carrier` varchar(20) NOT NULL,
 	`military_branch` char(8) NOT NULL,
 	`military_base_name` varchar(30) NOT NULL,
 	`home_location` tinytext NOT NULL,
 	`last_login_epoch` int NOT NULL,
 	`user_bio` TEXT(400) NOT NULL,
-	`user_permissions` varchar(8) NOT NULL,
+	`user_permissions` varchar(8) NOT NULL DEFAULT '111100',
 	`user_reputation` int NOT NULL DEFAULT '0',
 	`user_pay_grade` char(4) NOT NULL,
-	`dfac_sms_optin` bool NOT NULL,
+	`dfac_sms_optin` boolean NOT NULL,
 	PRIMARY KEY (`id`)
 );
 

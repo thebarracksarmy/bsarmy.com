@@ -49,9 +49,9 @@ function insert_new_user(string $username, string $name, $phone_number, string $
 	global $conn;
 	$date_joined_epoch = time();
 	$last_login_epoch = $date_joined_epoch;
-	$home_location = "";
-	$user_bio = "";
-	$dfac_sms_optin = "FALSE";
+	$home_location = "Feature not yet implemented";
+	$user_bio = "Feature not yet implemented";
+	// $dfac_sms_optin = "FALSE";
 
 
 	$username = mysqli_real_escape_string($conn, $username);
@@ -62,7 +62,7 @@ function insert_new_user(string $username, string $name, $phone_number, string $
 	$user_pay_grade = mysqli_real_escape_string($conn, $user_pay_grade);
 	$username = htmlentities($username);
 
-	$sql = "INSERT INTO user_data (username, name, date_joined_epoch, phone_number, phone_carrier, military_branch, military_base_name, last_login_epoch, user_pay_grade, home_location, user_bio, $dfac_sms_optin) VALUES ('" . $username . "', '" . $name . "','" . $date_joined_epoch . "', '" . $phone_number . "', '" . $phone_carrier . "', '" . $military_branch . "', '" . $military_base_name . "','" . $last_login_epoch . "',  '" . $user_pay_grade . "', '" . $home_location . "', '" . $user_bio . "', " . $dfac_sms_optin . "')";
+	$sql = "INSERT INTO user_data (username, name, date_joined_epoch, phone_number, phone_carrier, military_branch, military_base_name, last_login_epoch, user_pay_grade, home_location, user_bio, dfac_sms_optin) VALUES ('" . $username . "', '" . $name . "','" . $date_joined_epoch . "', '" . $phone_number . "', '" . $phone_carrier . "', '" . $military_branch . "', '" . $military_base_name . "', '" . $last_login_epoch . "', '" . $user_pay_grade . "', '" . $home_location . "', '" . $user_bio . "', '" . $dfac_sms_optin . "')";
 
 	echo "SQL: " . $sql . "<br>";
 
