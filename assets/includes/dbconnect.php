@@ -1,6 +1,6 @@
 <?php
 
-include_once '../../creds.php';
+include_once '/var/www/creds.php';
 
 
 $DB_SERVER = constant('DB_SERVER');

@@ -1,21 +1,8 @@
 <?php
 
-$file_path = $_SERVER['DOCUMENT_ROOT'] . '/assets/includes/db_templates.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/assets/includes/db_templates.php';
 
-if (file_exists($file_path)) {
-	require_once($file_path);
-} else {
-	echo "Error: The file does not exist at path: $file_path";
-}
-
-$file_path = $_SERVER['DOCUMENT_ROOT'] . '/assets/includes/beforeIncludes.php';
-
-if (file_exists($file_path)) {
-	require_once($file_path);
-} else {
-	echo "Error: The file does not exist at path: $file_path";
-}
-
+require_once $_SERVER['DOCUMENT_ROOT'] . '/assets/includes/beforeIncludes.php';
 
 
 ?>
