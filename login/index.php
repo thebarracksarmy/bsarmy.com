@@ -4,6 +4,8 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/assets/includes/db_templates.php';
 
 require_once $_SERVER['DOCUMENT_ROOT'] . '/assets/includes/beforeIncludes.php';
 
+$auth_required = true;
+
 ?>
 
 
