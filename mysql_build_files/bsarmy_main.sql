@@ -88,9 +88,10 @@ ALTER TABLE `temp_login_codes` ADD CONSTRAINT `temp_login_codes_fk0` FOREIGN KEY
 
 
 
-CREATE USER 'user'@'host' IDENTIFIED with mysql_native_password BY 'password';
+-- CREATE USER 'user'@'host' IDENTIFIED with mysql_native_password BY 'password';
 
-GRANT SELECT, INSERT, UPDATE, DELETE ON bsarmy_main.* TO 'user'@'host';
+-- GRANT SELECT, INSERT, UPDATE, DELETE ON bsarmy_main.* TO 'user'@'host';
+FLUSH PRIVILEGES;
 
 -- From https://erd.dbdesigner.net/designer/schema/1695956275-bs-army
 
