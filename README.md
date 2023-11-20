@@ -46,7 +46,7 @@ This project uses the following technologies:
 ![Using Cloudflare Tunnel](https://img.shields.io/badge/Tunnels-_?style=for-the-badge&logo=cloudflare&label=Cloudflare&labelColor=gray&color=gray)
 ![GitHub](https://img.shields.io/badge/GIT-_?style=for-the-badge&logo=github&label=Github&labelColor=gray&color=gray)
 ![Spectrum Internet](https://img.shields.io/badge/Internet-_?style=for-the-badge&logo=Spectrum&logoColor=blue&label=Spectrum&labelColor=gray&color=gray)
-
+[![wakatime](https://wakatime.com/badge/user/7e1905d0-e3a0-4cd1-8818-1f7978dac4fb/project/453cd693-0937-4e35-bfef-4835104f677a.svg)](https://wakatime.com/badge/user/7e1905d0-e3a0-4cd1-8818-1f7978dac4fb/project/453cd693-0937-4e35-bfef-4835104f677a?style=for-the-badge)
 ## Contact
 
 Please see [CONTACT.md](CONTACT.md) for contact information.
