@@ -8,8 +8,6 @@ Last Modified: 17 SEP 23 17:43 by LB
 
 */
 
-
-
 require_once 'dbconnect.php';
 
 function log_server_command(string $admin_username, $ip,  $description, int $category)
@@ -53,7 +51,26 @@ function insert_new_user(string $username, string $name, $phone_number, string $
 	$last_login_epoch = $date_joined_epoch;
 	$home_location = "Feature not yet implemented";
 	$user_bio = "Feature not yet implemented";
-	// $dfac_sms_optin = "FALSE";
+
+	// convert the boolean to an int for the database
+	// default is false
+	switch ($dfac_sms_optin) {
+		case TRUE:
+			$dfac_sms_optin = 1;
+			break;
+		case "TRUE":
+			$dfac_sms_optin = 1;
+			break;
+		case FALSE:
+			$dfac_sms_optin = 0;
+			break;
+		case "FALSE":
+			$dfac_sms_optin = 0;
+			break;
+		default:
+			$dfac_sms_optin = 0;
+			break;
+	}
 
 
 	$username = mysqli_real_escape_string($conn, $username);

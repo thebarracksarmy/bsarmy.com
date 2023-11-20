@@ -156,7 +156,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/assets/includes/beforeIncludes.php';
 					<div class="form-check mb-3">
 						<input class="form-check-input" type="checkbox" value="TRUE" id="dfac_sms_optin" name="dfac_sms_optin">
 						<label class="form-check-label" for="dfac_sms_optin">
-							Check this box to agree to receive monthly DFAC schedule updates. You can unsubscribe at any time.
+							Check this box to agree to receive monthly DFAC schedule updates. You can unsubscribe at any time by emailing support@bsarmy.com.
 						</label>
 					</div>
 
