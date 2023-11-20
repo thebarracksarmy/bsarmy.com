@@ -10,7 +10,7 @@ Building the Barracks up, improving the QOL for everyone, making the B's a bette
 - [x] Create a basic structure for the project and vote on what features to implement first
 - [x] Create the first feature: DFAC schedule and map for Fort Liberty, NC
  - [ ] Generate JSON files for each DFAC and load them into the page
-- [ ] Add login feature
+- [x] Add login feature
 - [ ] Create the second feature: Event calendar for Fort Liberty, NC
 
 ## Contributing
