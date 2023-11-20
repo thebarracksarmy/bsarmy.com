@@ -19,6 +19,7 @@
 
 .bg-dark-green {
 	background-color: #20493c !important;
+	color: #fff;
 }
 
 .table-hover tr:hover {
