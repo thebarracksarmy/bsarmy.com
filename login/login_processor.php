@@ -28,7 +28,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 			->verifications
 			->create($phone_number, "sms");
 
+
 		// echo $verification->status;
+
+
 	} else if (isset($_POST["verification_code"]) && $_POST["verification_code"] != 'null') {
 		// Get the verification code from the POST request
 		$verification_code = $_POST["verification_code"];
@@ -46,6 +49,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 				"to" => $phone_number,
 				"code" => $verification_code
 			]);
+
 
 		// echo $verification_check->status;
 		// If the verification code is correct, then log the user in
