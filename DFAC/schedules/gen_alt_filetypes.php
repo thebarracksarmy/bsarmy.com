@@ -92,4 +92,12 @@ if (count($formats_needed) == 0) {
 }
 
 
-// TODO: if there are no schedules for the current month, then email the head of bsarmy.com at support@bsarmy 
+// TODO: #10 if there are no schedules for the current month, then email the head of bsarmy.com at support@bsarmy 
+// if (count($files) == 0) {
+// 	$to = "support@bsarmy.com";
+// 	$subject = "No schedules found for the current month";
+// 	$message = "Dear Head of bsarmy.com,\n\nNo schedules were found for the current month. Please generate the schedules as soon as possible.\n\nBest regards,\nYour Name";
+// 	$headers = "From: your-email@example.com";
+
+// 	mail($to, $subject, $message, $headers);
+// }

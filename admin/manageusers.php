@@ -30,7 +30,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/assets/includes/beforeIncludes.php';
 
 <body>
 	<!-- The navbar won't change so insert it for a more consistant exprience -->
-	<!-- TODO: figure out how to pass the active page to make it aria accessable -->
+	<!-- TODO: #9 figure out how to pass the active page to make it aria accessable -->
 	<?php include $_SERVER['DOCUMENT_ROOT'] . '/assets/includes/elements/nav.php'; ?>
 
 	<div class="table-responsive">
