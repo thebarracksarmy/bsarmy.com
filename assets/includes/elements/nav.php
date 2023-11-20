@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 echo <<<EOT
 
@@ -38,8 +38,26 @@ echo <<<EOT
 							<a href="/contact/" class="btn btn-light-tan disabled" id="contactButton" disabled>Contact Form</a>
 							<!-- Below this is account related links -->
 						<hr>
+
+	EOT;
+if (isset($_SESSION["name"])) {
+	$name = $_SESSION["name"];
+	// If the user is logged in, show the account related links
+	echo <<<EOT
+						<p class="text-white">Hello, $name</p>
+						<a href="/account/" class="btn btn-outline-light-tan">Account</a>
+						<a href="/logout/" class="btn btn-outline-light-tan">Logout</a>
+		EOT;
+} else {
+	// If the user is not logged in, show the login and register links
+	echo <<<EOT
 						<a href="/login/" class="btn btn-outline-light-tan">Login</a>
-						<a href="/register/" class="btn btn-light-tan">Sign Up</a>
+						<a href="/register/" class="btn btn-outline-light-tan">Register</a>
+		EOT;
+}
+
+echo <<<EOT
+
 
 					</div>
 					<div class="col-sm-4 offset-md-1 py-4">
@@ -51,8 +69,4 @@ echo <<<EOT
 	</header>
 
 	EOT;
-
-
-
-
 ?>
