@@ -1,7 +1,6 @@
 <?php
 
-include $_SERVER['DOCUMENT_ROOT'] . '/assets/includes/beforeIncludes.php';
-
+require_once $_SERVER['DOCUMENT_ROOT'] . '/assets/includes/beforeIncludes.php';
 
 ?>
 
@@ -11,16 +10,10 @@ include $_SERVER['DOCUMENT_ROOT'] . '/assets/includes/beforeIncludes.php';
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="">
-	<title>Barracks Army - Coming Soon</title>
+	<meta name="description" content='Improving the barracks one little thing at a time. "It does not take a majority to prevail... but rather an irate, tireless minority, keen on setting brushfires of freedom in the minds of men." - Samuel Adams'>
+	<title>BS Army</title>
 
-
-	<?php
-
-include $_SERVER['DOCUMENT_ROOT'] . '/assets/includes/elements/head.php';
-
-
-?>
+	<?php include $_SERVER['DOCUMENT_ROOT'] . '/assets/includes/elements/head.php'; ?>
 
 	<style>
 	.bd-placeholder-img {
@@ -51,10 +44,9 @@ include $_SERVER['DOCUMENT_ROOT'] . '/assets/includes/elements/head.php';
 		<section class="py-5 text-center container">
 			<div class="row py-lg-5">
 				<div class="col-lg-6 col-md-8 mx-auto">
-					<h1 class="font-weight-bold">Coming Soon</h1>
-					<p class="lead text-muted">Starting out small at Fort Liberty, NC.</p>
-					<small>Hosted by your local PFC in the barracks. No, First Sergeant, thats a server, not a
-						bomb.</small>
+					<h1 class="font-weight-bold">Improving the barracks one little thing at a time. </h1>
+					<p class="lead text-muted">"It does not take a majority to prevail... but rather an irate, tireless minority, keen on setting brushfires of freedom in the minds of men." - Samuel Adams</p>
+					<small>Mmmmm, warm brushfires.</small>
 					<p>
 						<a href="https://github.com/lucasburlingham/bsarmy.com/" target="_blank" rel="noopener noreferrer"
 							class="btn btn-light-tan my-2">See our progress!</a>
