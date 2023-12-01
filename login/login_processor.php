@@ -11,10 +11,9 @@ use Twilio\Rest\Client;
 
 
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+if ($_SERVER["REQUEST_METHOD"]==="POST") {
 	// if $_POST["phone_number"] is set, then process that, if not, then process the verification code
 	if (isset($_POST["phone_number"]) && $_POST["phone_number"] != 'null' && $_POST["verification_code"] = 'null') {
-
 		// Get the phone number from the POST request
 		$phone_number = '+1' . $_POST["phone_number"];
 		$_SESSION["phone_number"] = $phone_number;
@@ -53,7 +52,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 		// echo $verification_check->status;
 		// If the verification code is correct, then log the user in
-		if ($verification_check->status == 'approved') {
+		if ($verification_check->status==='approved') {
 			// Get the user's information from the database
 			$user = get_user_by_phone_number($phone_number);
 
@@ -101,7 +100,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	<!-- The navbar won't change so insert it for a more consistant exprience -->
 	<!-- TODO: figure out how to pass the active page to make it aria accessable -->
 
-	<?php include $_SERVER['DOCUMENT_ROOT'] . '/assets/includes/elements/nav.php'; ?>
+	<?php require $_SERVER['DOCUMENT_ROOT'] . '/assets/includes/elements/nav.php'; ?>
 
 	<div class="container">
 		<div class="row">

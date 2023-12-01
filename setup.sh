@@ -67,13 +67,13 @@ echo "--- 1: Installed dependencies..."
 # --- Install and configure cloudflared
 curl -L --output cloudflared.deb https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64.deb
 sudo dpkg -i cloudflared.deb
-sudo cloudflared service install $cloudflareKey
+sudo cloudflared service install "$cloudflareKey"
 echo "--- 2: Installed cloudflared and configured tunnel..."
 
 # --- Enable and configure firewall
 ufw enable
 #  Add port to firewall
-ufw allow $port/tcp
+ufw allow "$port"/tcp
 echo "--- 3: Enabled firewall and allowed port $port..."
 
 
@@ -119,7 +119,12 @@ echo "--- 5: Cloned bsarmy.com into /var/www/bsarmy.com with submodules..."
 # set permissions
 chown -R www-data:www-data /var/www
 echo "Set permissions for /var/www"
-chown -R www-data:www-data /var/www/bsarmy.com
+chown -R lburlingham bsarmy.com/
+chown -R www-data ^C
+chgrp www-data bsarmy.com/
+chmod -R 750 bsarmy.com/
+chmod g+s bsarmy.com/
+
 echo "--- 6: Set permissions for /var/www/bsarmy.com..."
 
 # set up cron jobs https://unix.stackexchange.com/a/348716

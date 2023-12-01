@@ -21,8 +21,7 @@ function log_server_command(string $admin_username, $ip,  $description, int $cat
 	// log to logs/admin_logs.log
 	shell_exec('echo ' . $epoch_time . ', \"' . $description . '\", ' . $admin_username . ', ' . $ip . ', \"' . $category . '\" >> /var/www/html/logs/admin_logs.log');
 
-	
-	if ($debug) {
+	if ($debug===true) {
 		echo 'echo ' . $epoch_time . ', \"' . $description . '\", ' . $admin_username . ', ' . $ip . ', \"' . $category . '\" >> /var/www/html/logs/admin_logs.log';
 	}
 }
