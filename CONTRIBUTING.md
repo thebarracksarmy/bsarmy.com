@@ -6,14 +6,14 @@
 
 **Programs**
 
-- [git](https://git-scm.com/)
-- [vscode](https://code.visualstudio.com/)
-- Chromium based browser & Firefox
-  - [Google Chrome](https://www.google.com/chrome/)
-  - [Chromium](https://www.chromium.org/getting-involved/download-chromium)
-  - [Vivaldi](https://vivaldi.com/)
-  - [Microsoft Edge](https://www.microsoft.com/en-us/edge)
-  - [Firefox](https://www.mozilla.org/en-US/firefox/new/)
+ -  [git](https://git-scm.com/)
+ -  [vscode](https://code.visualstudio.com/)
+ -  Chromium based browser & Firefox
+   -  [Google Chrome](https://www.google.com/chrome/)
+   -  [Chromium](https://www.chromium.org/getting-involved/download-chromium)
+   -  [Vivaldi](https://vivaldi.com/)
+   -  [Microsoft Edge](https://www.microsoft.com/en-us/edge)
+   -  [Firefox](https://www.mozilla.org/en-US/firefox/new/)
 
 ```bash
 sudo apt install git code chromium-browser firefox
@@ -21,32 +21,32 @@ sudo apt install git code chromium-browser firefox
 
 **Accounts**
 
-- [GitHub](https://github.com) with 2FA enabled, [GitHub Copilot](https://copilot.github.com/) recommended but certainly not required
-- [WakaTime](https://wakatime.com/) recommended
+ -  [GitHub](https://github.com) with 2FA enabled, [GitHub Copilot](https://copilot.github.com/) recommended but certainly not required
+ -  [WakaTime](https://wakatime.com/) recommended
 
 **Access to any of the following OS's:** (in order of preference)
 
-- Linux (Ubuntu Desktop LTS recommended)
-- macOS
-- Windows (extra configuration required)
+ -  Linux (Ubuntu Desktop LTS recommended)
+ -  macOS
+ -  Windows (extra configuration required)
 
 #### Knowledge
 
 You should have a basic understanding of some of the following popular technologies:
 
-- [GitHub](https://github.com)
-  - [Markdown](https://www.markdownguide.org/)
-  - [git](https://git-scm.com/)
-- [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML)
-- [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS)
-- [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
-- [PHP](https://www.php.net/)
-- [MySQL](https://www.mysql.com/)
-- [Apache](https://httpd.apache.org/)
-- [Linux](https://www.linux.org/)
-  - We specifically use [Ubuntu Server](https://ubuntu.com/server).
-  - [Bash](https://www.gnu.org/software/bash/)
-- [SSH](https://www.ssh.com/ssh/)
+ -  [GitHub](https://github.com)
+   -  [Markdown](https://www.markdownguide.org/)
+   -  [git](https://git-scm.com/)
+ -  [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML)
+ -  [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS)
+ -  [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+ -  [PHP](https://www.php.net/)
+ -  [MySQL](https://www.mysql.com/)
+ -  [Apache](https://httpd.apache.org/)
+ -  [Linux](https://www.linux.org/)
+   -  We specifically use [Ubuntu Server](https://ubuntu.com/server).
+   -  [Bash](https://www.gnu.org/software/bash/)
+ -  [SSH](https://www.ssh.com/ssh/)
 
 Running on a LAMP stack in 2023. Go figure.
 
@@ -60,15 +60,15 @@ code .
 
 ### Install the recommended extensions
 
-- [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer)
-- [WakaTime](https://marketplace.visualstudio.com/items?itemName=WakaTime.vscode-wakatime)
-- [W3C Validation](https://marketplace.visualstudio.com/items?itemName=CelianRiboulet.webvalidator)
-- [Remote Explorer](https://marketplace.visualstudio.com/items?itemName=ms-vscode.remote-explorer)
-- [Remote Explorer - SSH Editing Configuration Files](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-ssh-edit)
-- [Remote Explorer - SSH](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-ssh)
-- [markdownlint](https://marketplace.visualstudio.com/items?itemName=DavidAnson.vscode-markdownlint)
-- [Format HTML in PHP](https://marketplace.visualstudio.com/items?itemName=rifi2k.format-html-in-php)
-- [PHP Intelephense](https://marketplace.visualstudio.com/items?itemName=bmewburn.vscode-intelephense-client)
+ -  [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer)
+ -  [WakaTime](https://marketplace.visualstudio.com/items?itemName=WakaTime.vscode-wakatime)
+ -  [W3C Validation](https://marketplace.visualstudio.com/items?itemName=CelianRiboulet.webvalidator)
+ -  [Remote Explorer](https://marketplace.visualstudio.com/items?itemName=ms-vscode.remote-explorer)
+ -  [Remote Explorer  -  SSH Editing Configuration Files](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-ssh-edit)
+ -  [Remote Explorer  -  SSH](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-ssh)
+ -  [markdownlint](https://marketplace.visualstudio.com/items?itemName=DavidAnson.vscode-markdownlint)
+ -  [Format HTML in PHP](https://marketplace.visualstudio.com/items?itemName=rifi2k.format-html-in-php)
+ -  [PHP Intelephense](https://marketplace.visualstudio.com/items?itemName=bmewburn.vscode-intelephense-client)
 
 ## Who can contribute
 
@@ -92,11 +92,11 @@ This project uses the [Gitflow Workflow](https://www.atlassian.com/git/tutorials
 
 This project will be divided into departments, each with their own responsibilities. Each department has a department head, and each department head is responsible for their department's code. The department heads are responsible for reviewing pull requests and merging them into the `develop` branch. The department heads are also responsible for making sure their department's code/work is up to date with the `develop` branch and production material.
 
-- [Public Affairs/Social Media](departments/public-affairs.md)
-- [Web Development](departments/web-development.md)
-- [Web/Graphic Design & Testing](departments/design.md)
-- [Project Vision & Planning](departments/product-management.md)
-- [Secretary & Finance](departments/secretary.md)
-- [Legal](departments/legal.md)
+ -  [Public Affairs/Social Media](departments/public-affairs.md)
+ -  [Web Development](departments/web-development.md)
+ -  [Web/Graphic Design & Testing](departments/design.md)
+ -  [Project Vision & Planning](departments/product-management.md)
+ -  [Secretary & Finance](departments/secretary.md)
+ -  [Legal](departments/legal.md)
 
 Currently, the only department head is the project manager, Lucas Burlingham. If you're interested in becoming a department head, please submit an issue with the tag `Job Request`.
