@@ -65,7 +65,7 @@ $base = "liberty";
 
 						<?php
 						$filename = $base . '_' . $full_month . '_' . $year . '.jpg';
-						if (file_exists($_SERVER['DOCUMEN// iT_ROOT'] . '/DFAC/schedules/' . $year . '/' . $month . '/' . $filename))
+						if (file_exists($_SERVER['DOCUMENT_ROOT'] . '/DFAC/schedules/' . $year . '/' . $month . '/' . $filename))
 						{
 
 							$schedule = <<<EOT
