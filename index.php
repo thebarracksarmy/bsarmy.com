@@ -1,7 +1,7 @@
 <?php
 
 header('Location: /landingpage.php');
-include $_SERVER['DOCUMENT_ROOT'] . '/assets/includes/beforeIncludes.php';
+require $_SERVER['DOCUMENT_ROOT'] . '/assets/includes/beforeIncludes.php';
 
 ?>
 
@@ -14,7 +14,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/assets/includes/beforeIncludes.php';
 	<title>The Barracks | Army</title>
 	<?php
 
-include $_SERVER['DOCUMENT_ROOT'] . '/assets/includes/elements/head.php';
+require $_SERVER['DOCUMENT_ROOT'] . '/assets/includes/elements/head.php';
 
 
 
@@ -24,7 +24,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/assets/includes/elements/head.php';
 <body>
 
 
-	<?php include $_SERVER['DOCUMENT_ROOT'] . '/assets/includes/elements/nav.php'; ?>
+	<?php require $_SERVER['DOCUMENT_ROOT'] . '/assets/includes/elements/nav.php'; ?>
 
 
 	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"

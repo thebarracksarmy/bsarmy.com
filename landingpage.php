@@ -13,7 +13,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/assets/includes/beforeIncludes.php';
 	<meta name="description" content='Improving the barracks one little thing at a time. "It does not take a majority to prevail... but rather an irate, tireless minority, keen on setting brushfires of freedom in the minds of men." - Samuel Adams'>
 	<title>BS Army</title>
 
-	<?php include $_SERVER['DOCUMENT_ROOT'] . '/assets/includes/elements/head.php'; ?>
+	<?php require $_SERVER['DOCUMENT_ROOT'] . '/assets/includes/elements/head.php'; ?>
 
 	<style>
 	.bd-placeholder-img {
@@ -37,7 +37,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/assets/includes/beforeIncludes.php';
 
 <body>
 
-	<?php include $_SERVER['DOCUMENT_ROOT'] . '/assets/includes/elements/nav.php'; ?>
+	<?php require $_SERVER['DOCUMENT_ROOT'] . '/assets/includes/elements/nav.php'; ?>
 
 	<main>
 
@@ -304,17 +304,15 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/assets/includes/beforeIncludes.php';
 <?php
 // Add footer to page
 require_once $_SERVER['DOCUMENT_ROOT'] . '/assets/includes/elements/footer.php';
-?>
 
+// Don't put php closing tag at the end, it can cause problems with redirects and headers?
+require_once $_SERVER['DOCUMENT_ROOT'] . '/assets/includes/afterIncludes.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/assets/includes/db_disconnect.php';
+
+?>
 
 </body>
 
 </html>
 
 
-<?php
-
-require_once $_SERVER['DOCUMENT_ROOT'] . '/assets/includes/afterIncludes.php';
-require_once $_SERVER['DOCUMENT_ROOT'] . '/assets/includes/db_disconnect.php';
-
-?>

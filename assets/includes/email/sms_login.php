@@ -56,7 +56,7 @@ require './SMTP.php';
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\Exception;
 
-if(!isset($_POST['phone_number']) && !empty($_POST['phone_number'])){
+if (!isset($_POST['phone_number']) && !empty($_POST['phone_number'])) {
 	echo "No phone number provided";
 	exit();
 } else {
@@ -85,7 +85,7 @@ $mail->Body = 'Your bsarmy.com login code is: $code. Please use within 5 minutes
 
 var_dump($mail);
 
-if(!$mail->send()){
+if (!$mail->send()) {
     echo "Mailer Error: " . $mail->ErrorInfo;
 }else{
     echo "Message sent!";

@@ -6,7 +6,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/assets/includes/beforeIncludes.php';
 
 
 
-// if(isset($_POST['git_pull']) && $_POST['git_pull'] == 'git_pull') {
+// if (isset($_POST['git_pull']) && $_POST['git_pull']==='git_pull') {
 // 	shell_exec('git pull');
 // 	// Need to use HTTP_CF_CONNECTING_IP because Cloudflare Tunnels works behind a proxy to serve the site
 // 	// https://stackoverflow.com/questions/14985518/cloudflare-and-logging-visitor-ip-addresses-via-in-php
@@ -33,17 +33,14 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/assets/includes/beforeIncludes.php';
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>The Barracks Admin - Main</title>
-	<?php
 
-include_once $_SERVER['DOCUMENT_ROOT'] . '/assets/includes/elements/head.php';
-
-?>
+<?php include_once $_SERVER['DOCUMENT_ROOT'] . '/assets/includes/elements/head.php'; ?>
 
 </head>
 
 <body>
 
-	<?php include $_SERVER['DOCUMENT_ROOT'] . '/assets/includes/elements/nav.php'; ?>
+	<?php require $_SERVER['DOCUMENT_ROOT'] . '/assets/includes/elements/nav.php'; ?>
 
 
 	<form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="POST">

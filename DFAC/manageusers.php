@@ -38,20 +38,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/assets/includes/beforeIncludes.php';
 			<thead>
 				<tr>
 					<?php
-					$column = array(
-						"#",
-						"Username",
-						"Name",
-						"Date Joined",
-						"Last Login",
-						"Phone Number",
-						"SMS Gateway",
-						"Branch",
-						"Duty Station",
-						"Permissions",
-						"Pay Grade",
-						"Opted in to DFAC SMS?"
-					);
+					$column = array("#","Username","Name","Date Joined","Last Login","Phone Number","SMS Gateway","Branch","Duty Station","Permissions","Pay Grade","Opted in to DFAC SMS?");
 
 					foreach ($column as $item) {
 						echo '<th scope="col">' . $item . '</th>';
