@@ -12,5 +12,5 @@ DB Operations: add session token and created date to session_data table
 
 ### Input
 
- -  phone_number: string
+- phone_number: string
 
