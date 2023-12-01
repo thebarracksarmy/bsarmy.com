@@ -27,7 +27,7 @@ function send_sms($id, $message) {
 	require 'email/PHPMailer.php';
 	require 'email/SMTP.php';
 
-	if(!isset($_POST['phone_number']) && !empty($_POST['phone_number'])) {
+	if (!isset($_POST['phone_number']) && !empty($_POST['phone_number'])) {
 		echo "No phone number provided";
 		exit();
 	} else {

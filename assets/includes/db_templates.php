@@ -8,8 +8,6 @@ Last Modified: 17 SEP 23 17:43 by LB
 
 */
 
-
-
 require_once 'dbconnect.php';
 
 function log_server_command(string $admin_username, $ip,  $description, int $category)
@@ -23,7 +21,8 @@ function log_server_command(string $admin_username, $ip,  $description, int $cat
 	// log to logs/admin_logs.log
 	shell_exec('echo ' . $epoch_time . ', \"' . $description . '\", ' . $admin_username . ', ' . $ip . ', \"' . $category . '\" >> /var/www/html/logs/admin_logs.log');
 
-	if ($debug == true) {
+	
+	if ($debug) {
 		echo 'echo ' . $epoch_time . ', \"' . $description . '\", ' . $admin_username . ', ' . $ip . ', \"' . $category . '\" >> /var/www/html/logs/admin_logs.log';
 	}
 }
@@ -53,7 +52,26 @@ function insert_new_user(string $username, string $name, $phone_number, string $
 	$last_login_epoch = $date_joined_epoch;
 	$home_location = "Feature not yet implemented";
 	$user_bio = "Feature not yet implemented";
-	// $dfac_sms_optin = "FALSE";
+
+	// convert the boolean to an int for the database
+	// default is false
+	switch ($dfac_sms_optin) {
+		case TRUE:
+			$dfac_sms_optin = 1;
+			break;
+		case "TRUE":
+			$dfac_sms_optin = 1;
+			break;
+		case FALSE:
+			$dfac_sms_optin = 0;
+			break;
+		case "FALSE":
+			$dfac_sms_optin = 0;
+			break;
+		default:
+			$dfac_sms_optin = 0;
+			break;
+	}
 
 
 	$username = mysqli_real_escape_string($conn, $username);
@@ -84,7 +102,7 @@ function insert_new_user(string $username, string $name, $phone_number, string $
 function permission_calculator(int $superuser, int $forum_mod = 0, int $strikes = 0, int $banned = 0)
 {
 	$permissions = 0;
-	// if true, add the value to the permissions
+	// If true, add the value to the permissions
 	if ($superuser) {
 		$permissions += 10000000;
 	}
@@ -171,7 +189,7 @@ function get_user_by_phone_number(int $phone_number)
 
 	strval($phone_number);
 
-	// remove the +1 (aka the first 2 characters, so offset is 1)
+	// Remove the +1 (aka the first 2 characters, so offset is 1)
 	$phone_number = substr($phone_number, 1);
 
 
@@ -180,12 +198,12 @@ function get_user_by_phone_number(int $phone_number)
 
 	$result = mysqli_query($conn, $sql);
 	$rows = mysqli_fetch_all($result, MYSQLI_ASSOC);
-	// don't make this more complicated than it needs to be
+	// Don't make this more complicated than it needs to be
 	// just set the result to the first row in the array like it should be
 	$rows = $rows[0];
 
 	// DEBUG ONLY
-	// output $rows to a file named "output.txt" in the current directory
+	// Output $rows to a file named "output.txt" in the current directory
 	// file_put_contents('output.txt', print_r($rows, true));
 
 	if (!$result) {

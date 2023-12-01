@@ -44,7 +44,7 @@ $base = "liberty";
 <body>
 	<!-- The navbar won't change so insert it for a more consistant exprience -->
 	<!-- TODO: figure out how to pass the active page to make it aria accessable -->
-	<?php include $_SERVER['DOCUMENT_ROOT'] . '/assets/includes/elements/nav.php'; ?>
+	<?php require $_SERVER['DOCUMENT_ROOT'] . '/assets/includes/elements/nav.php'; ?>
 
 	<section class="py-5 text-center container">
 		<div class="row py-lg-3">
@@ -64,10 +64,11 @@ $base = "liberty";
 					<div class="col">
 
 						<?php
-							$filename = $base . '_' . $full_month . '_' . $year . '.jpg';
-							if(file_exists($_SERVER['DOCUMENT_ROOT'] . '/DFAC/schedules/' . $year . '/' . $month . '/' . $filename)) {
+						$filename = $base . '_' . $full_month . '_' . $year . '.jpg';
+						if (file_exists($_SERVER['DOCUMENT_ROOT'] . '/DFAC/schedules/' . $year . '/' . $month . '/' . $filename))
+						{
 
-								$schedule = <<<EOT
+							$schedule = <<<EOT
 								<a href='/DFAC/schedules/$year/$month/$filename' target="_blank" rel="noopener noreferrer">
 									<img src='/DFAC/schedules/$year/$month/$filename' alt="Fort Liberty, NC DFAC Schedule for date('F Y') " class="img-fluid" />
 								</a>
@@ -78,38 +79,42 @@ $base = "liberty";
 									Download a different format: 
 								EOT;
 
-								echo $schedule;
+							echo $schedule;
 
-									// iterate through each format and output a link to it
-									$formats = ['pdf', 'png', 'jpg'];
+							// iterate through each format and output a link to it
+							$formats = ['pdf', 'png', 'jpg'];
 
-									foreach ($formats as $format) {
-										// Prepare filename
-										$format_upper = strtoupper($format);
-										$base = "liberty";
-										$filename = $base . '_' . $full_month . '_' . $year . '.' . $format;
+							foreach ($formats as $format)
+							{
+								// Prepare filename
+								$format_upper = strtoupper($format);
+								$base = "liberty";
+								$filename = $base . '_' . $full_month . '_' . $year . '.' . $format;
 
-										// Construct link
-										$href = <<<EOT
+								// Construct link
+								$href = <<<EOT
 										<a href="/DFAC/schedules/$year/$month/$filename" target="_blank" rel="noopener noreferrer" class="text-muted"> $format_upper version </a>&middot;
 										EOT;
 
-										// if it's the last element in the array, don't add the middot
-										if ($format == end($formats)) {
-											$href = substr($href, 0, -9);
-										}
+								// if it's the last element in the array, don't add the middot
+								if ($format===end($formats))
+								{
+									$href = substr($href, 0, -9);
+								}
 
 
-										// Output link to page
-										echo $href;
-									}
-
-							} else {
-								echo '<p class="text-muted">Schedule for '. date('F Y') .' not found. Please check back later.<p>';
-								echo '<p class="text-muted">If you believe this is an error, please email <a href="mailto:support@bsarmy.com">support@bsarmy.com</a>.</p>';
+								// Output link to page
+								echo $href;
 							}
-							
-								?>
+
+						}
+						else
+						{
+							echo '<p class="text-muted">Schedule for ' . date('F Y') . ' not found. Please check back later.<p>';
+							echo '<p class="text-muted">If you believe this is an error, please email <a href="mailto:support@bsarmy.com">support@bsarmy.com</a>.</p>';
+						}
+
+						?>
 					</div>
 				</div>
 			</div>
@@ -124,34 +129,40 @@ $base = "liberty";
 				<p class="text-muted">
 					<!-- None at the moment. Check back next month! -->
 					<?php
-						$year = date('Y');
+					$year = date('Y');
 
-						$yearsavaliable = scandir($_SERVER['DOCUMENT_ROOT'] . '/DFAC/schedules/');
-						$monthsavaliable = scandir($_SERVER['DOCUMENT_ROOT'] . '/DFAC/schedules/' . $year .'/');
+					$yearsavaliable = scandir($_SERVER['DOCUMENT_ROOT'] . '/DFAC/schedules/');
+					$monthsavaliable = scandir($_SERVER['DOCUMENT_ROOT'] . '/DFAC/schedules/' . $year . '/');
 
-						// remove the first two elements of the arrays (.) and (..)
-						array_splice($yearsavaliable, 0, 2);
-						array_splice($monthsavaliable, 0, 2);
-						// Remove gen_alt_filetypes.php from the array (always gonna be the last one since it's not a number)
-						array_pop($yearsavaliable);
+					// remove the first two elements of the arrays (.) and (..)
+					array_splice($yearsavaliable, 0, 2);
+					array_splice($monthsavaliable, 0, 2);
 
 
+					// Remove gen_alt_filetypes.php from the array (always gonna be the last one since it's not a number)
+					array_pop($yearsavaliable);
 
-						// sort numerically so we can get the elements before the current month
-						asort($yearsavaliable, SORT_NUMERIC);
-						asort($monthsavaliable, SORT_NUMERIC);
 
-						$monthsbefore = array_pop($monthsavaliable); // remove the current (last in array) month from the array
-											
+					// sort numerically so we can get the elements before the current month
+					asort($yearsavaliable, SORT_NUMERIC);
+					asort($monthsavaliable, SORT_NUMERIC);
+
+
+					$monthsbefore = array_pop($monthsavaliable); // remove the current (last in array) month from the array
+					
+					foreach ($yearsavaliable as $year)
+					{
 						// print_r($monthsavaliable);
-						foreach ($monthsavaliable as $month) {
+						foreach ($monthsavaliable as $month)
+						{
 							// Generate a list for each month with a link to the schedule in each format
 							$monthname = date('F', mktime(0, 0, 0, $month, 10));
 							$monthname = strtolower($monthname);
 							$monthnameNormal = ucfirst($monthname);
-							
+
 							echo "<p>$monthnameNormal $year:</p>";
-							foreach ($formats as $format) {
+							foreach ($formats as $format)
+							{
 								// Prepare filename
 								$format_upper = strtoupper($format);
 								$base = "liberty";
@@ -163,7 +174,8 @@ $base = "liberty";
 								EOT;
 
 								// if it's the last element in the array, don't add the middot
-								if ($format == end($formats)) {
+								if ($format===end($formats))
+								{
 									$href = substr($href, 0, -9);
 								}
 
@@ -172,15 +184,17 @@ $base = "liberty";
 							}
 
 						}
-						?>
+					}
+
+					?>
 				</p>
 			</div>
 		</div>
 	</section>
 	<?php
-			// Add footer to page
-			require_once $_SERVER['DOCUMENT_ROOT'] . '/assets/includes/elements/footer.php';
-		?>
+	// Add footer to page
+	require_once $_SERVER['DOCUMENT_ROOT'] . '/assets/includes/elements/footer.php';
+	?>
 </body>
 
 </html>

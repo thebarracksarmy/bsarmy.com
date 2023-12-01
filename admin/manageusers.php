@@ -31,14 +31,27 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/assets/includes/beforeIncludes.php';
 <body>
 	<!-- The navbar won't change so insert it for a more consistant exprience -->
 	<!-- TODO: #9 figure out how to pass the active page to make it aria accessable -->
-	<?php include $_SERVER['DOCUMENT_ROOT'] . '/assets/includes/elements/nav.php'; ?>
+	<?php require $_SERVER['DOCUMENT_ROOT'] . '/assets/includes/elements/nav.php'; ?>
 
 	<div class="table-responsive">
 		<table class="table container table-hover">
 			<thead>
 				<tr>
 					<?php
-					$column = array("#","Username","Name","Date Joined","Last Login","Phone Number","SMS Gateway","Branch","Duty Station","Permissions","Pay Grade","Opted in to DFAC SMS?");
+					$column = array(
+						"#",
+						"Username",
+						"Name",
+						"Date Joined",
+						"Last Login",
+						"Phone Number",
+						"SMS Gateway",
+						"Branch",
+						"Duty Station",
+						"Permissions",
+						"Pay Grade",
+						"Opted in to DFAC SMS?"
+					);
 
 					foreach ($column as $item) {
 						echo '<th scope="col">' . $item . '</th>';
@@ -69,22 +82,22 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/assets/includes/beforeIncludes.php';
 								$item = '<span class="text-muted">N/A</span>';
 							}
 
-							// if the item is a date, make it human readable, otherwise format it as a phone number
+							// If the item is a date, make it human readable, otherwise format it as a phone number
 							if ($index === 4 || $index === 5) {
 								$item = date('Y-m-d H:i:s', $item);
 							}
 							
 							if ($index === 6) {
-								// get the first digit of the phone number (US country code)
+								// Get the first digit of the phone number (US country code)
 								$countryCode = 1;
 
-								// get the next 3 digits (area code)
+								// Get the next 3 digits (area code)
 								$areaCode = substr($item, 0, 3);
 
-								// get the next 3 digits (prefix)
+								// Get the next 3 digits (prefix)
 								$prefix = substr($item, 3, 3);
 
-								// get the last 4 digits (line number)
+								// Get the last 4 digits (line number)
 								$lineNumber = substr($item, 6, 4);
 								
 								$item = '+' . $countryCode . ' (' . $areaCode . ') ' . $prefix . '-' . $lineNumber;
@@ -96,9 +109,9 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/assets/includes/beforeIncludes.php';
 
 
 							if ($index === 12) {
-								if ($item == 1) {
+								if ($item===1) {
 									$item = 'Yes';
-								} else  if ($item == 0){
+								} else  if ($item===0) {
 									$item = 'No';
 								}
 							}

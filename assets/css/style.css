@@ -23,7 +23,7 @@
 }
 
 .table-hover tr:hover {
-	background-color: rgb(192, 192, 192) !important;
+	background-color: rgb(192 192 192) !important;
 }
 
 /* To allow for a vertical line */
@@ -33,7 +33,7 @@
 /* } */
 
 hr.vertical {
-	width: 0px;
+	width: 0;
 	height: 100%;
 	/* or height in PX */
 }
@@ -52,7 +52,7 @@ hr.vertical {
 }
 
 .btn-outline-dark-green:focus, .btn-outline-dark-green.focus {
-	box-shadow: 0 0 0 0.2rem rgba(32, 73, 60, 0.5);
+	box-shadow: 0 0 0 0.2rem rgb(32 73 60 / 0.5);
 }
 
 .btn-outline-dark-green.disabled, .btn-outline-dark-green:disabled {
@@ -77,7 +77,7 @@ hr.vertical {
 }
 
 .btn-dark-green:focus, .btn-dark-green.focus {
-	box-shadow: 0 0 0 0.2rem rgba(32, 73, 60, 0.5);
+	box-shadow: 0 0 0 0.2rem rgb(32 73 60 / 0.5);
 }
 
 .btn-dark-green.disabled, .btn-dark-green:disabled {
@@ -103,7 +103,7 @@ hr.vertical {
 }
 
 .btn-light-tan:focus, .btn-light-tan.focus {
-	box-shadow: 0 0 0 0.2rem rgba(249, 211, 193, 0.5);
+	box-shadow: 0 0 0 0.2rem rgb(249 211 193 / 0.5);
 }
 
 .btn-light-tan.disabled, .btn-light-tan:disabled {
@@ -130,7 +130,7 @@ hr.vertical {
 }
 
 .btn-outline-light-tan:focus, .btn-outline-light-tan.focus {
-	box-shadow: 0 0 0 0.2rem rgba(249, 211, 193, 0.5);
+	box-shadow: 0 0 0 0.2rem rgb(249 211 193 / 0.5);
 }
 
 .btn-outline-light-tan.disabled, .btn-outline-light-tan:disabled {
