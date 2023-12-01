@@ -7,11 +7,10 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/assets/includes/beforeIncludes.php';
 
 
 if (isset($_POST['username'])) {
-
 	// set values from POST
 	$username = $_POST['username'];
 	// Don't let the fullname be null, but if it is, fix it
-	if (!isset($_POST['fullname']) || empty($_POST['fullname']) || $_POST['fullname'] == "" || $_POST['fullname'] == NULL) {
+	if (!isset($_POST['fullname']) || empty($_POST['fullname']) || $_POST['fullname']==="" || $_POST['fullname']===NULL) {
 		$fullname = $_POST['first_name'] . ' ' . $_POST['last_name'];
 	} else {
 		// Default to the POST value
