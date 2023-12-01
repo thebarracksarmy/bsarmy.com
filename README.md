@@ -47,6 +47,9 @@ This project uses the following technologies:
 ![GitHub](https://img.shields.io/badge/GIT-_?style=for-the-badge&logo=github&label=Github&labelColor=gray&color=gray)
 ![Spectrum Internet](https://img.shields.io/badge/Internet-_?style=for-the-badge&logo=Spectrum&logoColor=blue&label=Spectrum&labelColor=gray&color=gray)
 [![wakatime](https://wakatime.com/badge/user/7e1905d0-e3a0-4cd1-8818-1f7978dac4fb/project/453cd693-0937-4e35-bfef-4835104f677a.svg?style=for-the-badge)](https://wakatime.com/badge/user/7e1905d0-e3a0-4cd1-8818-1f7978dac4fb/project/453cd693-0937-4e35-bfef-4835104f677a)
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/74ba8dce8f3247d79799db9116682f90)](https://app.codacy.com/gh/lucasburlingham/bsarmy.com/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_grade)
+
+
 ## Contact
 
 Please see [CONTACT.md](CONTACT.md) for contact information.
