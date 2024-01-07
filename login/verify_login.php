@@ -1,6 +1,7 @@
 <?php
 
-if(isset($_POST['userid'])) [
+if(isset($_POST['userid'])) {
+	
 	$username = $_POST['userid'];
 
-]
+}
