@@ -10,8 +10,10 @@
 			<!-- bsarmy.com logo -->
 			<img src="/assets/icons/logo.png" height="80px" width="215px" class="rounded"/>
 		</a>
-		<p class="text-body-secondary">© Lucas Burlingham 2023</p>
-		<p class="text-body-secondary">bsarmy.com is not affiliated with the DoD.</p>
+		<p class="text-body-secondary">© Lucas Burlingham 2024</p>
+		<p class="text-body-secondary">bsarmy.com is not affiliated with the US DoD or the US Army.</p>
+		<p class="text-body-secondary">Continued use of this website constitutes acceptance of our <a href="https://bsarmy.com/docs/terms_conditions/" class="text-body-secondary">Terms & Conditions</a>.</p>
+		<p class="text-body-secondary">View our <a href="https://bsarmy.com/docs/privacy/" class="text-body-secondary">Privacy Policy</a>.</p>
 
 	</div>
 
@@ -60,5 +62,7 @@
 			<li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary disabled">About</a></li>
 		</ul>
 	</div>
+	<!-- Trustedsite Certification www.trustedsite.com-->
+	<script type="text/javascript" src="https://cdn.ywxi.net/js/1.js" async></script>
 </footer>
 </div>
