@@ -1,3 +1,0 @@
-[submodule "twilio-php"]
-	path = twilio-php
-	url = https://github.com/twilio/twilio-php
