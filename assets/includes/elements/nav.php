@@ -43,8 +43,25 @@ echo <<<EOT
 if (isset($_SESSION["name"])) {
 	$name = $_SESSION["name"];
 	// If the user is logged in, show the account related links
+
+	$greetings = [
+	 "Hello $name",
+	 "Hi $name",
+	 "Hey $name",
+	 "How are we doing today, $name ?",
+	 "Welcome back, $name.",
+	 "Good to see you again, $name.",
+	 "Hey there, $name.",
+	 "Remember to stay hydrated, $name.",
+	 "Is that a smile I see, $name ?",
+	 "Heyyyy $name. How's it going ?",
+	 "Heyyyy $name. 🧦 on.",
+	];
+
+	$randomGreeting = $greetings[rand(0, count($greetings) - 1)];
+
 	echo <<<EOT
-						<p class="text-white">Hello, $name</p>
+						<p class="text-white">$randomGreeting</p>
 						<a href="/account/" class="btn btn-outline-light-tan">Account</a>
 						<a href="/logout/" class="btn btn-outline-light-tan">Logout</a>
 		EOT;
