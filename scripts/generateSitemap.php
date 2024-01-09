@@ -1,6 +1,7 @@
 <?php
 
 // Generate sitemap from the root directory of the website
+// Downloads it as sitemap.xml
 
 $pages = [
 	"/",
