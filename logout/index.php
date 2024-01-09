@@ -40,6 +40,13 @@ unset($_SESSION);
 		// Add footer to page
 		require_once $_SERVER['DOCUMENT_ROOT'] . '/assets/includes/elements/footer.php';
 	?>
+
+	<script>
+		// Redirect to home page after 5 seconds
+		setTimeout(function () {
+			window.location.href = "/index.php?logout=true";
+		}, 5000);
+	</script>
 </body>
 
 </html>
