@@ -9,7 +9,6 @@ Building the Barracks up, improving the QOL for everyone, making the B's a bette
 - [x] Create landing page with basic information about the project and how to get involved
 - [x] Create a basic structure for the project and vote on what features to implement first
 - [x] Create the first feature: DFAC schedule and map for Fort Liberty, NC
- - [ ] Generate JSON files for each DFAC and load them into the page
 - [x] Add login feature
 - [ ] Create the second feature: Event calendar for Fort Liberty, NC
 
@@ -35,7 +34,7 @@ Use our [suggestion form](https://forms.gle/F9c7CEvEkwV6TbZNA) to submit suggest
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details. Additional licenses may apply to data/code used in this project. See the [licenses](licenses/) directory for more information.
+This project is licensed under the MIT License - see the [LICENSE.md](.github/LICENSE.md) file for details. Additional licenses may apply to data/code used in this project. See the [licenses](licenses/) directory for more information.
 
 ## Acknowledgements
 
@@ -52,4 +51,4 @@ This project uses the following technologies:
 
 ## Contact
 
-Please see [CONTACT.md](CONTACT.md) for contact information.
+Please see [CONTACT.md](.github/CONTACT.md) for contact information.
