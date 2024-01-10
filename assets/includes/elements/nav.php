@@ -21,19 +21,11 @@ echo <<<EOT
 				<div class="row">
 					<div class="col-sm-8 col-md-7 py-4">
 						<h4 class="text-white">Links</h4>
-<<<<<<< HEAD
 						<ul class="list-unstyled">
 							<li class="text-white"><a href="/DFAC/">DFAC Schedule</a></li>
 							<li class="text-white"><a href="https://www.armyresilience.army.mil/sharp/" target="_blank">Army SHARP</a></li>
 							<li class="text-white"><a href="https://www.smdc.army.mil/RESOURCES/EO/" target="_blank">Army EO</a></li>
 							<li class="text-white"><a href="https://www.armyresilience.army.mil/suicide-prevention/pages/iWantToHelpSomeone.html" target="_blank">Suicide Hotline (Or call 988, press 1)</a></li>
-=======
-						<ul style="list-style: none;" class="text-white">
-							<li><a href="/DFAC/">DFAC Schedule</a></li>
-							<li><a href="https://www.armyresilience.army.mil/sharp/" target="_blank">Army SHARP</a></li>
-							<li><a href="https://www.smdc.army.mil/RESOURCES/EO/" target="_blank">Army EO</a></li>
-							<li><a href="https://www.armyresilience.army.mil/suicide-prevention/pages/iWantToHelpSomeone.html" target="_blank">Suicide Hotline (Or call 988, press 1)</a></li>
->>>>>>> 29d6e529f294a4593b7dadbea15f784a67a5d384
 						</ul>
 					</div>
 					<div class="col-sm-4 offset-md-1 py-4">
@@ -53,6 +45,8 @@ echo <<<EOT
 						<hr>
 
 	EOT;
+
+	
 if (isset($_SESSION["name"])) {
 	$name = $_SESSION["name"];
 	// If the user is logged in, show the account related links
