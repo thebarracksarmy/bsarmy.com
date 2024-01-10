@@ -21,7 +21,7 @@ echo <<<EOT
 				<div class="row">
 					<div class="col-sm-8 col-md-7 py-4">
 						<h4 class="text-white">Links</h4>
-						<ul style="list-style: none;">
+						<ul style="list-style: none;" class="text-white">
 							<li><a href="/DFAC/">DFAC Schedule</a></li>
 							<li><a href="https://www.armyresilience.army.mil/sharp/" target="_blank">Army SHARP</a></li>
 							<li><a href="https://www.smdc.army.mil/RESOURCES/EO/" target="_blank">Army EO</a></li>
