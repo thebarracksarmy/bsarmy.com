@@ -53,7 +53,7 @@ Running on a LAMP stack in 2023. Go figure.
 ### Clone the repository
 
 ```bash
-git clone https://github.com/lucasburlingham/bsarmy.com
+git clone https://github.com/bsarmy-com/bsarmy.com
 cd bsarmy.com
 code .
 ```
