@@ -2,9 +2,15 @@
 
 require_once $_SERVER['DOCUMENT_ROOT'] . '/assets/includes/beforeIncludes.php';
 
+if(isset($_GET['logout']) && $_GET['logout'] == 'true') {
+	session_destroy();
+	header("Location: /");
+
+}
+
 ?>
 
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -44,7 +50,18 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/assets/includes/beforeIncludes.php';
 		<section class="py-5 text-center container">
 			<div class="row py-lg-5">
 				<div class="col-lg-6 col-md-8 mx-auto">
-					<h1 class="font-weight-bold">Improving the barracks one little thing at a time. </h1>
+
+				<?php
+					$randomTagline = [
+						"one little thing",
+						"one soldier",
+						"one papercut",
+						"one station",
+					];
+
+					$randomTagline = $randomTagline[rand(0, count($randomTagline) - 1)];
+				?>
+					<h1 class="font-weight-bold">Improving the barracks <?php echo $randomTagline; ?> at a time. </h1>
 					<p class="lead text-muted">"It does not take a majority to prevail... but rather an irate, tireless minority, keen on setting brushfires of freedom in the minds of men." - Samuel Adams</p>
 					<small>Mmmmm, warm brushfires.</small>
 					<p>

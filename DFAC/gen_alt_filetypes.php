@@ -8,9 +8,11 @@ $month = date('m'); // eg. 10
 $year = date('Y'); // 2023
 
 echo "month: $month<br>";
+echo "full_month: $full_month<br>";
 echo "year: $year<br>";
 
-$dir = __dir__ . "/$year/$month/";
+
+$dir = __DIR__ . "/schedules/$year/$month/";
 echo "dir: $dir<br>";
 
 
@@ -34,17 +36,21 @@ $format_not_found = [];
 $formats_needed = ['jpg', 'png', 'pdf'];
 
 // Check for schedules in each format
-foreach ($formats_needed as $format ) {
+foreach ($formats_needed as $format)
+{
 	// Must be $full_month
 	$pattern = "/^liberty_$full_month\w{0,}_$year\.$format$/i";
 	$matches = preg_grep($pattern, $files);
 
 	// If there are schedules for the current month in the currently being checked format
-	if (!empty($matches)) {
+	if (!empty($matches))
+	{
 		echo "Schedule for the current month found in $format format.<br>";
 
-	// Add $format to the array named format_not_found because it was not found
-	} else {
+		// Add $format to the array named format_not_found because it was not found
+	}
+	else
+	{
 		echo "No schedules for the current month in $format format found.<br>";
 
 		// Add $format to the array named format_not_found
@@ -56,16 +62,21 @@ foreach ($formats_needed as $format ) {
 // echo count($format_not_found);
 
 // If there are missing formats, then generate them from the existing schedule found
-if (count($formats_needed)===0) {
+if (count($formats_needed) === 0)
+{
 	echo "No schedules for the current month found in any format.<br>";
 
-// If all formats are found
-} elseif (count($format_not_found)===count($formats_needed)) {
+	// If all formats are found
+}
+elseif (count($format_not_found) === count($formats_needed))
+{
 	echo "Schedules for the current month found in all formats.<br>";
 
 	// If there are missing formats, then generate them from the existing schedule found
-} else {
-	
+}
+else
+{
+
 	echo "Schedules for the current month found in at least one format. Generating missing formats...<br>";
 
 	// get the name of the schedule files that were found
@@ -78,34 +89,35 @@ if (count($formats_needed)===0) {
 	print_r($format_not_found);
 	echo "<br>";
 
-	foreach ($format_not_found as $format) {
+	foreach ($format_not_found as $format)
+	{
 		// get the first format found (probably JPG)
 		$from_format = $formats_found[0];
 
-		$convert_command = 'convert -quality 100 '. $dir . 'liberty_' . $full_month . '_' . $year . '.' . $from_format . ' ' . $dir . 'liberty_' . $full_month . '_' . $year . '.' . $format; 
-		
+		$convert_command = 'convert -quality 100 ' . $dir . 'liberty_' . $full_month . '_' . $year . '.' . $from_format . ' ' . $dir . 'liberty_' . $full_month . '_' . $year . '.' . $format;
+
 		echo "Convert command: $convert_command<br>";
 
 		$status = shell_exec($convert_command);
 
-		if ($status) {
+		if ($status)
+		{
 			echo "Successfully converted schedule to $format format.<br>";
-		} else {
+		}
+		else
+		{
 			echo "Failed to convert schedule to $format format.<br>";
 		}
-		// Reload the page when finished
-		header("Refresh:0");
 	}
-	
 }
 
 
 // TODO: #10 if there are no schedules for the current month, then email the head of bsarmy.com at support@bsarmy 
 // if (count($files)===0) {
-// 	$to = "support@bsarmy.com";
-// 	$subject = "No schedules found for the current month";
-// 	$message = "Dear Head of bsarmy.com,\n\nNo schedules were found for the current month. Please generate the schedules as soon as possible.\n\nBest regards,\nYour Name";
-// 	$headers = "From: your-email@example.com";
+//      $to = "support@bsarmy.com";
+//      $subject = "No schedules found for the current month";
+//      $message = "Dear Head of bsarmy.com,\n\nNo schedules were found for the current month. Please generate the schedules as soon as possible.\n\nBest regards,\nYour Name";
+//      $headers = "From: your-email@example.com";
 
-// 	mail($to, $subject, $message, $headers);
+//      mail($to, $subject, $message, $headers);
 // }

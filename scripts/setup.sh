@@ -61,7 +61,7 @@ fi
 
 # Install dependencies
 apt-get update
-apt-get install -y apache2 php mysql-server mysql php-mysql php-curl curl wget git ufw
+apt-get install -y apache2 php mysql-server mysql php-mysql php-curl curl wget git ufw imagemagick
 echo "--- 1: Installed dependencies..."
 
 # --- Install and configure cloudflared

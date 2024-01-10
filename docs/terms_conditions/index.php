@@ -6,7 +6,7 @@
 
 <head>
 
-	<title>Register - The Barracks</title>
+	<title>Terms & Conditions - The Barracks</title>
 
 	<!-- Use includes to insert snippets of code that will be reused in every page -->
 	<?php include_once $_SERVER['DOCUMENT_ROOT'] . '/assets/includes/elements/head.php'; ?>
@@ -19,20 +19,17 @@
 
 	<!-- All Content -->
 
-	<!-- Register headline -->
-
-
 	<div class="container">
 		<div class="mt-4 p-5 bg-dark-green text-white rounded">
 		<h1>The Barracks | Terms & Conditions</h1>
 	</div>
-	<p class="text-muted fst-italic my-3">Last Updated: 23 September 2023</p>
+	<p class="text-muted fst-italic my-3">Last Updated: 09 January 2023</p>
 	<p>These Terms and Conditions ("Terms") govern your use of the website <a href="https://bsarmy.com/" target="_blank" rel="noopener noreferrer">bsarmy.com</a> and it's supporting subdomains and services, (the "Website"), 
 	owned and operated by Lucas Burlingham and company ("we," "us," or "our"). By accessing or using the Website, you agree to comply with and be bound by these Terms. If you do not agree to these Terms, please do not use the Website.</p>
 	<h6>1. Use of the Website</h6>
 	<p>1.1. You must be at least 17 years old to use this Website.</p>
 	<p>1.2. You agree to use the Website for lawful purposes and in accordance with these Terms, as well as any applicable laws and regulations.</p> 
-	<p>1.3 You are responsible for maintaining the confidentiality of your account and password and for restricting access to your computer or 3.device to prevent unauthorized access to your account.</p>
+	<p>1.3 You are responsible for maintaining the confidentiality of your account and for restricting access to your computer or device to prevent unauthorized access to your account. The login system for this site uses SMS messaging, which requires a cellular device. You are responsible for keeping said cellular device secure.</p>
 	<h6>2. Intellectual Property</h6>
 	<p>2.1. The content, design, graphics, and logos on this Website are protected by copyright and other intellectual property rights owned by us or our licensors.</p>
 	<p>2.2. You may not use, reproduce, distribute, or create derivative works based on the content of this Website without our prior written consent.</p>
@@ -62,7 +59,5 @@
 	?>
 
 </body>
-
-
 
 </html>

@@ -21,11 +21,19 @@ echo <<<EOT
 				<div class="row">
 					<div class="col-sm-8 col-md-7 py-4">
 						<h4 class="text-white">Links</h4>
+<<<<<<< HEAD
 						<ul class="list-unstyled">
 							<li class="text-white"><a href="/DFAC/">DFAC Schedule</a></li>
 							<li class="text-white"><a href="https://www.armyresilience.army.mil/sharp/" target="_blank">Army SHARP</a></li>
 							<li class="text-white"><a href="https://www.smdc.army.mil/RESOURCES/EO/" target="_blank">Army EO</a></li>
 							<li class="text-white"><a href="https://www.armyresilience.army.mil/suicide-prevention/pages/iWantToHelpSomeone.html" target="_blank">Suicide Hotline (Or call 988, press 1)</a></li>
+=======
+						<ul style="list-style: none;" class="text-white">
+							<li><a href="/DFAC/">DFAC Schedule</a></li>
+							<li><a href="https://www.armyresilience.army.mil/sharp/" target="_blank">Army SHARP</a></li>
+							<li><a href="https://www.smdc.army.mil/RESOURCES/EO/" target="_blank">Army EO</a></li>
+							<li><a href="https://www.armyresilience.army.mil/suicide-prevention/pages/iWantToHelpSomeone.html" target="_blank">Suicide Hotline (Or call 988, press 1)</a></li>
+>>>>>>> 29d6e529f294a4593b7dadbea15f784a67a5d384
 						</ul>
 					</div>
 					<div class="col-sm-4 offset-md-1 py-4">
@@ -48,8 +56,25 @@ echo <<<EOT
 if (isset($_SESSION["name"])) {
 	$name = $_SESSION["name"];
 	// If the user is logged in, show the account related links
+
+	$greetings = [
+	 "Hello $name",
+	 "Hi $name",
+	 "Hey $name",
+	 "How are we doing today, $name ?",
+	 "Welcome back, $name.",
+	 "Good to see you again, $name.",
+	 "Hey there, $name.",
+	 "Remember to stay hydrated, $name.",
+	 "Is that a smile I see, $name ?",
+	 "Heyyyy $name. How's it going ?",
+	 "Heyyyy $name. 🧦 on.",
+	];
+
+	$randomGreeting = $greetings[rand(0, count($greetings) - 1)];
+
 	echo <<<EOT
-						<p class="text-white">Hello, $name</p>
+						<p class="text-white">$randomGreeting</p>
 						<a href="/account/" class="btn btn-outline-light-tan">Account</a>
 						<a href="/logout/" class="btn btn-outline-light-tan">Logout</a>
 		EOT;
