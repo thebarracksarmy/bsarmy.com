@@ -4,8 +4,28 @@ $cacheVersion = time();
 
 // For production, remove ?$cacheVersion from the end of each link so we don't use up unnecessary bandwidth
 
-
+// These variables aren't found in this file, but are defined before including this file on each page
 echo <<<EOT
+	<!-- Meta tags -->
+	<!-- Cache version is used to force the browser to reload the page when the cache version changes,
+	though it probably doesn't matter all that much because Cloudflare does its own caching for us -->
+	<meta name="cache-version" content="$cacheVersion">
+
+	<!-- Required by Bootstrap (https://getbootstrap.com/docs/5.3/getting-started/introduction/) -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<meta name="description" content='$description'>
+	<title>$title</title>
+
+	<!-- Open Graph (https://ogp.me/) -->
+	<meta property="og:title" content="$title" />
+	<meta property="og:url" content="$url" />
+	<meta property="og:type" content="$type" />
+	<meta property="og:description" content='$description' />
+	<meta property="og:locale" content="en_US" />
+	<meta property="og:image:secure_url" content="$image" />
+
 
 	<!-- Google tag (gtag.js) -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=G-TRJJPB1GC1"></script>
@@ -17,9 +37,7 @@ echo <<<EOT
 	gtag('config', 'G-TRJJPB1GC1');
 	</script>
 
-	<!-- Required by Bootstrap (https://getbootstrap.com/docs/5.3/getting-started/introduction/) -->
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+
 
 	<!-- PWA (https://web.dev/progressive-web-apps/) -->
 	<link rel="manifest" href="/manifest.json">
@@ -65,17 +83,14 @@ echo <<<EOT
 	<link rel="icon" type="image/png" sizes="96x96" href="/assets/icons/favicon-96x96.png">
 	<link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16.png">
 
-
 	<link rel="manifest" href="/assets/icons/manifest.json">
+
 
 	<!-- For Microsoft Edge -->
 	<meta name="msapplication-TileColor" content="#f9d3c1">
 	<meta name="msapplication-TileImage" content="/assets/icons/ms-icon-144x144.png">
 	<meta name="theme-color" content="#20493c">
 
-
-	<!-- Meta -->
-	<meta name="cache-version" content="$cacheVersion">
 
 	<!-- FontAwesome 6.2.0 CSS -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
