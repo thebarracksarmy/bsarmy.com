@@ -5,8 +5,13 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/assets/includes/beforeIncludes.php';
 if(isset($_GET['logout']) && $_GET['logout'] == 'true') {
 	session_destroy();
 	header("Location: /");
-
 }
+
+$title = "The Barracks Army | Home";
+$url = "https://bsarmy.com/";
+$type = "website";
+$description = 'Improving the barracks one little thing at a time. "It does not take a majority to prevail... but rather an irate, tireless minority, keen on setting brushfires of freedom in the minds of men." - Samuel Adams';
+$image = "https://bsarmy.com/images/bsarmy.com_og:image.jpeg";
 
 ?>
 
@@ -14,11 +19,6 @@ if(isset($_GET['logout']) && $_GET['logout'] == 'true') {
 <html lang="en">
 
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content='Improving the barracks one little thing at a time. "It does not take a majority to prevail... but rather an irate, tireless minority, keen on setting brushfires of freedom in the minds of men." - Samuel Adams'>
-	<title>BS Army</title>
-
 	<?php require $_SERVER['DOCUMENT_ROOT'] . '/assets/includes/elements/head.php'; ?>
 
 	<style>

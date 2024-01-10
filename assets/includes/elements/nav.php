@@ -45,6 +45,8 @@ echo <<<EOT
 						<hr>
 
 	EOT;
+
+	
 if (isset($_SESSION["name"])) {
 	$name = $_SESSION["name"];
 	// If the user is logged in, show the account related links
