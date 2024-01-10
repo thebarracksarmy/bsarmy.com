@@ -6,7 +6,7 @@
 
 <head>
 
-	<title>Register - The Barracks</title>
+	<title>Privacy Policy - The Barracks</title>
 
 	<!-- Use includes to insert snippets of code that will be reused in every page -->
 	<?php include_once $_SERVER['DOCUMENT_ROOT'] . '/assets/includes/elements/head.php'; ?>
