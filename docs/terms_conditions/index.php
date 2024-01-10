@@ -6,7 +6,7 @@
 
 <head>
 
-	<title>Register - The Barracks</title>
+	<title>Terms & Conditions - The Barracks</title>
 
 	<!-- Use includes to insert snippets of code that will be reused in every page -->
 	<?php include_once $_SERVER['DOCUMENT_ROOT'] . '/assets/includes/elements/head.php'; ?>
@@ -18,9 +18,6 @@
 	<?php require $_SERVER['DOCUMENT_ROOT'] . '/assets/includes/elements/nav.php'; ?>
 
 	<!-- All Content -->
-
-	<!-- Register headline -->
-
 
 	<div class="container">
 		<div class="mt-4 p-5 bg-dark-green text-white rounded">
@@ -62,7 +59,5 @@
 	?>
 
 </body>
-
-
 
 </html>
