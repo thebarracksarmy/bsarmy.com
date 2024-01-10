@@ -21,7 +21,12 @@ echo <<<EOT
 				<div class="row">
 					<div class="col-sm-8 col-md-7 py-4">
 						<h4 class="text-white">Links</h4>
-						<a href="/DFAC/">DFAC Schedule</a>
+						<ul class="list-unstyled">
+							<li class="text-white"><a href="/DFAC/">DFAC Schedule</a></li>
+							<li class="text-white"><a href="https://www.armyresilience.army.mil/sharp/" target="_blank">Army SHARP</a></li>
+							<li class="text-white"><a href="https://www.smdc.army.mil/RESOURCES/EO/" target="_blank">Army EO</a></li>
+							<li class="text-white"><a href="https://www.armyresilience.army.mil/suicide-prevention/pages/iWantToHelpSomeone.html" target="_blank">Suicide Hotline (Or call 988, press 1)</a></li>
+						</ul>
 					</div>
 					<div class="col-sm-4 offset-md-1 py-4">
 						<h4 class="text-white">Contact</h4>
