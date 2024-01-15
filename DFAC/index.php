@@ -21,6 +21,15 @@ DFAC event system (aka Taco Tuesday, Pizza Friday, etc.)
 
 // require_once $_SERVER['DOCUMENT_ROOT'] . '/assets/includes/db_templates.php';
 
+$description = "View the monthly schedule for the Fort Liberty, NC DFAC.";
+$title = "DFAC Schedules | THE BARRACKS";
+$url = "https://bsarmy.com/DFAC/";
+$image = "";
+$type = "article";
+
+
+
+
 require_once $_SERVER['DOCUMENT_ROOT'] . '/assets/includes/beforeIncludes.php';
 
 $full_month = strtolower(date('F'));
