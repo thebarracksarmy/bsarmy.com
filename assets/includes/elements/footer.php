@@ -33,11 +33,14 @@
 	</div>
 
 	<div class="col mb-3">
-		<h5>DFAC</h5>
+		<h5>Facilities</h5>
 		<ul class="nav flex-column">
 			<li class="nav-item mb-2">
 				<a href="https://bsarmy.com/dfac/" class="nav-link p-0 text-body-secondary" rel="noopener noreferrer">
-					<?php echo date('F Y'); ?> Schedule
+					<?php echo date('F Y'); ?> DFAC Schedule
+				</a>
+				<a href="https://bsarmy.com/gyms/" class="nav-link p-0 text-body-secondary" rel="noopener noreferrer">
+					Fitness Centers
 				</a>
 			</li>
 	<!-- <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Features</a></li>
