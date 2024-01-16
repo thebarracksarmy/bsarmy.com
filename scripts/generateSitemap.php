@@ -5,7 +5,7 @@
 
 $pages = [
 	"/",
-	"/DFAC/",
+	"/dfac/",
 	"/login/",
 	"/register/",
 	"/docs/terms_conditions/"
