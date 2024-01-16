@@ -65,7 +65,7 @@ $image = "https://bsarmy.com/images/bsarmy.com_og:image.jpeg";
 					<p class="lead text-muted">"It does not take a majority to prevail... but rather an irate, tireless minority, keen on setting brushfires of freedom in the minds of men." - Samuel Adams</p>
 					<small>Mmmmm, warm brushfires.</small>
 					<p>
-						<a href="https://github.com/lucasburlingham/bsarmy.com/" target="_blank" rel="noopener noreferrer"
+						<a href="https://github.com/bsarmy-com/bsarmy.com/" target="_blank" rel="noopener noreferrer"
 							class="btn btn-light-tan my-2">See our progress!</a>
 						<a href="https://forms.gle/F9c7CEvEkwV6TbZNA" class="btn btn-dark-green my-2" target="_blank" rel="noopener noreferrer">Suggestion form</a>
 					</p>

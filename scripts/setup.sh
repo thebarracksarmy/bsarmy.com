@@ -113,7 +113,7 @@ mysql -u root > mysql_build_files/bsarmy_main.sql
 echo "--- 5: Configured MySQL and imported database..."
 
 # get the latest source code
-git clone --recurse-submodules https://github.com/lucasburlingham/bsarmy.com.git /var/www/bsarmy.com
+git clone --recurse-submodules https://github.com/bsarmy-com/bsarmy.com.git /var/www/bsarmy.com
 echo "--- 5: Cloned bsarmy.com into /var/www/bsarmy.com with submodules..."
 
 # set permissions

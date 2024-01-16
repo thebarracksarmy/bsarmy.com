@@ -53,7 +53,7 @@
 		<ul class="nav flex-column">
 			<li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Submit an Issue</a></li>
 			<li class="nav-item mb-2">
-				<a href="https://github.com/lucasburlingham/bsarmy.com/" class="nav-link p-0 text-body-secondary">
+				<a href="https://github.com/bsarmy-com/bsarmy.com/" class="nav-link p-0 text-body-secondary">
 					Start Contributing on <i class="fa-brands fa-github" alt="GitHub"></i>
 				</a>
 			</li>
