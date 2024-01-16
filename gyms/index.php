@@ -87,7 +87,8 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/assets/includes/beforeIncludes.php';
 							<br>
 							<iframe
 								src="https://www.google.com/maps/d/embed?mid=19j9dt5PQQZ4MPFa1LUQyK4zLspGdSs8&ehbc=2E312F&noprof=1"
-								width="640" height="480"></iframe>
+								width="640" height="480">
+							</iframe>
 
 								<!-- Yes I know its "deprecated", but still works. Suck it. -->
 								<noframes>
@@ -105,3 +106,18 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/assets/includes/beforeIncludes.php';
 			</div>
 		</div>
 	</section>
+	
+	<?php
+	// Add footer to page
+	require_once $_SERVER['DOCUMENT_ROOT'] . '/assets/includes/elements/footer.php';
+	?>
+</body>
+
+</html>
+
+<?php
+
+require_once $_SERVER['DOCUMENT_ROOT'] . '/assets/includes/afterIncludes.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/assets/includes/db_disconnect.php';
+
+?>

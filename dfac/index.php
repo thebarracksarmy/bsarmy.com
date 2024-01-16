@@ -21,9 +21,9 @@ DFAC event system (aka Taco Tuesday, Pizza Friday, etc.)
 
 // require_once $_SERVER['DOCUMENT_ROOT'] . '/assets/includes/db_templates.php';
 
-$description = "View the monthly schedule for the Fort Liberty, NC DFAC.";
+$description = "View the monthly schedule for the Fort Liberty, NC DFACs.";
 $title = "DFAC Schedules | THE BARRACKS";
-$url = "https://bsarmy.com/DFAC/";
+$url = "https://bsarmy.com/dfac/";
 $image = "";
 $type = "article";
 
@@ -66,9 +66,9 @@ $base = "liberty";
 			</h3>
 			<!-- Show JPG version of schedule for the current month -->
 			<!-- Image name syntax is as follows: -->
-			<!-- /DFAC/schedules/YYYY/MMM/liberty_mmmmm_yyyy.jpg -->
-			<!-- /DFAC/schedules/YYYY/MMM/liberty_mmmmm_yyyy.pdf -->
-			<!-- /DFAC/schedules/YYYY/MMM/liberty_mmmmm_yyyy.png -->
+			<!-- /dfac/schedules/YYYY/MMM/liberty_mmmmm_yyyy.jpg -->
+			<!-- /dfac/schedules/YYYY/MMM/liberty_mmmmm_yyyy.pdf -->
+			<!-- /dfac/schedules/YYYY/MMM/liberty_mmmmm_yyyy.png -->
 
 			<div class="container">
 				<div class="row">
@@ -77,11 +77,11 @@ $base = "liberty";
 						<?php
 						$filename = $base . '_' . $full_month . '_' . $year . '.jpg';
 
-						if (file_exists($_SERVER['DOCUMENT_ROOT'] . '/DFAC/schedules/' . $year . '/' . $month . '/' . $filename)) {
+						if (file_exists($_SERVER['DOCUMENT_ROOT'] . '/dfac/schedules/' . $year . '/' . $month . '/' . $filename)) {
 
 							$schedule = <<<EOT
-								<a href='/DFAC/schedules/$year/$month/$filename' target="_blank" rel="noopener noreferrer">
-									<img src='/DFAC/schedules/$year/$month/$filename' alt="Fort Liberty, NC DFAC Schedule for date('F Y') " class="img-fluid" />
+								<a href='/dfac/schedules/$year/$month/$filename' target="_blank" rel="noopener noreferrer">
+									<img src='/dfac/schedules/$year/$month/$filename' alt="Fort Liberty, NC DFAC Schedule for date('F Y') " class="img-fluid" />
 								</a>
 								<!-- Show links to download different versions -->
 								<br>
@@ -104,7 +104,7 @@ $base = "liberty";
 
 								// Construct link
 								$href = <<<EOT
-										<a href="/DFAC/schedules/$year/$month/$filename" target="_blank" rel="noopener noreferrer" class="text-muted"> $format_upper version </a>&middot;
+										<a href="/dfac/schedules/$year/$month/$filename" target="_blank" rel="noopener noreferrer" class="text-muted"> $format_upper version </a>&middot;
 										EOT;
 
 								// if it's the last element in the array, don't add the middot
@@ -141,8 +141,8 @@ $base = "liberty";
 					<?php
 					// $year = date('Y');
 					// echo "before<br>";
-					// $yearsavaliable = scandir($_SERVER['DOCUMENT_ROOT'] . '/DFAC/schedules/');
-					// $monthsavaliable = scandir($_SERVER['DOCUMENT_ROOT'] . '/DFAC/schedules/' . $year . '/');
+					// $yearsavaliable = scandir($_SERVER['DOCUMENT_ROOT'] . '/dfac/schedules/');
+					// $monthsavaliable = scandir($_SERVER['DOCUMENT_ROOT'] . '/dfac/schedules/' . $year . '/');
 
 					// echo var_dump($yearsavaliable);
 					// echo "<br>";
@@ -193,7 +193,7 @@ $base = "liberty";
 
 					// 			// Construct link
 					// 			$href = <<<EOT
-					// 			<a href="/DFAC/schedules/$year/$month/$filename" target="_blank" rel="noopener noreferrer" class="text-muted"> $format_upper version </a>&middot;
+					// 			<a href="/dfac/schedules/$year/$month/$filename" target="_blank" rel="noopener noreferrer" class="text-muted"> $format_upper version </a>&middot;
 					// 			EOT;
 
 					// 			// if it's the last element in the array, don't add the middot
@@ -248,11 +248,11 @@ $base = "liberty";
 						return $allData;
 					}
 					// Don't include the ending / in the directory name
-					$allFiles = scanDirectories($_SERVER['DOCUMENT_ROOT'] . '/DFAC/schedules');
+					$allFiles = scanDirectories($_SERVER['DOCUMENT_ROOT'] . '/dfac/schedules');
 
 					foreach ($allFiles as $path) {
 
-						// Remove the first /DFAC/schedules/ from the path
+						// Remove the first /dfac/schedules/ from the path
 						$path = substr($path, 24);
 
 						unset($link);
