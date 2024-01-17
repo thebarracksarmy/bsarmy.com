@@ -2,6 +2,11 @@
 
 $cacheVersion = time();
 
+if(!isset($page_title)) { $page_title = "BSArmy"; }
+if(!isset($description)) { $description = "The Barracks Army - Improving the barracks one little thing at a time."; }
+if(!isset($image)) { $image = ""; }
+if(!isset($url)) { $url = "https://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";}
+
 // For production, remove ?$cacheVersion from the end of each link so we don't use up unnecessary bandwidth
 
 // These variables aren't found in this file, but are defined before including this file on each page
@@ -47,10 +52,12 @@ echo <<<EOT
 		integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"
 		integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/"
-		crossorigin="anonymous"></script>
-	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+		crossorigin="anonymous">
+	</script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js/dist/umd/popper.min.js"
 		integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-		crossorigin="anonymous"></script>
+		crossorigin="anonymous">
+	</script>
 
 		
 	<!-- htmx (https://htmx.org/)-->

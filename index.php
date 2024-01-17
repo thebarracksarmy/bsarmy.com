@@ -78,7 +78,7 @@ $image = "https://bsarmy.com/images/bsarmy.com_og:image.jpeg";
 						So far, this site includes:	
 					</h3>
 					<ul class="list-group mx-1">
-						<a class="list-group-item active" href="/DFAC/">
+						<a class="list-group-item active" href="/dfac/">
 							DFAC Schedule for <?php echo date('F Y'); ?> <i class="fa-solid fa-arrow-right"></i>
 						</a>
 						<a class="list-group-item text-dark" href="/register/">

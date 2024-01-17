@@ -36,7 +36,7 @@
 		<h5>DFAC</h5>
 		<ul class="nav flex-column">
 			<li class="nav-item mb-2">
-				<a href="https://bsarmy.com/DFAC/" class="nav-link p-0 text-body-secondary" rel="noopener noreferrer">
+				<a href="https://bsarmy.com/dfac/" class="nav-link p-0 text-body-secondary" rel="noopener noreferrer">
 					<?php echo date('F Y'); ?> Schedule
 				</a>
 			</li>
