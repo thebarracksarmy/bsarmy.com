@@ -1,5 +1,6 @@
 <?php
 
+
 echo <<<EOT
 
 
@@ -20,13 +21,26 @@ echo <<<EOT
 			<div class="container">
 				<div class="row">
 					<div class="col-sm-8 col-md-7 py-4">
-						<h4 class="text-white">Links</h4>
-						<ul style="list-style: none;" class="text-white">
-							<li class="text-white"><a href="/DFAC/">DFAC Schedule</a></li>
-							<li class="text-white"><a href="https://www.armyresilience.army.mil/sharp/" target="_blank">Army SHARP</a></li>
-							<li class="text-white"><a href="https://www.smdc.army.mil/RESOURCES/EO/" target="_blank">Army EO</a></li>
-							<li class="text-white"><a href="https://www.armyresilience.army.mil/suicide-prevention/pages/iWantToHelpSomeone.html" target="_blank">Suicide Hotline (Or call 988, press 1)</a></li>
-						</ul>
+						<div class="container-fluid">
+							<div class="row">
+								<div class="col">
+									<h4 class="text-white">Links</h4>
+									<!-- <ul style="list-style: none;" class="text-white list-group list-group-flush"> -->
+										<li class="text-white list-group-item"><a href="/dfac/">DFAC Schedule</a></li>
+										<li class="text-white list-group-item"><a href="/gyms/">Fitness Centers</a></li>
+										<!-- </ul> -->
+								</div>
+								<div class="col">
+									<h4 class="text-white">Resources</h4>
+									<li class="text-white list-group-item"><a href="https://www.armyresilience.army.mil/sharp/" target="_blank">SHARP</a></li>
+									<li class="text-white list-group-item"><a href="https://www.smdc.army.mil/RESOURCES/EO/" target="_blank" data-bs-toggle="tooltip" data-bs-title="Equal Opportunity">EO</a></li>
+									<li class="text-white list-group-item"><a href="https://ig.army.mil/" target="_blank">Army IG</a></li>
+									<li class="text-white list-group-item"><a href="https://www.armyignited.army.mil/student/" target="_blank">ArmyIgnited</a></li>
+									<li class="text-white list-group-item"><a href="https://www.armyresilience.army.mil/suicide-prevention/pages/iWantToHelpSomeone.html" target="_blank">Suicide Hotline (Or call 988, press 1)</a></li>
+								</div>
+							</div>
+						</div>
+						
 					</div>
 					<div class="col-sm-4 offset-md-1 py-4">
 						<h4 class="text-white">Contact</h4>
@@ -93,4 +107,5 @@ echo <<<EOT
 	</header>
 
 	EOT;
-?>
+
+

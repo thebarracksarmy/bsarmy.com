@@ -26,11 +26,6 @@
 	background-color: rgb(192 192 192) !important;
 }
 
-/* To allow for a vertical line */
-/* html, */
-/* body { */
-/* height: 100%; */
-/* } */
 
 hr.vertical {
 	width: 0;
@@ -142,8 +137,17 @@ hr.vertical {
 	-ms-user-select: none;
 }
 
-a {
+/* a {
 	color: #20493c;
+} 
+This caused me so much pain
+*/
+/* a:visited {
+	color: #20493c;
+}
+
+a.text-white {
+	color: #fff;
 }
 
 a:hover {
@@ -156,6 +160,10 @@ a:hover:disabled, a:hover + .disabled {
 	text-decoration: strikethrough;
 }
 
+a.text-white:visited {
+	color: #fff;
+} */
+
 
 .list-group-item.active {
 	background-color: #20493c !important;
@@ -163,7 +171,20 @@ a:hover:disabled, a:hover + .disabled {
 	border-color: #20493c !important;
 }
 
-.list-group-item  + .active:hover {
+.list-group-item {
 	background-color: transparent;
+	color: #f9d3c1;
+}
+
+li.list-group:hover {
+	background-color: #20493c;
+	color: #f9d3c1;
+}
+
+li.list-group-item > a:hover {
+	color: #f9d3c1;
+}
+
+li.list-group-item > a {
 	color: #f9d3c1;
 }
