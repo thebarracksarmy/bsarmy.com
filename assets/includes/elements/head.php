@@ -2,10 +2,11 @@
 
 $cacheVersion = time();
 
-if(!isset($page_title)) { $page_title = "BSArmy"; }
+if(!isset($title)) { $title = "BSArmy"; }
 if(!isset($description)) { $description = "The Barracks Army - Improving the barracks one little thing at a time."; }
 if(!isset($image)) { $image = ""; }
-if(!isset($url)) { $url = "https://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";}
+if(!isset($url)) { $url = "https://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]"; }
+if(!isset($type)) { $type = "website"; }
 
 // For production, remove ?$cacheVersion from the end of each link so we don't use up unnecessary bandwidth
 

@@ -36,6 +36,11 @@ a:hover:disabled, a:hover + .disabled {
 	color: #fff !important;
 }
 
+.bg-light-tan {
+	background-color: #f9d3c1 !important;
+	color: #20493c !important;
+}
+
 .table-hover tr:hover {
 	background-color: rgb(192 192 192) !important;
 }
@@ -151,35 +156,7 @@ hr.vertical {
 	-ms-user-select: none;
 }
 
-/* a {
-	color: #20493c;
-} 
-This caused me so much pain
-*/
-/* a:visited {
-	color: #20493c;
-}
-
-a.text-white {
-	color: #fff;
-}
-
-a:hover {
-	color: #20493c;
-	text-decoration: underline;
-}
-
-a:hover:disabled, a:hover + .disabled {
-	color: #20493c;
-	text-decoration: strikethrough;
-}
-
-a.text-white:visited {
-	color: #fff;
-} */
-
-
-.list-group-item.hover {
+.list-group-item:hover {
 	background-color: #20493c !important;
 	color: #f9d3c1;
 	border-color: #20493c !important;
