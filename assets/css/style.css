@@ -1,3 +1,17 @@
+a {
+	color: #20493c;
+}
+
+a:hover {
+	color: #20493c;
+	text-decoration: underline;
+}
+
+a:hover:disabled, a:hover + .disabled {
+	color: #20493c;
+	text-decoration: line-through;
+}
+
 .navbar-brand {
 	font-family: 'Operation Napalm',
 		monospace;
@@ -19,7 +33,7 @@
 
 .bg-dark-green {
 	background-color: #20493c !important;
-	color: #fff;
+	color: #fff !important;
 }
 
 .table-hover tr:hover {
@@ -165,7 +179,7 @@ a.text-white:visited {
 } */
 
 
-.list-group-item.active {
+.list-group-item.hover {
 	background-color: #20493c !important;
 	color: #f9d3c1;
 	border-color: #20493c !important;

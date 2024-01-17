@@ -65,8 +65,8 @@ $base = "liberty";
 
 						<?php
 						$filename = $base . '_' . $full_month . '_' . $year . '.jpg';
-						if (file_exists($_SERVER['DOCUMENT_ROOT'] . '/dfac/schedules/' . $year . '/' . $month . '/' . $filename))
-						{
+
+						if (file_exists($_SERVER['DOCUMENT_ROOT'] . '/dfac/schedules/' . $year . '/' . $month . '/' . $filename)) {
 
 							$schedule = <<<EOT
 								<a href='/dfac/schedules/$year/$month/$filename' target="_blank" rel="noopener noreferrer">
@@ -80,12 +80,12 @@ $base = "liberty";
 								EOT;
 
 							echo $schedule;
+							unset($schedule);
 
 							// iterate through each format and output a link to it
 							$formats = ['pdf', 'png', 'jpg'];
 
-							foreach ($formats as $format)
-							{
+							foreach ($formats as $format) {
 								// Prepare filename
 								$format_upper = strtoupper($format);
 								$base = "liberty";
@@ -97,8 +97,7 @@ $base = "liberty";
 										EOT;
 
 								// if it's the last element in the array, don't add the middot
-								if ($format===end($formats))
-								{
+								if ($format === end($formats)) {
 									$href = substr($href, 0, -9);
 								}
 
@@ -106,10 +105,8 @@ $base = "liberty";
 								// Output link to page
 								echo $href;
 							}
-
-						}
-						else
-						{
+							echo "</div>";
+						} else {
 							echo '<p class="text-muted">Schedule for ' . date('F Y') . ' not found. Please check back later.<p>';
 							echo '<p class="text-muted">If you believe this is an error, please email <a href="mailto:support@bsarmy.com">support@bsarmy.com</a>.</p>';
 						}
@@ -120,80 +117,75 @@ $base = "liberty";
 			</div>
 		</div>
 	</section>
+
+	<!-- Archived schedules -->
 	<section class="container text-center py-5">
 		<div class="row">
 			<div class="col">
 				<h3>
 					Archived Schedules:
 				</h3>
+
 				<p class="text-muted">
-					<!-- None at the moment. Check back next month! -->
+
 					<?php
-					$year = date('Y');
 
-					$yearsavaliable = scandir($_SERVER['DOCUMENT_ROOT'] . '/dfac/schedules/');
-					$monthsavaliable = scandir($_SERVER['DOCUMENT_ROOT'] . '/dfac/schedules/' . $year . '/');
-
-					// remove the first two elements of the arrays (.) and (..)
-					array_splice($yearsavaliable, 0, 2);
-					array_splice($monthsavaliable, 0, 2);
-
-
-					// Remove gen_alt_filetypes.php from the array (always gonna be the last one since it's not a number)
-					array_pop($yearsavaliable);
-
-
-					// sort numerically so we can get the elements before the current month
-					asort($yearsavaliable, SORT_NUMERIC);
-					asort($monthsavaliable, SORT_NUMERIC);
-
-
-					$monthsbefore = array_pop($monthsavaliable); // remove the current (last in array) month from the array
-					
-					foreach ($yearsavaliable as $year)
+					# Standing on the backs of giants: https://www.php.net/manual/en/function.scandir.php#80057
+					# Thank you fatpratmatt dot at dot gmail dot com
+					function scanDirectories($rootDir, $allData = array())
 					{
-						// print_r($monthsavaliable);
-						foreach ($monthsavaliable as $month)
-						{
-							// Generate a list for each month with a link to the schedule in each format
-							$monthname = date('F', mktime(0, 0, 0, $month, 10));
-							$monthname = strtolower($monthname);
-							$monthnameNormal = ucfirst($monthname);
-
-							echo "<p>$monthnameNormal $year:</p>";
-							foreach ($formats as $format)
-							{
-								// Prepare filename
-								$format_upper = strtoupper($format);
-								$base = "liberty";
-								$filename = $base . '_' . $monthname . '_' . $year . '.' . $format;
-
-								// Construct link
-								$href = <<<EOT
-								<a href="/dfac/schedules/$year/$month/$filename" target="_blank" rel="noopener noreferrer" class="text-muted"> $format_upper version </a>&middot;
-								EOT;
-
-								// if it's the last element in the array, don't add the middot
-								if ($format===end($formats))
-								{
-									$href = substr($href, 0, -9);
+						// set filenames invisible if you want
+						$invisibleFileNames = array(".", "..", ".htaccess", ".htpasswd", ".git", ".gitignore", "gen_alt_filetypes.php");
+						// run through content of root directory
+						$dirContent = scandir($rootDir);
+						foreach ($dirContent as $key => $content) {
+							// filter all files not accessible
+							$path = $rootDir . '/' . $content;
+							if (!in_array($content, $invisibleFileNames)) {
+								// if content is file & readable, add to array
+								if (is_file($path) && is_readable($path)) {
+									// save file name with path
+									$allData[] = $path;
+									// if content is a directory and readable, add path and name
+								} elseif (is_dir($path) && is_readable($path)) {
+									// recursive callback to open new directory
+									$allData = scanDirectories($path, $allData);
 								}
-
-								// Output link to page
-								echo $href;
 							}
-
 						}
-					}
 
+						foreach ($allData as $key => $value) {
+							$allData[$key] = str_replace($_SERVER['DOCUMENT_ROOT'], '', $value);
+						}
+
+
+						return $allData;
+					}
+					// Don't include the ending / in the directory name
+					$allFiles = scanDirectories($_SERVER['DOCUMENT_ROOT'] . '/dfac/schedules');
+
+					foreach ($allFiles as $path) {
+
+						// Remove the first /dfac/schedules/ from the path
+						$path = substr($path, 24);
+
+						unset($link);
+						$link = <<<EOT
+								<a href="https://bsarmy.com/$path" target="_blank" rel="noopener noreferrer">$path</a>
+								<br>
+								EOT;
+						echo $link;
+					}
 					?>
-				</p>
 			</div>
 		</div>
 	</section>
+	
 	<?php
+
 	// Add footer to page
 	require_once $_SERVER['DOCUMENT_ROOT'] . '/assets/includes/elements/footer.php';
+
 	?>
 </body>
 
