@@ -1,5 +1,14 @@
 <?php
 
+$description = "HTTP Error 404 - Page or resource not found.";
+$image = "";
+$url = "";
+$type = "error";
+$title = "404 - Page Not Found";
+
+
+
+
 include_once $_SERVER['DOCUMENT_ROOT'] . '/assets/includes/beforeIncludes.php';
 
 ?>
