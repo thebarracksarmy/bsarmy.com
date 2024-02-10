@@ -52,7 +52,7 @@
 	</div>
 
 	<div class="col mb-3">
-		<h5>Help & Terms</h5>
+		<h5>Help</h5>
 		<ul class="nav flex-column">
 			<li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Submit an Issue</a></li>
 			<li class="nav-item mb-2">
