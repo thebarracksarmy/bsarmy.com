@@ -1,7 +1,6 @@
 User-agent: *
 Disallow: /account/
 Disallow: /admin/
-Disallow: /assets/
 Disallow: /error/
 Disallow: /logout/
 Disallow: /scripts/
