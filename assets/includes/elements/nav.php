@@ -3,7 +3,6 @@
 
 echo <<<EOT
 
-
 	<header>
 		
 		<div class="navbar navbar-dark bg-dark-green shadow-sm">
@@ -26,17 +25,17 @@ echo <<<EOT
 								<div class="col">
 									<h4 class="text-white">Links</h4>
 									<!-- <ul style="list-style: none;" class="text-white list-group list-group-flush"> -->
-										<li class="text-white list-group-item"><a href="/dfac/">DFAC Schedule</a></li>
-										<li class="text-white list-group-item"><a href="/gyms/">Fitness Centers</a></li>
+										<a class="text-light-tan list-group-item" href="/dfac/">DFAC Schedule</a>
+										<a class="text-light-tan list-group-item" href="/gyms/">Fitness Centers</a>
 										<!-- </ul> -->
 								</div>
 								<div class="col">
 									<h4 class="text-white">Resources</h4>
-									<li class="text-white list-group-item"><a href="https://www.armyresilience.army.mil/sharp/" target="_blank">SHARP</a></li>
-									<li class="text-white list-group-item"><a href="https://www.smdc.army.mil/RESOURCES/EO/" target="_blank" data-bs-toggle="tooltip" data-bs-title="Equal Opportunity">EO</a></li>
-									<li class="text-white list-group-item"><a href="https://ig.army.mil/" target="_blank">Army IG</a></li>
-									<li class="text-white list-group-item"><a href="https://www.armyignited.army.mil/student/" target="_blank">ArmyIgnited</a></li>
-									<li class="text-white list-group-item"><a href="https://www.armyresilience.army.mil/suicide-prevention/pages/iWantToHelpSomeone.html" target="_blank">Suicide Hotline (Or call 988, press 1)</a></li>
+									<a class="text-light-tan list-group-item" href="https://www.armyresilience.army.mil/sharp/" target="_blank">SHARP</a>
+									<a class="text-light-tan list-group-item" href="https://www.smdc.army.mil/RESOURCES/EO/" target="_blank" data-bs-toggle="tooltip" data-bs-title="Equal Opportunity">EO</a>
+									<a class="text-light-tan list-group-item" href="https://ig.army.mil/" target="_blank">Army IG</a>
+									<a class="text-light-tan list-group-item" href="https://www.armyignited.army.mil/student/" target="_blank">ArmyIgnited</a>
+									<a class="text-light-tan list-group-item" href="https://www.armyresilience.army.mil/suicide-prevention/pages/iWantToHelpSomeone.html" target="_blank">Suicide Hotline (Or call 988, press 1)</a>
 								</div>
 							</div>
 						</div>
