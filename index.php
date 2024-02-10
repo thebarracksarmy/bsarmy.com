@@ -76,7 +76,7 @@ $image = "https://bsarmy.com/images/bsarmy.com_og:image.jpeg";
 					</p>
 				</div>
 			</div>
-			<!-- <div class="row py-lg-5">
+			<div class="row py-lg-5">
 				<div class="col-lg-4"></div>
 				<div class="col-lg-4">
 					<h3 class="h3">
@@ -92,10 +92,10 @@ $image = "https://bsarmy.com/images/bsarmy.com_og:image.jpeg";
 					</ul>
 				</div>
 				<div class="col-lg-4"></div>
-			</div> -->
+			</div>
 
 			<div class="row py-lg-5">
-				<div class="col-lg-2"></div>
+				<div class="col-lg-4"></div>
 				<div class="col-lg-4">
 					<h3 class="h3">
 						Send everyone a message!
@@ -104,14 +104,12 @@ $image = "https://bsarmy.com/images/bsarmy.com_og:image.jpeg";
 						<!-- <a href="/chat/" class="btn btn-dark-green my-2" target="_blank" rel="noopener noreferrer">Chat</a> -->
 						<button id="activate-chat" class="btn btn-dark-green">Toggle Chat</button>
 
-					<ul id="chat" style="display: none;" class="list-groupl">
-						<li class="list-group-item" style="list-style: none;">
-							<span class="time">Wed Jan 17 05:40:05 PM EST 2024</span>
-							Hey! My name is Lucas Burlingham and I've made this site. Please enter a message below and
-							hit "send". Messages disappear after 2 hours.<br>
-							SHARP and EO aren't funny. Keep it civil, please.<br>
-							Use this space to ask or offer to give a ride to the <a href="/dfac/"
-								target="_blank">DFAC</a> or <a href="/gyms/" target="_blank">gym</a>, or just to say Hi!
+					<ul id="chat" style="display: none;" class="list-group list-group-flush">
+						<li class="list-group-item active bg-dark-green rounded" style="list-style: none;">
+							<span class="time badge bg-secondary">Now </span>
+							Messages disappear after 2 hours.<br>
+							Use this space to ask or offer to give a ride to the <a class="text-white" href="/dfac/"
+								target="_blank">DFAC</a> or <a class="text-white" href="/gyms/" target="_blank">gym</a>, or just to say Hi!
 						</li>
 					</ul>
 
