@@ -1,16 +1,8 @@
-a {
-	color: #20493c;
-}
-
 a:hover {
-	color: #20493c;
 	text-decoration: underline;
+	text-decoration-style: dashed;
 }
 
-a:hover:disabled, a:hover + .disabled {
-	color: #20493c;
-	text-decoration: line-through;
-}
 
 .navbar-brand {
 	font-family: 'Operation Napalm',
@@ -39,6 +31,11 @@ a:hover:disabled, a:hover + .disabled {
 .bg-light-tan {
 	background-color: #f9d3c1 !important;
 	color: #20493c !important;
+}
+
+.btn-light-tan:hover {
+	color: #f9d3c1 !important;
+	background-color: #20493c;
 }
 
 .table-hover tr:hover {
@@ -110,12 +107,6 @@ hr.vertical {
 	border-color: #f9d3c1;
 }
 
-.btn-light-tan:hover {
-	color: #f9d3c1 !important;
-	background-color: #20493c;
-	border-color: #f9d3c1;
-}
-
 .btn-light-tan:focus, .btn-light-tan.focus {
 	box-shadow: 0 0 0 0.2rem rgb(249 211 193 / 0.5);
 }
@@ -156,7 +147,15 @@ hr.vertical {
 	-ms-user-select: none;
 }
 
-.list-group-item:hover {
+.text-light-tan {
+	color: #f9d3c1;
+}
+
+.text-light-tan:hover {
+	color: #fff;
+}
+
+/* .list-group-item:hover {
 	background-color: #20493c !important;
 	color: #f9d3c1;
 	border-color: #20493c !important;
@@ -178,4 +177,12 @@ li.list-group-item > a:hover {
 
 li.list-group-item > a {
 	color: #f9d3c1;
+} */
+
+.text-white > * {
+	color: #fff;
+}
+
+.text-white:hover > * {
+	color: #eee;
 }
