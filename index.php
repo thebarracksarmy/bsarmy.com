@@ -8,11 +8,12 @@ if (isset($_GET['logout']) && $_GET['logout'] == 'true')
 	header("Location: /");
 }
 
+
 $title = "The Barracks Army | Home";
-$url = "https://bsarmy.com/";
+$url = "https://".$_SERVER['HTTP_HOST']."/";
 $type = "website";
 $description = 'Improving the barracks one little thing at a time. "It does not take a majority to prevail... but rather an irate, tireless minority, keen on setting brushfires of freedom in the minds of men." - Samuel Adams';
-$image = "https://bsarmy.com/images/bsarmy.com_og:image.jpeg";
+$image = "https://".$_SERVER['HTTP_HOST']."/assets/images/bsarmy.com_og-image.jpeg";
 
 ?>
 
@@ -38,7 +39,14 @@ $image = "https://bsarmy.com/images/bsarmy.com_og:image.jpeg";
 			}
 		}
 	</style>
-	<script src="/assets/js/chat.js"></script>
+	<?php
+
+	// You can blame https://css-tricks.com/snippets/htaccess/use-php-inside-javascript/ for this monstrocity.
+	// It works. See https://imgflip.com/i/8fdw67
+	echo <<<EOT
+	<script src="/assets/js/chat.php?cacheVersion"></script>
+	EOT;
+	?>
 
 </head>
 
@@ -50,7 +58,7 @@ $image = "https://bsarmy.com/images/bsarmy.com_og:image.jpeg";
 
 		<section class="py-5 text-center container">
 			<div class="row py-lg-5">
-				<div class="col-lg-6 col-md-8 mx-auto">
+				<div class="col-lg-6 col-md-8 col-sm-10 mx-auto">
 
 					<?php
 					$randomTagline = [
@@ -77,49 +85,45 @@ $image = "https://bsarmy.com/images/bsarmy.com_og:image.jpeg";
 				</div>
 			</div>
 			<div class="row py-lg-5">
-				<div class="col-lg-4"></div>
-				<div class="col-lg-4">
+				<div class="col-lg-6 mx-auto">
 					<h3 class="h3">
-						So far, this site includes:	
+						So far, this site includes:
 					</h3>
 					<ul class="list-group mx-1">
-						<a class="list-group-item active bg-dark-green" href="/dfac/">
-							DFAC Schedule for <?php echo date('F Y'); ?> <i class="fa-solid fa-arrow-right"></i>
+						<a class="list-group-item active bg-dark-green btn-outline-dark-green" href="/dfac/">
+							DFAC Schedule for
+							<?php echo date('F Y'); ?> <i class="fa-solid fa-arrow-right"></i>
 						</a>
 						<a class="list-group-item bg-light-tan" href="/register/">
 							Register to subscribe to DFAC SMS alerts <i class="fa-solid fa-arrow-right"></i>
 						</a>
 					</ul>
 				</div>
-				<div class="col-lg-4"></div>
 			</div>
 
 			<div class="row py-lg-5">
-				<div class="col-lg-4"></div>
-				<div class="col-lg-4">
-					<h3 class="h3">
+				<div class="col-lg-6 col-md-8 col-sm-10 mx-auto">
+					<h3 class="h3 mt-2">
 						Send everyone a message!
 					</h3>
-					<p>
-						<!-- <a href="/chat/" class="btn btn-dark-green my-2" target="_blank" rel="noopener noreferrer">Chat</a> -->
-						<button id="activate-chat" class="btn btn-dark-green">Toggle Chat</button>
+
+					<button id="activate-chat" class="btn btn-dark-green mb-3 mx-auto">Toggle Chat</button>
 
 					<ul id="chat" style="display: none;" class="list-group list-group-flush">
 						<li class="list-group-item active bg-dark-green rounded" style="list-style: none;">
 							<span class="time badge bg-secondary">Now </span>
 							Messages disappear after 2 hours.<br>
 							Use this space to ask or offer to give a ride to the <a class="text-white" href="/dfac/"
-								target="_blank">DFAC</a> or <a class="text-white" href="/gyms/" target="_blank">gym</a>, or just to say Hi!
+								target="_blank">DFAC</a> or <a class="text-white" href="/gyms/" target="_blank">gym</a>,
+							or just to say Hi!
 						</li>
 					</ul>
 
-					<form method="POST" id="messageInput">
-						<input type="text" name="message" id="message" placeholder="Message">
-						<input type="submit" value="Send">
-					</form>				
-					</p>
+					<form class="input-group mb-3" method="POST" id="messageInput" >
+						<input class="input-group-text form-control" type="text" name="message" id="message" placeholder="Message">
+						<button class="btn btn-outline-dark-green" type="submit" value="Send">Send</button>
+					</form>
 				</div>
-				<div class="col-lg-2"></div>
 			</div>
 		</section>
 	</main>
