@@ -51,15 +51,14 @@ hr.vertical {
 
 .btn-outline-dark-green {
 	color: #20493c;
-	background-color: transparent;
-	background-image: none;
-	border-color: #20493c;
+	border: #20493c;
+	border: #20493c 1px solid;
 }
 
 .btn-outline-dark-green:hover {
 	color: #fff;
 	background-color: #20493c;
-	border-color: #20493c;
+	border: #20493c 1px solid;
 }
 
 .btn-outline-dark-green:focus, .btn-outline-dark-green.focus {
