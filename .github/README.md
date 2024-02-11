@@ -11,7 +11,7 @@ Building the Barracks up, improving the QOL for everyone, making the B's a bette
 - [x] Create the first feature: DFAC schedule and map for Fort Liberty, NC
 - [x] Add login feature
 - [x] Chat functionality (using [ntfy.sh](https://ntfy.sh))
-- [] Add user profile feature
+- [ ] Add user profile feature
 
 ## Contributing
 
