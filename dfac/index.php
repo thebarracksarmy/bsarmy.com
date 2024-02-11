@@ -27,6 +27,14 @@ $full_month = strtolower(date('F'));
 $month = date('m');
 $year = date('Y');
 $base = "liberty";
+
+// OG tags
+$title = "DFAC Schedules | THE BARRACKS";
+$description = "Monthly schedules for the Fort Liberty, NC DFACs.";
+$url = "https://bsarmy.com/dfac";
+$type = "website";
+$image = "https://bsarmy.com/assets/images/bsarmy.com-dfac_og-image.png";
+
 ?>
 
 <!DOCTYPE html>
@@ -134,19 +142,20 @@ $base = "liberty";
 					# Thank you fatpratmatt dot at dot gmail dot com
 					function scanDirectories($rootDir, $allData = array())
 					{
-						// set filenames invisible if you want
+						// set the files names you would like to ignore 
 						$invisibleFileNames = array(".", "..", ".htaccess", ".htpasswd", ".git", ".gitignore", "gen_alt_filetypes.php");
 						// run through content of root directory
 						$dirContent = scandir($rootDir);
 						foreach ($dirContent as $key => $content) {
 							// filter all files not accessible
 							$path = $rootDir . '/' . $content;
+
 							if (!in_array($content, $invisibleFileNames)) {
 								// if content is file & readable, add to array
 								if (is_file($path) && is_readable($path)) {
 									// save file name with path
 									$allData[] = $path;
-									// if content is a directory and readable, add path and name
+								// if content is a directory and readable, add path and name
 								} elseif (is_dir($path) && is_readable($path)) {
 									// recursive callback to open new directory
 									$allData = scanDirectories($path, $allData);
@@ -161,17 +170,28 @@ $base = "liberty";
 
 						return $allData;
 					}
+
 					// Don't include the ending / in the directory name
 					$allFiles = scanDirectories($_SERVER['DOCUMENT_ROOT'] . '/dfac/schedules');
 
 					foreach ($allFiles as $path) {
+						// Get all of the files with .jpg at the end
+						if (substr($path, -4) === '.jpg') {
+							$jpgFiles[] = $path;
+						}
+					}
 
-						// Remove the first /dfac/schedules/ from the path
-						$path = substr($path, 24);
+					foreach ($jpgFiles as $path) {
+
+						// Remove the first /dfac/schedules/ from the path that we want to display
+						$display_path = substr($path, 24);
 
 						unset($link);
+
+						$servername = $_SERVER['SERVER_NAME'];
+
 						$link = <<<EOT
-								<a href="https://bsarmy.com/$path" target="_blank" rel="noopener noreferrer">$path</a>
+								<a href="https://$servername/$path" target="_blank" rel="noopener noreferrer">$display_path</a>
 								<br>
 								EOT;
 						echo $link;
