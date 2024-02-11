@@ -1,16 +1,8 @@
-a {
-	color: #20493c;
-}
-
 a:hover {
-	color: #20493c;
 	text-decoration: underline;
+	text-decoration-style: dashed;
 }
 
-a:hover:disabled, a:hover + .disabled {
-	color: #20493c;
-	text-decoration: line-through;
-}
 
 .navbar-brand {
 	font-family: 'Operation Napalm',
@@ -36,15 +28,20 @@ a:hover:disabled, a:hover + .disabled {
 	color: #fff !important;
 }
 
+.bg-light-tan {
+	background-color: #f9d3c1 !important;
+	color: #20493c !important;
+}
+
+.btn-light-tan:hover {
+	color: #f9d3c1 !important;
+	background-color: #20493c;
+}
+
 .table-hover tr:hover {
 	background-color: rgb(192 192 192) !important;
 }
 
-/* To allow for a vertical line */
-/* html, */
-/* body { */
-/* height: 100%; */
-/* } */
 
 hr.vertical {
 	width: 0;
@@ -54,15 +51,14 @@ hr.vertical {
 
 .btn-outline-dark-green {
 	color: #20493c;
-	background-color: transparent;
-	background-image: none;
-	border-color: #20493c;
+	border: #20493c;
+	border: #20493c 1px solid;
 }
 
 .btn-outline-dark-green:hover {
 	color: #fff;
 	background-color: #20493c;
-	border-color: #20493c;
+	border: #20493c 1px solid;
 }
 
 .btn-outline-dark-green:focus, .btn-outline-dark-green.focus {
@@ -110,12 +106,6 @@ hr.vertical {
 	border-color: #f9d3c1;
 }
 
-.btn-light-tan:hover {
-	color: #f9d3c1 !important;
-	background-color: #20493c;
-	border-color: #f9d3c1;
-}
-
 .btn-light-tan:focus, .btn-light-tan.focus {
 	box-shadow: 0 0 0 0.2rem rgb(249 211 193 / 0.5);
 }
@@ -156,13 +146,42 @@ hr.vertical {
 	-ms-user-select: none;
 }
 
+.text-light-tan {
+	color: #f9d3c1;
+}
 
-.list-group-item.hover {
+.text-light-tan:hover {
+	color: #fff;
+}
+
+/* .list-group-item:hover {
 	background-color: #20493c !important;
 	color: #f9d3c1;
 	border-color: #20493c !important;
 }
 
-body {
-	color:white;
+.list-group-item {
+	background-color: transparent;
+	color: #f9d3c1;
+}
+
+li.list-group:hover {
+	background-color: #20493c;
+	color: #f9d3c1;
+}
+
+li.list-group-item > a:hover {
+	color: #f9d3c1;
+}
+
+li.list-group-item > a {
+	color: #f9d3c1;
+} */
+
+.text-white > * {
+	color: #fff;
+}
+
+.text-white:hover > * {
+	color: #eee;
 }

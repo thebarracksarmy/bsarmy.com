@@ -1,7 +1,7 @@
 <?php
 
-echo <<<EOT
 
+echo <<<EOT
 
 	<header>
 		
@@ -20,21 +20,30 @@ echo <<<EOT
 			<div class="container">
 				<div class="row">
 					<div class="col-sm-8 col-md-7 py-4">
-						<h4 class="text-white">Links</h4>
-						<p class="text-white">
-							<ul style="list-style: none; color: white;" class="text-white">
-								<li class="text-white" style="color: white !important;"><a href="/dfac/">DFAC Schedule</a></li>
-								<li class="text-white" style="color: white;"><a href="/gyms/">Fitness Centers</a></li>
-								<hr>
-								<li class="text-white" style="color: white;"><a href="https://www.armyresilience.army.mil/sharp/" target="_blank">Army SHARP</a></li>
-								<li class="text-white" style="color: white;"><a href="https://www.smdc.army.mil/RESOURCES/EO/" target="_blank">Army EO</a></li>
-								<li class="text-white" style="color: white;"><a href="https://www.armyresilience.army.mil/suicide-prevention/pages/iWantToHelpSomeone.html" target="_blank">Suicide Hotline (Or call 988, press 1)</a></li>
-							</ul>
-						</p>
+						<div class="container-fluid">
+							<div class="row">
+								<div class="col">
+									<h4 class="text-white">Links</h4>
+									<!-- <ul style="list-style: none;" class="text-white list-group list-group-flush"> -->
+										<a class="text-light-tan list-group-item" href="/dfac/">DFAC Schedule</a>
+										<a class="text-light-tan list-group-item" href="/gyms/">Fitness Centers</a>
+										<!-- </ul> -->
+								</div>
+								<div class="col">
+									<h4 class="text-white">Resources</h4>
+									<a class="text-light-tan list-group-item" href="https://www.armyresilience.army.mil/sharp/" target="_blank">SHARP</a>
+									<a class="text-light-tan list-group-item" href="https://www.smdc.army.mil/RESOURCES/EO/" target="_blank" data-bs-toggle="tooltip" data-bs-title="Equal Opportunity">EO</a>
+									<a class="text-light-tan list-group-item" href="https://ig.army.mil/" target="_blank">Army IG</a>
+									<a class="text-light-tan list-group-item" href="https://www.armyignited.army.mil/student/" target="_blank">ArmyIgnited</a>
+									<a class="text-light-tan list-group-item" href="https://www.armyresilience.army.mil/suicide-prevention/pages/iWantToHelpSomeone.html" target="_blank">Suicide Hotline (Or call 988, press 1)</a>
+								</div>
+							</div>
+						</div>
+						
 					</div>
 					<div class="col-sm-4 offset-md-1 py-4">
 						<h4 class="text-white">Contact</h4>
-							<button class="btn btn-outline-light-tan" id="emailbutton">Email</button>
+						<!--<button class="btn btn-outline-light-tan" id="emailbutton">Email</button>
 							<script>
 								button = document.getElementById("emailbutton");
 								// console.log(btoa("mailto:emailhehenoscammers"));
@@ -44,6 +53,7 @@ echo <<<EOT
 									window.location.href = atob("bWFpbHRvOmhpQGJzYXJteS5jb20=");
 								});
 							</script>
+							-->
 							<a href="/contact/" class="btn btn-light-tan disabled" id="contactButton" disabled>Contact Form</a>
 							<!-- Below this is account related links -->
 						<hr>
@@ -65,8 +75,7 @@ if (isset($_SESSION["name"])) {
 	 "Hey there, $name.",
 	 "Remember to stay hydrated, $name.",
 	 "Is that a smile I see, $name ?",
-	 "Heyyyy $name. How's it going ?",
-	 "Heyyyy $name. 🧦 on.",
+	 "Hey $name! How's it going ?",
 	];
 
 	$randomGreeting = $greetings[rand(0, count($greetings) - 1)];
@@ -98,4 +107,3 @@ echo <<<EOT
 
 	EOT;
 
-?>

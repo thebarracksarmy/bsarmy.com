@@ -20,4 +20,3 @@ if ($conn->connect_error) {
 	$db_connection_status = true;
 }
 
-?>

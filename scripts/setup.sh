@@ -79,6 +79,7 @@ echo "--- 3: Enabled firewall and allowed port $port..."
 
 # --- Configure Apache
 a2enmod rewrite
+a2enmod headers
 sed -i "s/localhost:80/localhost:$port/g" bsarmy.com.conf
 cp bsarmy.com.conf /etc/apache2/sites-available/bsarmy.com.conf
 a2ensite bsarmy.com.conf

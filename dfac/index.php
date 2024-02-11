@@ -21,21 +21,20 @@ DFAC event system (aka Taco Tuesday, Pizza Friday, etc.)
 
 // require_once $_SERVER['DOCUMENT_ROOT'] . '/assets/includes/db_templates.php';
 
-$description = "View the monthly schedule for the Fort Liberty, NC DFACs.";
-$title = "DFAC Schedules | THE BARRACKS";
-$url = "https://bsarmy.com/dfac/";
-$image = "";
-$type = "article";
-
-
-
-
 require_once $_SERVER['DOCUMENT_ROOT'] . '/assets/includes/beforeIncludes.php';
 
 $full_month = strtolower(date('F'));
 $month = date('m');
 $year = date('Y');
 $base = "liberty";
+
+// OG tags
+$title = "DFAC Schedules | THE BARRACKS";
+$description = "Monthly schedules for the Fort Liberty, NC DFACs.";
+$url = "https://bsarmy.com/dfac";
+$type = "website";
+$image = "https://bsarmy.com/assets/images/bsarmy.com-dfac_og-image.png";
+
 ?>
 
 <!DOCTYPE html>
@@ -55,8 +54,6 @@ $base = "liberty";
 	<!-- TODO: figure out how to pass the active page to make it aria accessable -->
 	<?php require $_SERVER['DOCUMENT_ROOT'] . '/assets/includes/elements/nav.php'; ?>
 
-
-	<!-- Current schedule -->
 	<section class="py-5 text-center container">
 		<div class="row py-lg-3">
 			<h3 class="h3">
@@ -136,81 +133,6 @@ $base = "liberty";
 				<h3>
 					Archived Schedules:
 				</h3>
-				<p class="text-muted">
-
-					<?php
-					// $year = date('Y');
-					// echo "before<br>";
-					// $yearsavaliable = scandir($_SERVER['DOCUMENT_ROOT'] . '/dfac/schedules/');
-					// $monthsavaliable = scandir($_SERVER['DOCUMENT_ROOT'] . '/dfac/schedules/' . $year . '/');
-
-					// echo var_dump($yearsavaliable);
-					// echo "<br>";
-
-					// echo var_dump($monthsavaliable);
-					// echo "<br>";
-
-					// // remove the first two elements of the arrays (.) and (..)
-					// array_splice($yearsavaliable, 0, 2);
-					// array_splice($monthsavaliable, 0, 2);
-
-
-
-					// // Remove gen_alt_filetypes.php from the array (always gonna be the last one since it's not a number)
-					// array_pop($yearsavaliable);
-
-
-					// // sort numerically so we can get the elements before the current month
-					// asort($yearsavaliable, SORT_NUMERIC);
-					// asort($monthsavaliable, SORT_NUMERIC);
-
-					// echo "after<br>";
-					// echo var_dump($yearsavaliable);
-					// echo "<br>";
-
-					// echo var_dump($monthsavaliable);
-					// echo "<br>";
-					// $monthsbefore = array_pop($monthsavaliable); // remove the current (last in array) month from the array
-
-
-					// foreach ($yearsavaliable as $year)
-					// {
-					// 	// print_r($monthsavaliable);
-					// 	foreach ($monthsavaliable as $month)
-					// 	{
-					// 		// Generate a list for each month with a link to the schedule in each format
-					// 		$monthname = date('F', mktime(0, 0, 0, $month, 10));
-					// 		$monthname = strtolower($monthname);
-					// 		$monthnameNormal = ucfirst($monthname);
-
-					// 		echo "<p>$monthnameNormal $year:</p>";
-					// 		foreach ($formats as $format)
-					// 		{
-					// 			// Prepare filename
-					// 			$format_upper = strtoupper($format);
-					// 			$base = "liberty";
-					// 			$filename = $base . '_' . $monthname . '_' . $year . '.' . $format;
-
-					// 			// Construct link
-					// 			$href = <<<EOT
-					// 			<a href="/dfac/schedules/$year/$month/$filename" target="_blank" rel="noopener noreferrer" class="text-muted"> $format_upper version </a>&middot;
-					// 			EOT;
-
-					// 			// if it's the last element in the array, don't add the middot
-					// 			if ($format===end($formats))
-					// 			{
-					// 				$href = substr($href, 0, -9);
-					// 			}
-
-					// 			// Output link to page
-					// 			echo $href;
-					// 		}
-
-					// 	}
-					// }
-
-					?>
-				</p>
 
 				<p class="text-muted">
 
@@ -220,19 +142,20 @@ $base = "liberty";
 					# Thank you fatpratmatt dot at dot gmail dot com
 					function scanDirectories($rootDir, $allData = array())
 					{
-						// set filenames invisible if you want
+						// set the files names you would like to ignore 
 						$invisibleFileNames = array(".", "..", ".htaccess", ".htpasswd", ".git", ".gitignore", "gen_alt_filetypes.php");
 						// run through content of root directory
 						$dirContent = scandir($rootDir);
 						foreach ($dirContent as $key => $content) {
 							// filter all files not accessible
 							$path = $rootDir . '/' . $content;
+
 							if (!in_array($content, $invisibleFileNames)) {
 								// if content is file & readable, add to array
 								if (is_file($path) && is_readable($path)) {
 									// save file name with path
 									$allData[] = $path;
-									// if content is a directory and readable, add path and name
+								// if content is a directory and readable, add path and name
 								} elseif (is_dir($path) && is_readable($path)) {
 									// recursive callback to open new directory
 									$allData = scanDirectories($path, $allData);
@@ -247,17 +170,28 @@ $base = "liberty";
 
 						return $allData;
 					}
+
 					// Don't include the ending / in the directory name
 					$allFiles = scanDirectories($_SERVER['DOCUMENT_ROOT'] . '/dfac/schedules');
 
 					foreach ($allFiles as $path) {
+						// Get all of the files with .jpg at the end
+						if (substr($path, -4) === '.jpg') {
+							$jpgFiles[] = $path;
+						}
+					}
 
-						// Remove the first /dfac/schedules/ from the path
-						$path = substr($path, 24);
+					foreach ($jpgFiles as $path) {
+
+						// Remove the first /dfac/schedules/ from the path that we want to display
+						$display_path = substr($path, 24);
 
 						unset($link);
+
+						$servername = $_SERVER['SERVER_NAME'];
+
 						$link = <<<EOT
-								<a href="https://bsarmy.com/$path" target="_blank" rel="noopener noreferrer">$path</a>
+								<a href="https://$servername/$path" target="_blank" rel="noopener noreferrer">$display_path</a>
 								<br>
 								EOT;
 						echo $link;
@@ -266,9 +200,12 @@ $base = "liberty";
 			</div>
 		</div>
 	</section>
+	
 	<?php
+
 	// Add footer to page
 	require_once $_SERVER['DOCUMENT_ROOT'] . '/assets/includes/elements/footer.php';
+
 	?>
 </body>
 

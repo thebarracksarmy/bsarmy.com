@@ -1,5 +1,12 @@
 <?php
 
+$description = "HTTP Error 404 - Page or resource not found.";
+$image = "";
+$url = "";
+$type = "error";
+$title = "404 - Page Not Found";
+
+
 include_once $_SERVER['DOCUMENT_ROOT'] . '/assets/includes/beforeIncludes.php';
 
 ?>
@@ -24,13 +31,13 @@ include_once $_SERVER['DOCUMENT_ROOT'] . '/assets/includes/beforeIncludes.php';
 			<h1 class="display-5 fw-bold"><kbd>http error 404</kbd> Page or resource not found.</h1>
 			<p class="fst-italics">Sorry, the page you are looking for does not exist.</p>
 			<a href="/index.php" class="btn btn-light-tan">Return to Home</a>
-			<!-- go back to page referrer or close page if not referred -->
 
+			<!-- go back to page referrer or close page if not referred -->
 			<?php
 				if (isset($_SERVER['HTTP_REFERER'])) {
 					echo '<a href="' . $_SERVER['HTTP_REFERER'] . '" class="btn btn-outline-dark-green">Go back</a>';
 				} else {
-					// I have no idea what these extra single quotes (') do but they work --\_(0_0)_/--
+					// I have no idea what these extra single quotes (') do but they work
 					echo '<a onClick="javascript:window.close(\'\',\'_parent\',\'\');" class="btn btn-outline-dark-green">Go back</a>';
 				}
 			?>
