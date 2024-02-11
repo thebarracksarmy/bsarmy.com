@@ -43,7 +43,7 @@ echo <<<EOT
 					</div>
 					<div class="col-sm-4 offset-md-1 py-4">
 						<h4 class="text-white">Contact</h4>
-							<button class="btn btn-outline-light-tan" id="emailbutton">Email</button>
+						<!--<button class="btn btn-outline-light-tan" id="emailbutton">Email</button>
 							<script>
 								button = document.getElementById("emailbutton");
 								// console.log(btoa("mailto:emailhehenoscammers"));
@@ -53,6 +53,7 @@ echo <<<EOT
 									window.location.href = atob("bWFpbHRvOmhpQGJzYXJteS5jb20=");
 								});
 							</script>
+							-->
 							<a href="/contact/" class="btn btn-light-tan disabled" id="contactButton" disabled>Contact Form</a>
 							<!-- Below this is account related links -->
 						<hr>
@@ -74,8 +75,7 @@ if (isset($_SESSION["name"])) {
 	 "Hey there, $name.",
 	 "Remember to stay hydrated, $name.",
 	 "Is that a smile I see, $name ?",
-	 "Heyyyy $name. How's it going ?",
-	 "Heyyyy $name. 🧦 on.",
+	 "Hey $name! How's it going ?",
 	];
 
 	$randomGreeting = $greetings[rand(0, count($greetings) - 1)];
