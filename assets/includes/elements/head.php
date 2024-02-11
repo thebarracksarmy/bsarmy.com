@@ -1,10 +1,9 @@
 <?php
 
-$cacheVersion = time();
 
 if(!isset($title)) { $title = "BSArmy"; }
 if(!isset($description)) { $description = "The Barracks Army - Improving the barracks one little thing at a time."; }
-if(!isset($image)) { $image = ""; }
+if(!isset($image)) { $image = "https://bsarmy.com/assets/images/bsarmy.com_og-image.jpeg"; }
 if(!isset($url)) { $url = "https://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]"; }
 if(!isset($type)) { $type = "website"; }
 
@@ -30,46 +29,51 @@ echo <<<EOT
 	<meta property="og:type" content="$type" />
 	<meta property="og:description" content='$description' />
 	<meta property="og:locale" content="en_US" />
+	<meta property="og:image" content="$image" />
 	<meta property="og:image:secure_url" content="$image" />
 
+	EOT;
 
+	if($_SERVER['SERVER_NAME'] == "bsarmy.com") {
+	echo <<<EOT
 	<!-- Google tag (gtag.js) -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=G-TRJJPB1GC1"></script>
 	<script>
-	window.dataLayer = window.dataLayer || [];
-	function gtag(){dataLayer.push(arguments);}
-	gtag('js', new Date());
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
 
-	gtag('config', 'G-TRJJPB1GC1');
+		gtag('config', 'G-TRJJPB1GC1');
 	</script>
+	EOT;
+	}
 
+	echo <<<EOT
 
+	
 
 	<!-- PWA (https://web.dev/progressive-web-apps/) -->
 	<!-- <link rel="manifest" href="/manifest.json"> -->
 
 	<!-- Bootstrap (https://getbootstrap.com) -->
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" 
-		integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="preload stylesheet" 
+		integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" as="style">
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"
 		integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/"
-		crossorigin="anonymous"></script>
+		crossorigin="anonymous" defer async as="script"> </script>
 	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
 		integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-		crossorigin="anonymous"></script>
+		crossorigin="anonymous" defer async as="script"></script>
+		
 
 		
 	<!-- htmx (https://htmx.org/)-->
 	<script src="https://unpkg.com/htmx.org@1.9.5"></script>
 
-	<!-- less.js (http://lesscss.org/) -->
-	<script src="https://cdn.jsdelivr.net/npm/less"></script>
-
 	<!-- Project CSS -->
-	<link rel="stylesheet" href="/assets/css/fonts.css?$cacheVersion">
-	<link rel="stylesheet" href="/assets/css/normalize.css?$cacheVersion">
-	<link rel="stylesheet" href="/assets/css/style.css?$cacheVersion">
-
+	<link rel="preload stylesheet" href="/assets/css/fonts.css?$cacheVersion" as="style">
+	<link rel="preload stylesheet" href="/assets/css/normalize.css?$cacheVersion" as="style">
+	<link rel="preload stylesheet" href="/assets/css/style.css?$cacheVersion" as="style">
 	
 	<!-- Project JS -->
 	<script src="/assets/js/script.js?$cacheVersion"></script>
