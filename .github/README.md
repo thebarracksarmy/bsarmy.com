@@ -10,7 +10,8 @@ Building the Barracks up, improving the QOL for everyone, making the B's a bette
 - [x] Create a basic structure for the project and vote on what features to implement first
 - [x] Create the first feature: DFAC schedule and map for Fort Liberty, NC
 - [x] Add login feature
-- [ ] Create the second feature: Event calendar for Fort Liberty, NC
+- [x] Chat functionality (using [ntfy.sh](https://ntfy.sh))
+- [] Add user profile feature
 
 ## Contributing
 
@@ -19,14 +20,14 @@ Building the Barracks up, improving the QOL for everyone, making the B's a bette
 1. Fork the repository
 2. Clone the repository (use `git clone --recurse-submodules https://github.com/bsarmy-com/bsarmy.com` to clone the required submodules)
 3. Create a new branch
-4. Make your changes
+4. Make your changes and test them in a mobile and desktop browser
 5. Commit your changes
 6. Push your changes to GitHub
 7. Open a pull request, including a detailed description of your changes and where you are located. You'll be contacted by a maintainer to verify your identity and ask a series of questions to verify military service. We then get you added to the project.
 
 ### Submitting suggestions
 
-Use our [suggestion form](https://forms.gle/F9c7CEvEkwV6TbZNA) to submit suggestions for the project. You can also submit suggestions by opening an issue on GitHub.
+Use our [suggestion form](https://forms.gle/F9c7CEvEkwV6TbZNA) to submit suggestions for the project. You can also submit suggestions by opening an issue.
 
 ## Contributors
 
