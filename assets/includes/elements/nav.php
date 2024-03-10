@@ -43,7 +43,7 @@ echo <<<EOT
 					</div>
 					<div class="col-sm-4 offset-md-1 py-4">
 						<h4 class="text-white">Contact</h4>
-						<!--<button class="btn btn-outline-light-tan" id="emailbutton">Email</button>
+						<!--<button class="btn outline-light-tan" id="emailbutton">Email</button>
 							<script>
 								button = document.getElementById("emailbutton");
 								// console.log(btoa("mailto:emailhehenoscammers"));
@@ -82,14 +82,14 @@ if (isset($_SESSION["name"])) {
 
 	echo <<<EOT
 						<p class="text-white">$randomGreeting</p>
-						<a href="/account/" class="btn btn-outline-light-tan">Account</a>
-						<a href="/logout/" class="btn btn-outline-light-tan">Logout</a>
+						<a href="/account/" class="btn outline-light-tan">Account</a>
+						<a href="/logout/" class="btn outline-light-tan">Logout</a>
 		EOT;
 } else {
 	// If the user is not logged in, show the login and register links
 	echo <<<EOT
-						<a href="/login/" class="btn btn-outline-light-tan">Login</a>
-						<a href="/register/" class="btn btn-outline-light-tan">Register</a>
+						<a href="/login/" class="btn outline-light-tan">Login</a>
+						<a href="/register/" class="btn outline-light-tan">Register</a>
 		EOT;
 }
 

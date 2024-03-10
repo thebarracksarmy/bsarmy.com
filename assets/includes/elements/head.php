@@ -7,7 +7,6 @@ if(!isset($image)) { $image = "https://bsarmy.com/assets/images/bsarmy.com_og-im
 if(!isset($url)) { $url = "https://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]"; }
 if(!isset($type)) { $type = "website"; }
 
-// For production, remove ?$cacheVersion from the end of each link so we don't use up unnecessary bandwidth
 
 // These variables aren't found in this file, but are defined before including this file on each page
 echo <<<EOT
@@ -53,7 +52,9 @@ echo <<<EOT
 	
 
 	<!-- PWA (https://web.dev/progressive-web-apps/) -->
-	<!-- <link rel="manifest" href="/manifest.json"> -->
+	<link rel="manifest" href="/manifest.json">
+	<script src="/service-worker.js"></script>
+
 
 	<!-- Bootstrap (https://getbootstrap.com) -->
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="preload stylesheet" 
@@ -92,8 +93,6 @@ echo <<<EOT
 	<link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png">
 	<link rel="icon" type="image/png" sizes="96x96" href="/assets/icons/favicon-96x96.png">
 	<link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16.png">
-
-	<link rel="manifest" href="/assets/icons/manifest.json">
 
 
 	<!-- For Microsoft Edge -->

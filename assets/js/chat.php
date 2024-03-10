@@ -37,6 +37,16 @@ if(debug) {
 function DOMLoaded() {
 
 
+	// When the page is loaded and the message box is focused, listen for the enter key being pressed
+	// and then submit the form
+	document.getElementById('message').addEventListener('focus', function () {
+		document.addEventListener('keyup', function (event) {
+			if (event.key === 'Enter') {
+				document.getElementById('messageInput').dispatchEvent(new Event('clicked'));
+			}
+		});
+	});
+
 	// Get all messages within the last 2 hours
 	const socket = new WebSocket('wss://<?php echo $chat_server; ?>/ws?since=2h');
 
@@ -116,6 +126,7 @@ function DOMLoaded() {
 
 		// Get the message from the input
 		let message = document.getElementById('message').value;
+		
 		if (message === '') {
 			return;
 		}
@@ -131,6 +142,9 @@ function DOMLoaded() {
 		});
 
 		console.log('Message sent: ' + message + ' by ' + user_name);
+
+		// Clear the input
+		document.getElementById('message').value = "";
 	});
 
 

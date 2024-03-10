@@ -8,10 +8,12 @@ Building the Barracks up, improving the QOL for everyone, making the B's a bette
 
 - [x] Create landing page with basic information about the project and how to get involved
 - [x] Create a basic structure for the project and vote on what features to implement first
-- [x] Create the first feature: DFAC schedule and map for Fort Liberty, NC
+- [x] DFAC schedule and map for Fort Liberty, NC
 - [x] Add login feature
 - [x] Chat functionality (using [ntfy.sh](https://ntfy.sh))
-- [ ] Add user profile feature
+- [ ] Add user profile mangement 
+- [ ] Add monthly SMS messages for DFAC schedules
+- [ ] Full PWA support
 
 ## Contributing
 
@@ -23,7 +25,7 @@ Building the Barracks up, improving the QOL for everyone, making the B's a bette
 4. Make your changes and test them in a mobile and desktop browser
 5. Commit your changes
 6. Push your changes to GitHub
-7. Open a pull request, including a detailed description of your changes and where you are located. You'll be contacted by a maintainer to verify your identity and ask a series of questions to verify military service. We then get you added to the project.
+7. Open a pull request, including a detailed description of your changes and where you are located. You'll be contacted by a maintainer to verify your identity and asked a series of questions to verify military service. We then get you added to the project.
 
 ### Submitting suggestions
 
@@ -41,8 +43,9 @@ This project is licensed under the MIT License - see the [LICENSE.md](.github/LI
 
 This project uses the following technologies:
 
-![Made with Apache 2](https://img.shields.io/badge/Made_With-Apache_2-blue?style=for-the-badge)
-![Ubuntu Linux](https://img.shields.io/badge/Linux-_?style=for-the-badge&logo=ubuntu&label=Ubuntu&labelColor=gray&color=gray)
+![Runs on Apache 2](https://img.shields.io/badge/Runs_On-Apache_2-blue?style=for-the-badge)
+![Made with PHP](https://img.shields.io/badge/Runs_On-PHP-purple?style=for-the-badge)
+![Ubuntu Linux](https://img.shields.io/badge/Linux-_?style=for-the-badge&logo=ubuntu&label=Ubuntu&labelColor=orange&color=gray)
 ![Using Cloudflare Tunnel](https://img.shields.io/badge/Tunnels-_?style=for-the-badge&logo=cloudflare&label=Cloudflare&labelColor=gray&color=gray)
 ![GitHub](https://img.shields.io/badge/GIT-_?style=for-the-badge&logo=github&label=Github&labelColor=gray&color=gray)
 ![Spectrum Internet](https://img.shields.io/badge/Internet-_?style=for-the-badge&logo=Spectrum&logoColor=blue&label=Spectrum&labelColor=gray&color=gray)
@@ -52,4 +55,4 @@ This project uses the following technologies:
 
 ## Contact
 
-Please see [CONTACT.md](.github/CONTACT.md) for contact information.
+Please see [CONTACT.md](CONTACT.md) for contact information.

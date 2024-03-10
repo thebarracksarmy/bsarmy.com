@@ -90,7 +90,7 @@ $image = "https://".$_SERVER['HTTP_HOST']."/assets/images/bsarmy.com_og-image.jp
 						So far, this site includes:
 					</h3>
 					<ul class="list-group mx-1">
-						<a class="list-group-item active bg-dark-green btn-outline-dark-green" href="/dfac/">
+						<a class="list-group-item bg-dark-green outline-dark-green" href="/dfac/">
 							DFAC Schedule for
 							<?php echo date('F Y'); ?> <i class="fa-solid fa-arrow-right"></i>
 						</a>
@@ -108,21 +108,23 @@ $image = "https://".$_SERVER['HTTP_HOST']."/assets/images/bsarmy.com_og-image.jp
 					</h3>
 
 					<button id="activate-chat" class="btn btn-dark-green mb-3 mx-auto">Toggle Chat</button>
+					
+					<div id="chat" style="display: none;">
+						<ul class="list-group list-group-flush">
+							<li class="list-group-item active bg-dark-green rounded" style="list-style: none;">
+								<span class="time badge bg-secondary">Now </span>
+								Messages disappear after 2 hours.<br>
+								Use this space to ask or offer to give a ride to the <a class="text-white" href="/dfac/"
+									target="_blank">DFAC</a> or <a class="text-white" href="/gyms/" target="_blank">gym</a>,
+								or just to say Hi!
+							</li>						
+						</ul>
 
-					<ul id="chat" style="display: none;" class="list-group list-group-flush">
-						<li class="list-group-item active bg-dark-green rounded" style="list-style: none;">
-							<span class="time badge bg-secondary">Now </span>
-							Messages disappear after 2 hours.<br>
-							Use this space to ask or offer to give a ride to the <a class="text-white" href="/dfac/"
-								target="_blank">DFAC</a> or <a class="text-white" href="/gyms/" target="_blank">gym</a>,
-							or just to say Hi!
-						</li>
-					</ul>
-
-					<form class="input-group mb-3" method="POST" id="messageInput" >
-						<input class="input-group-text form-control" type="text" name="message" id="message" placeholder="Message">
-						<button class="btn btn-outline-dark-green" type="submit" value="Send">Send</button>
-					</form>
+						<form class="input-group mb-3" id="messageInput" >
+							<input class="input-group-text form-control" type="text" name="message" id="message" placeholder="Message" autocomplete="off">
+							<button class="btn outline-dark-green" type="submit" value="Send">Send</button>
+						</form>
+					</div>
 				</div>
 			</div>
 		</section>

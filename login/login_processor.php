@@ -127,7 +127,7 @@ if ($_SERVER["REQUEST_METHOD"]==="POST") {
 					</div>
 					<!-- Submit button -->
 					<div class="form-group">
-						<button type="submit" class="btn btn-outline-dark-green">Send Code</button>
+						<button type="submit" class="btn outline-dark-green">Send Code</button>
 					</div>
 				</form>
 			</div>
