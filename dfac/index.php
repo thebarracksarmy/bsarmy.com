@@ -28,6 +28,8 @@ $month = date('m');
 $year = date('Y');
 $base = "liberty";
 
+$month_year = date('F Y');
+
 // OG tags
 $title = "DFAC Schedules | THE BARRACKS";
 $description = "Monthly schedules for the Fort Liberty, NC DFACs.";
@@ -72,13 +74,15 @@ $image = "https://bsarmy.com/assets/images/bsarmy.com-dfac_og-image.png";
 					<div class="col">
 
 						<?php
-						$filename = $base . '_' . $full_month . '_' . $year . '.jpg';
+						$filename = $base . '_' . $full_month . '_' . $year . '.png';
+
+						// echo $_SERVER['DOCUMENT_ROOT'] . '/dfac/schedules/' . $year . '/' . $month . '/' . $filename;
 
 						if (file_exists($_SERVER['DOCUMENT_ROOT'] . '/dfac/schedules/' . $year . '/' . $month . '/' . $filename)) {
 
 							$schedule = <<<EOT
 								<a href='/dfac/schedules/$year/$month/$filename' target="_blank" rel="noopener noreferrer">
-									<img src='/dfac/schedules/$year/$month/$filename' alt="Fort Liberty, NC DFAC Schedule for date('F Y') " class="img-fluid" />
+									<img src='/dfac/schedules/$year/$month/$filename' alt="Fort Liberty, NC DFAC Schedule for $month_year " class="img-fluid" />
 								</a>
 								<!-- Show links to download different versions -->
 								<br>
