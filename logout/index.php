@@ -31,7 +31,7 @@ unset($_SESSION);
 			<h1 class="mt-4 p-5 bg-dark-green text-white rounded"><i>Good bye!</i> You've been logged out.</h1>
 			<p class="fst-italics">To return to the home page, click the home button or wait another few seconds to be redirected automatically. If you'd like to log back in, click the <i>login</i> button below. </p>
 			<a href="/index.php" class="btn btn-light-tan">Return to Home</a>
-			<a href="/login/index.php" class="btn btn-outline-dark-green">Login</a>
+			<a href="/login/index.php" class="btn outline-dark-green">Login</a>
 			
 		</div>
 	</div>

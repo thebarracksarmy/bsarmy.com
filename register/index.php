@@ -171,7 +171,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/assets/includes/beforeIncludes.php';
 						</label>
 					</div>
 					<div class="col-12">
-						<button class="btn btn-outline-dark-green" type="submit" name="submit" value="true">Sign Up</button>
+						<button class="btn outline-dark-green" type="submit" name="submit" value="true">Sign Up</button>
 					</div>
 				</form>
 			</div>

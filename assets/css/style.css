@@ -33,11 +33,6 @@ a:hover {
 	color: #20493c !important;
 }
 
-.btn-light-tan:hover {
-	color: #f9d3c1 !important;
-	background-color: #20493c;
-}
-
 .table-hover tr:hover {
 	background-color: rgb(192 192 192) !important;
 }
@@ -49,23 +44,35 @@ hr.vertical {
 	/* or height in PX */
 }
 
-.btn-outline-dark-green {
+.btn {
+	border: black 1px solid;
+	border-radius: 0.5rem;
+	padding: 0.375rem 0.75rem;
+}
+
+
+.btn-light-tan:hover {
+	color: #f9d3c1 !important;
+	background-color: #20493c;
+}
+
+.outline-dark-green {
 	color: #20493c;
 	border: #20493c;
 	border: #20493c 1px solid;
 }
 
-.btn-outline-dark-green:hover {
+.outline-dark-green:hover {
 	color: #fff;
 	background-color: #20493c;
 	border: #20493c 1px solid;
 }
 
-.btn-outline-dark-green:focus, .btn-outline-dark-green.focus {
+.outline-dark-green:focus, .outline-dark-green.focus {
 	box-shadow: 0 0 0 0.2rem rgb(32 73 60 / 0.5);
 }
 
-.btn-outline-dark-green.disabled, .btn-outline-dark-green:disabled {
+.outline-dark-green.disabled, .outline-dark-green:disabled {
 	color: #797070;
 	background-color: transparent;
 	user-select: none;
@@ -77,7 +84,7 @@ hr.vertical {
 .btn-dark-green {
 	color: #fff;
 	background-color: #20493c;
-	border-color: #20493c;
+	border-color: #20493c !important;
 }
 
 .btn-dark-green:hover {
@@ -120,24 +127,24 @@ hr.vertical {
 	-ms-user-select: none;
 }
 
-.btn-outline-light-tan {
+.outline-light-tan {
 	color: #f9d3c1;
 	background-color: transparent;
 	background-image: none;
 	border-color: #f9d3c1;
 }
 
-.btn-outline-light-tan:hover {
+.outline-light-tan:hover {
 	color: #20493c;
 	background-color: #f9d3c1;
 	border-color: #f9d3c1;
 }
 
-.btn-outline-light-tan:focus, .btn-outline-light-tan.focus {
+.outline-light-tan:focus, .outline-light-tan.focus {
 	box-shadow: 0 0 0 0.2rem rgb(249 211 193 / 0.5);
 }
 
-.btn-outline-light-tan.disabled, .btn-outline-light-tan:disabled {
+.outline-light-tan.disabled, .outline-light-tan:disabled {
 	color: #797070;
 	background-color: transparent;
 	user-select: none;
@@ -184,4 +191,8 @@ li.list-group-item > a {
 
 .text-white:hover > * {
 	color: #eee;
+}
+
+.active {
+	border-color: unset !important;
 }

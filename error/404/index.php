@@ -35,10 +35,10 @@ include_once $_SERVER['DOCUMENT_ROOT'] . '/assets/includes/beforeIncludes.php';
 			<!-- go back to page referrer or close page if not referred -->
 			<?php
 				if (isset($_SERVER['HTTP_REFERER'])) {
-					echo '<a href="' . $_SERVER['HTTP_REFERER'] . '" class="btn btn-outline-dark-green">Go back</a>';
+					echo '<a href="' . $_SERVER['HTTP_REFERER'] . '" class="btn outline-dark-green">Go back</a>';
 				} else {
 					// I have no idea what these extra single quotes (') do but they work
-					echo '<a onClick="javascript:window.close(\'\',\'_parent\',\'\');" class="btn btn-outline-dark-green">Go back</a>';
+					echo '<a onClick="javascript:window.close(\'\',\'_parent\',\'\');" class="btn outline-dark-green">Go back</a>';
 				}
 			?>
 			
