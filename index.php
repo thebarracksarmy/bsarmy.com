@@ -44,7 +44,7 @@ $image = "https://".$_SERVER['HTTP_HOST']."/assets/images/bsarmy.com_og-image.jp
 	// You can blame https://css-tricks.com/snippets/htaccess/use-php-inside-javascript/ for this monstrocity.
 	// It works. See https://imgflip.com/i/8fdw67
 	echo <<<EOT
-	<script src="/assets/js/chat.php?cacheVersion"></script>
+	<script src="/assets/js/chat.php"></script>
 	EOT;
 	?>
 
