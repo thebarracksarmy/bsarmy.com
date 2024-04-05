@@ -53,7 +53,8 @@ echo <<<EOT
 
 	<!-- PWA (https://web.dev/progressive-web-apps/) -->
 	<link rel="manifest" href="/manifest.json">
-	<script src="/service-worker.js"></script>
+	<!-- <script src="/service-worker.js"></script> -->
+	
 
 
 	<!-- Bootstrap (https://getbootstrap.com) -->
