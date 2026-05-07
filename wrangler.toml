@@ -1,0 +1,16 @@
+name = "bsarmy-landing"
+main = "src/index.js"
+preview_urls = false
+workers_dev = false
+compatibility_date = "2026-05-07"
+compatibility_flags = [ "nodejs_compat" ]
+
+[[routes]]
+pattern = "bsarmy.com"
+custom_domain = true
+
+[assets]
+directory = "./assets/images"
+binding = "BSARMY_ASSETS"
+html_handling = "force-trailing-slash"
+not_found_handling = "404-page"
